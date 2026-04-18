@@ -1,0 +1,49 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  gap: 1rem;
+}
+
+.chords {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  gap: 3px;
+}
+
+.btn-previews-chord {
+  display: none;
+  position: absolute;
+  left: 30px;
+}
+.btn-next-chord {
+  display: none;
+  position: absolute;
+  right: 30px;
+}
+
+@media all and (max-width: 650px) {
+  .chords {
+  }
+  .btn-previews-chord {
+    display: none;
+  }
+  .btn-next-chord {
+    display: none;
+  }
+}
+
+.chordsBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+}

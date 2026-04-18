@@ -1,0 +1,36 @@
+<div class="chords">
+  @for (chord of chords; track chord.name){
+  <app-chord [chord]="chord"></app-chord>
+  }
+
+  <button
+    class="btn-previews-chord"
+    mat-fab
+    color="primary"
+    matTooltip="Previews chord"
+  >
+    <mat-icon>keyboard_arrow_left</mat-icon>
+  </button>
+
+  <button
+    class="btn-next-chord"
+    mat-fab
+    color="primary"
+    matTooltip="Next chord"
+  >
+    <mat-icon>keyboard_arrow_right</mat-icon>
+  </button>
+</div>
+
+<div class="chordsBtn">
+  @for (chordName of chordsBtn; track chordName){
+  <button
+    mat-button
+    color="primary"
+    matTooltip="{{ chordName }}"
+    (click)="selectChord(chordName)"
+  >
+    {{ chordName }}
+  </button>
+  }
+</div>

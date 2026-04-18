@@ -1,0 +1,33 @@
+:host {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color: #ffff, $alpha: 60%);
+  z-index: 100;
+}
+
+mat-progress-spinner {
+  left: 47.5%;
+  top: 45%;
+}
+
+mat-progress-bar-fill::after {
+  border-radius: 2px;
+}
+
+mat-progress-bar-buffer {
+  border-radius: 2px;
+}
+
+@media (max-width: 1200px) {
+  mat-progress-spinner {
+    left: 42.5%;
+  }
+}
+@media (max-width: 599px) {
+  mat-progress-spinner {
+    left: 40%;
+  }
+}

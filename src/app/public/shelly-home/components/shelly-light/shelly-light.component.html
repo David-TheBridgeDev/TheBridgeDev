@@ -1,0 +1,20 @@
+@if (loading){
+<mat-spinner [diameter]="60"></mat-spinner>
+}
+
+<p>{{ deviceName }}</p>
+
+<button
+  class="btn btn-right"
+  matTooltip="Off"
+  (click)="controlLight(ShellyActions.OFF)"
+>
+  o
+</button>
+<button
+  class="btn btn-left"
+  matTooltip="On"
+  (click)="controlLight(ShellyActions.ON)"
+>
+  -
+</button>

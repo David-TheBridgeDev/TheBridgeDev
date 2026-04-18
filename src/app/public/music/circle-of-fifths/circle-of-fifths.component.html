@@ -1,0 +1,79 @@
+<div class="keyNotesContainer">
+  <div class="keyNoteContainer">
+    <p class="keyNote major">{{ majorNotes[0] }}</p>
+    <p class="grade">1º</p>
+  </div>
+  <div class="keyNoteContainer">
+    <p class="keyNote minor">{{ majorNotes[1] }}</p>
+    <p class="grade">2º</p>
+  </div>
+  <div class="keyNoteContainer">
+    <p class="keyNote minor">{{ majorNotes[2] }}</p>
+    <p class="grade">3º</p>
+  </div>
+  <div class="keyNoteContainer">
+    <p class="keyNote major">{{ majorNotes[3] }}</p>
+    <p class="grade">4º</p>
+  </div>
+  <div class="keyNoteContainer">
+    <p class="keyNote major">{{ majorNotes[4] }}</p>
+    <p class="grade">5º</p>
+  </div>
+  <div class="keyNoteContainer">
+    <p class="keyNote minor">{{ majorNotes[5] }}</p>
+    <p class="grade">6º</p>
+  </div>
+  <div class="keyNoteContainer">
+    <p class="keyNote minor diminished">{{ majorNotes[6] }}</p>
+    <p class="grade">7º</p>
+  </div>
+</div>
+<div class="keyNotesContainer">
+  <div class="keyNoteContainer">
+    <p class="keyNote minor">{{ minorNotes[0] }}</p>
+    <p class="grade">1º</p>
+  </div>
+  <div class="keyNoteContainer">
+    <p class="keyNote minor diminished">{{ minorNotes[1] }}</p>
+    <p class="grade">2º</p>
+  </div>
+  <div class="keyNoteContainer">
+    <p class="keyNote major">{{ minorNotes[2] }}</p>
+    <p class="grade">3º</p>
+  </div>
+  <div class="keyNoteContainer">
+    <p class="keyNote minor">{{ minorNotes[3] }}</p>
+    <p class="grade">4º</p>
+  </div>
+  <div class="keyNoteContainer">
+    <p class="keyNote minor">{{ minorNotes[4] }}</p>
+    <p class="grade">5º</p>
+  </div>
+  <div class="keyNoteContainer">
+    <p class="keyNote major">{{ minorNotes[5] }}</p>
+    <p class="grade">6º</p>
+  </div>
+  <div class="keyNoteContainer">
+    <p class="keyNote major">{{ minorNotes[6] }}</p>
+    <p class="grade">7º</p>
+  </div>
+</div>
+<div class="circle-of-fifths-container">
+  <img
+    class="circle"
+    src="assets/images/png/music/circle-of-fifths.png"
+    alt="circle-of-fifths"
+  />
+
+  <img
+    class="outside"
+    [ngStyle]="{ transform: 'rotate(' + deg + 'deg)' }"
+    src="assets/images/png/music/circle-of-fifths-outside.png"
+    alt="circle-of-fifths"
+  />
+  <h1>{{ key }}</h1>
+</div>
+
+<mat-slider min="0" max="11" step="1" showTickMarks>
+  <input matSliderThumb [formControl]="stepSelectionSlider" />
+</mat-slider>

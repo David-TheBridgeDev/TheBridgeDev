@@ -1,0 +1,9 @@
+@if (loading){
+<mat-spinner [diameter]="60"></mat-spinner>
+}
+
+<p>{{ name }}</p>
+
+<button class="btn btn-left" matTooltip="On" (click)="triggerAction()">
+  -
+</button>

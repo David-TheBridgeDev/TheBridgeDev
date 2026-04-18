@@ -1,0 +1,66 @@
+@if (loading){
+<mat-spinner [diameter]="60"></mat-spinner>
+}
+
+<p>{{ deviceName }}</p>
+
+@if (opening) {
+<button
+  class="btn btn-stop"
+  matTooltip="open"
+  (click)="actionStopRoller(ShellyActions.OPEN)"
+>
+  <mat-icon>stop </mat-icon>
+</button>
+} @else { @if (deviceState == DeviceState.NORMAL){
+<!--------------------NORMAL-------------------->
+<button
+  class="btn btn-left"
+  matTooltip="open"
+  (click)="actionStopRoller(ShellyActions.OPEN)"
+>
+  <mat-icon>keyboard_arrow_up</mat-icon>
+</button>
+<button class="btn btn-right" matTooltip="close" (click)="toPosStop()">
+  @if (!!toPosValue) {
+  {{ toPosValue }}
+  }@else{ <mat-icon>keyboard_arrow_down </mat-icon>}
+</button>
+}@else if(deviceState == DeviceState.STEP){
+<!--------------------STEP-------------------->
+<button
+  class="btn btn-right"
+  matTooltip="{{ RollerPoss[0] }}"
+  (click)="toPosStop(RollerPoss[0])"
+>
+  {{ RollerPoss[0] }}
+</button>
+<button
+  class="btn btn-right"
+  matTooltip="{{ RollerPoss[1] }}"
+  (click)="toPosStop(RollerPoss[1])"
+>
+  {{ RollerPoss[1] }}
+</button>
+<button
+  class="btn btn-right"
+  matTooltip="{{ RollerPoss[2] }}"
+  (click)="toPosStop(RollerPoss[2])"
+>
+  {{ RollerPoss[2] }}
+</button>
+<button
+  class="btn btn-right"
+  matTooltip="{{ RollerPoss[3] }}"
+  (click)="toPosStop(RollerPoss[3])"
+>
+  {{ RollerPoss[3] }}
+</button>
+<button
+  class="btn btn-right"
+  matTooltip="{{ RollerPoss[4] }}"
+  (click)="toPosStop(RollerPoss[4])"
+>
+  {{ RollerPoss[4] }}
+</button>
+} }

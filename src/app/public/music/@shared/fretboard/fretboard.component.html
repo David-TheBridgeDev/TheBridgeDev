@@ -1,0 +1,31 @@
+<div class="fretboard">
+  @for (fret of scale.degrees; track rowIndex; let rowIndex = $index){
+  <div class="fret">
+    @if (rowIndex == 3 || rowIndex == 5 || rowIndex == 7 || rowIndex == 9){
+    <div class="dot">0</div>
+    } @if (rowIndex == 12 ){
+    <div class="dot doble">00</div>
+    } @for (note of fret; track colIndex; let colIndex = $index){
+    <div class="box">
+      @if (!!note.trim()){
+      <span
+        class="note"
+        [class.tonica]="note.includes('1')"
+        [class.supertonica]="note.includes('2')"
+        [class.mediante]="note.includes('3')"
+        [class.subdominante]="note.includes('4')"
+        [class.dominante]="note.includes('5')"
+        [class.superdominante]="note.includes('6')"
+        [class.sensible]="note.includes('7')"
+        [class.novena]="note.includes('9')"
+        [class.once]="note.includes('11')"
+        [class.trece]="note.includes('13')"
+      >
+        {{ scale.degrees[rowIndex][colIndex] }}
+      </span>
+      }
+    </div>
+    }
+  </div>
+  }
+</div>

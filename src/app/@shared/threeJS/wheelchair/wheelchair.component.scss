@@ -1,0 +1,14 @@
+#rendererContainer {
+  filter: blur(2px);
+  cursor: pointer;
+  transition: 0.2s;
+}
+#rendererContainer:hover {
+  filter: blur(0px);
+}
+
+@media only screen and (max-width: 800px) {
+  #rendererContainer {
+    filter: blur(0px);
+  }
+}

@@ -1,0 +1,98 @@
+.btn {
+  width: 50%;
+  height: 100%;
+  background-color: transparent;
+
+  border-color: #b7b7b7 !important;
+
+  color: white;
+
+  font-size: 15px;
+
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover */
+.btn:hover {
+  background-color: #2980b9;
+}
+
+@keyframes hoverAnim {
+  0% {
+  }
+  10% {
+  }
+
+  100% {
+  }
+}
+
+/* Presionado (click) */
+.btn:active {
+  animation: bounce 0.3s ease;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Enfocado (accesibilidad con teclado) */
+.btn:focus {
+}
+
+.mat-icon,
+mat-icon.mat-primary,
+mat-icon.mat-accent,
+mat-icon.mat-warn {
+  color: white !important;
+}
+
+$border-width: 2px;
+
+.btn-left {
+  border-top: $border-width solid;
+  border-right: 0 solid;
+  border-left: $border-width solid;
+  border-bottom: $border-width solid;
+  border: 0;
+}
+.btn-right {
+  border-top: $border-width solid;
+  border-right: $border-width solid;
+  border-left: 0 solid;
+  border-bottom: $border-width solid;
+  border: 0;
+}
+
+.btn-stop {
+  border-top: $border-width solid;
+  border-right: $border-width solid;
+  border-left: 0 solid;
+  border-bottom: $border-width solid;
+  border: 0;
+  width: 100%;
+}
+
+p {
+  position: absolute;
+  top: 1px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin: 0rem;
+  font-size: 1.2rem;
+}
+
+mat-spinner {
+  position: absolute;
+  width: 100% !important;
+  height: 100% !important;
+}

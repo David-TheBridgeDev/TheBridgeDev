@@ -1,0 +1,22 @@
+@use "../componentes-common-styes";
+
+:host {
+  position: relative;
+
+  background-color: #523e35;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 14px;
+
+  width: 175px;
+  height: 100px;
+
+  color: #a8a8a8 !important;
+
+  overflow: hidden;
+}
+
+.btn-left {
+  background-color: #a10000;
+}

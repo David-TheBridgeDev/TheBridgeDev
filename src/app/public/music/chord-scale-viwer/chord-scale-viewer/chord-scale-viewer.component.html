@@ -1,0 +1,36 @@
+<div class="chords">
+  <button
+    class="btn-previews-chord"
+    mat-fab
+    color="primary"
+    matTooltip="Previews chord"
+    (click)="incrementOffset(+1)"
+  >
+    <mat-icon>keyboard_arrow_left</mat-icon>
+  </button>
+  <app-fretboard [scale]="scale"></app-fretboard>
+  <button
+    class="btn-next-chord"
+    mat-fab
+    color="primary"
+    matTooltip="Next chord"
+    (click)="incrementOffset(-1)"
+  >
+    <mat-icon>keyboard_arrow_right</mat-icon>
+  </button>
+</div>
+
+<div class="chordsBtn">
+  @for (chordName of scaleBtn; track chordName){
+  <button
+    mat-button
+    color="primary"
+    matTooltip="{{
+      !!chordName.description ? chordName.description : chordName.name
+    }}"
+    (click)="selectChordScale(chordName.name)"
+  >
+    {{ chordName.name }}
+  </button>
+  }
+</div>

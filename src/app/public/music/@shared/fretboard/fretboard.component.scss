@@ -1,0 +1,102 @@
+:host {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid rgba(185, 47, 47, 0);
+  border-radius: 1rem;
+  box-shadow:
+    rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: #ffffff;
+}
+
+@media all and (max-width: 760px) {
+  :host {
+    margin-top: 0;
+  }
+}
+
+.fretboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 8px;
+  transform: translate(-18px, 0);
+}
+
+.fret {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+// Cuerdas al aire
+.fret:first-child {
+  .box {
+    border: 1px solid transparent;
+    .note {
+      transform: translate(70%, 50%);
+    }
+  }
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 30px;
+  border: 1px solid #000000;
+  position: relative;
+}
+
+.box:last-child {
+  border-width: 0;
+}
+
+.note {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  transform: translate(0, 54%);
+
+  border-radius: 40px;
+  z-index: 10;
+  color: #000000;
+}
+
+.dot {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transform: translate(100%, -440%);
+
+  border-radius: 40px;
+
+  background-color: #000000;
+}
+
+.doble {
+  height: 40px !important;
+  transform: translate(100%, -147%) !important;
+}
+
+.void {
+  background-color: transparent !important;
+  color: black;
+  font-size: 20px;
+}

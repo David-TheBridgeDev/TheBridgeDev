@@ -1,0 +1,67 @@
+@if (chord.startAt != 0){
+<p class="start-at">{{ chord.startAt }}</p>
+}
+
+<div class="fretboard">
+  @for (fret of chord.degrees; track rowIndex; let rowIndex = $index){
+  <div class="fret">
+    @for (note of fret; track colIndex; let colIndex = $index){
+    <div class="note">
+      @if (!!note.trim()){
+      <span
+        class="label"
+        [class.tonica]="note.includes('1')"
+        [class.supertonica]="note.includes('2')"
+        [class.mediante]="note.includes('3')"
+        [class.subdominante]="note.includes('4')"
+        [class.dominante]="note.includes('5')"
+        [class.superdominante]="note.includes('6')"
+        [class.sensible]="note.includes('7')"
+        >{{ chord.degrees[rowIndex][colIndex] }}
+      </span>
+      } @else if (note.toLowerCase().trim().includes("x")){<span
+        class="label void"
+      >
+        x
+      </span>
+      }
+    </div>
+    }
+  </div>
+  }
+</div>
+
+<!--<div class="fretboard">
+  <div class="fret">
+    <div class="note"><span class="label">1</span></div>
+    <div class="note"></div>
+    <div class="note"><span class="label">1</span></div>
+    <div class="note"><span class="label"></span></div>
+    <div class="note"><span class="label"></span></div>
+    <div class="note"><span class="label"></span></div>
+  </div>
+  <div class="fret">
+    <div class="note"></div>
+    <div class="note"></div>
+    <div class="note"></div>
+    <div class="note"></div>
+    <div class="note"><span class="label"></span></div>
+    <div class="note"></div>
+  </div>
+  <div class="fret">
+    <div class="note"></div>
+    <div class="note"></div>
+    <div class="note"></div>
+    <div class="note"></div>
+    <div class="note"><span class="label"></span></div>
+    <div class="note"></div>
+  </div>
+  <div class="fret">
+    <div class="note"></div>
+    <div class="note"></div>
+    <div class="note"></div>
+    <div class="note"></div>
+    <div class="note"><span class="label"></span></div>
+    <div class="note"></div>
+  </div>
+</div>-->

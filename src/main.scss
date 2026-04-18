@@ -1,0 +1,46 @@
+@use "@angular/material" as mat;
+
+@import "styles/styles.scss";
+
+$common-color: rgb(182, 169, 169);
+
+.tonica {
+  background-color: #009ee7;
+  box-shadow: rgb(28, 75, 241) 0px 0px 12px inset;
+  font-size: 1.5rem !important;
+}
+.supertonica {
+  background-color: $common-color;
+}
+.mediante {
+  background-color: #eeda00;
+  box-shadow: rgb(255, 255, 0) 0px 0px 12px inset;
+}
+.subdominante {
+  background-color: $common-color;
+}
+.dominante {
+  background-color: #3be104;
+  box-shadow: rgb(48, 194, 0) 0px 0px 12px inset;
+}
+.superdominante {
+  background-color: #7a7a7a;
+}
+.sensible {
+  background-color: #ab07ce;
+  box-shadow: rgb(196, 2, 238) 0px 0px 12px inset;
+}
+
+.novena {
+  background-color: #ce7807;
+  box-shadow: rgb(238, 120, 2) 0px 0px 12px inset;
+}
+
+.once {
+  background-color: #ce3c07;
+  box-shadow: rgb(238, 45, 2) 0px 0px 12px inset;
+}
+.trece {
+  background-color: #ce2507;
+  box-shadow: rgb(238, 2, 2) 0px 0px 12px inset;
+}

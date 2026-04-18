@@ -1,0 +1,67 @@
+<button
+  class="btn-flaying btn-flaying-right"
+  matTooltip="Refresh"
+  (click)="refreshPage()"
+>
+  <mat-icon>update</mat-icon>
+</button>
+<button class="btn-flaying" matTooltip="Switch" (click)="switchState()">
+  <mat-icon>code</mat-icon>
+</button>
+
+<div class="roller-container">
+  <app-shelly-light
+    [deviceName]="'Light'"
+    [deviceIp]="DevicesIp.BULB1"
+  ></app-shelly-light>
+  <app-shelly-light
+    [deviceName]="'Light'"
+    [deviceIp]="DevicesIp.BULB2"
+  ></app-shelly-light>
+  <app-shelly-light
+    [deviceName]="'RGB'"
+    [deviceIp]="DevicesIp.RGB"
+  ></app-shelly-light>
+  <app-shelly-relay
+    [deviceName]="'Heat'"
+    [deviceIp]="DevicesIp.HEATING"
+  ></app-shelly-relay>
+  <app-shelly-roller
+    [deviceName]="'H.David'"
+    [deviceIp]="DevicesIp.H_DAVID"
+    [toPosValue]="30"
+  ></app-shelly-roller>
+  <app-shelly-roller
+    [deviceName]="'H.Mae'"
+    [deviceIp]="DevicesIp.H_MAE"
+    [toPosValue]="30"
+  ></app-shelly-roller>
+  <app-shelly-roller
+    [deviceName]="'SALON_1'"
+    [deviceIp]="DevicesIp.SALON_1"
+    [toPosValue]="0"
+  ></app-shelly-roller>
+  <app-shelly-roller
+    [deviceName]="'SALON_2'"
+    [deviceIp]="DevicesIp.SALON_2"
+    [toPosValue]="28"
+  ></app-shelly-roller>
+  <app-shelly-roller
+    [deviceName]="'SALON_3'"
+    [deviceIp]="DevicesIp.SALON_3"
+    [toPosValue]="28"
+  ></app-shelly-roller>
+  <app-shelly-roller
+    [deviceName]="'SALON_4'"
+    [deviceIp]="DevicesIp.SALON_4"
+    [toPosValue]="40"
+  ></app-shelly-roller>
+  <app-shelly-global-action
+    [name]="'Day'"
+    [actions]="ShellyGlobalActions.DAY"
+  ></app-shelly-global-action>
+  <app-shelly-global-action
+    [name]="'Night'"
+    [actions]="ShellyGlobalActions.NIGHT"
+  ></app-shelly-global-action>
+</div>
