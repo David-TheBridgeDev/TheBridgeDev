@@ -1,5 +1,5 @@
 export enum AppRoutes {
-  HOME = 'home',
+  HOME = '',
   HOME_AUTOMATION = 'home-automation',
   MUSIC = 'music',
 }
