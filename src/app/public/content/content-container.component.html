@@ -9,9 +9,23 @@
       <app-wheelchair></app-wheelchair>
     </div>
 
-    <app-skills></app-skills>
+    <aside id="tab_header" class="tab_header">
+      <span class="TagSelector" tag="skills">{{
+        "Skills.Title" | translate
+      }}</span>
+    </aside>
+    <div id="container_skills" class="tabElement">
+      <app-skills></app-skills>
+    </div>
 
-    <app-tools></app-tools>
+    <aside id="tab_header" class="tab_header">
+      <span class="TagSelector" tag="tools">{{
+        "Tools.Title" | translate
+      }}</span>
+    </aside>
+    <div id="container_tools" class="tabElement">
+      <app-tools></app-tools>
+    </div>
 
     <aside id="tab_header" class="tab_header">
       <span class="TagSelector" tag="vr">VR</span>
@@ -20,8 +34,20 @@
       <app-vr></app-vr>
     </div>
 
-    <app-art></app-art>
+    <aside id="tab_header" class="tab_header">
+      <span class="TagSelector" tag="art">Art</span>
+    </aside>
+    <div id="container_art" class="tabElement">
+      <app-art></app-art>
+    </div>
 
-    <app-experience></app-experience>
+    <aside id="tab_header" class="tab_header">
+      <span class="TagSelector" tag="experience">{{
+        "Experience.Title" | translate
+      }}</span>
+    </aside>
+    <div id="container_experience" class="tabElement">
+      <app-experience></app-experience>
+    </div>
   </nav>
 </div>

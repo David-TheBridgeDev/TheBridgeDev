@@ -396,10 +396,9 @@ h1.portfolio_text:hover {
 .tabGrid {
   position: relative;
   overflow: hidden;
-  margin: auto;
   min-height: 20vh;
   transition: height 0.35s;
-  margin-bottom: 5px;
+  margin: auto auto 5px;
 }
 
 .tab_container {

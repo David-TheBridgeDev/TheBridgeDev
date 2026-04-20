@@ -1,47 +1,45 @@
-<aside id="tab_header" class="tab_header">
-  <span class="TagSelector" tag="experience">{{ 'Experience.Title' | translate }}</span>
-</aside>
-<div id="container_experience" class="tabElement">
-  <div class="experience-list">
-    <div
-      *ngFor="let exp of experiences; let i = index"
-      class="experience-card"
-      [class.is-expanded]="expandedIndex === i"
-      (click)="toggleExperience(i)"
-    >
-      <div class="exp-header">
-        <div class="exp-header-left">
-          <span class="exp-date">{{ 'Experience.' + exp + '.Date' | translate }}</span>
-          <div class="exp-titles">
-            <h3>{{ 'Experience.' + exp + '.Company' | translate }}</h3>
-            <h4>{{ 'Experience.' + exp + '.Role' | translate }}</h4>
-          </div>
-        </div>
-        <div class="exp-arrow">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
+<div class="experience-list">
+  <div
+    *ngFor="let exp of experiences; let i = index"
+    class="experience-card"
+    [class.is-expanded]="expandedIndex === i"
+    (click)="toggleExperience(i)"
+  >
+    <div class="exp-header">
+      <div class="exp-header-left">
+        <span class="exp-date">{{
+          "Experience." + exp + ".Date" | translate
+        }}</span>
+        <div class="exp-titles">
+          <h3>{{ "Experience." + exp + ".Company" | translate }}</h3>
+          <h4>{{ "Experience." + exp + ".Role" | translate }}</h4>
         </div>
       </div>
+      <div class="exp-arrow">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </div>
+    </div>
 
-      <div class="exp-content-wrapper" [class.show]="expandedIndex === i">
-        <div class="exp-content">
-          <p class="exp-description">
-            {{ 'Experience.' + exp + '.Description' | translate }}
-          </p>
-          <div class="exp-stack">
-            <strong>Stack: </strong>{{ 'Experience.' + exp + '.Stack' | translate }}
-          </div>
+    <div class="exp-content-wrapper" [class.show]="expandedIndex === i">
+      <div class="exp-content">
+        <p class="exp-description">
+          {{ "Experience." + exp + ".Description" | translate }}
+        </p>
+        <div class="exp-stack">
+          <strong>Stack: </strong
+          >{{ "Experience." + exp + ".Stack" | translate }}
         </div>
       </div>
     </div>
