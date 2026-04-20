@@ -4,6 +4,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { SkillsComponent } from './skills/skills.component';
 import { ToolsComponent } from './tools/tools.component';
 import { VrComponent } from './vr/vr.component';
+import { ExperienceComponent } from './experience/experience.component';
 import { WheelchairComponent } from '../../@shared/threeJS/wheelchair/wheelchair.component';
 
 @Component({
@@ -17,6 +18,7 @@ import { WheelchairComponent } from '../../@shared/threeJS/wheelchair/wheelchair
     ArtComponent,
     ProjectsComponent,
     VrComponent,
+    ExperienceComponent,
     WheelchairComponent,
   ],
 })

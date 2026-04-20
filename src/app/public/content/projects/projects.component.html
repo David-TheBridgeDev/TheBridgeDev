@@ -1,9 +1,9 @@
 <aside id="tab_header" class="tab_header">
-  <span class="TagSelector" tag="projects">Projects</span>
+  <span class="TagSelector" tag="projects">{{ 'Projects.Title' | translate }}</span>
 </aside>
 <div id="container_projects" class="tabElement">
   <h2 class="portfolio_text">
-    Project Portfolio
+    {{ 'Projects.Title' | translate }}
     <svg
       xmlns="http://www.w3.org/2000/svg"
       id="move-tool"
@@ -30,9 +30,11 @@
     </svg>
   </h2>
 
+  <p class="projects-intro">{{ 'Projects.Intro' | translate }}</p>
+
   <div class="graphics_ides ides_container container_projects_icons">
     <div
-      matTooltip="Home Automation"
+      [matTooltip]="'Projects.HomeAutomation' | translate"
       class="grid-element"
       style="
         background-image: url(&quot;assets/images/png/others/domotic.png&quot;);
@@ -42,7 +44,7 @@
     ></div>
 
     <div
-      matTooltip="Music"
+      [matTooltip]="'Projects.Music' | translate"
       class="grid-element"
       style="
         background-image: url(&quot;assets/images/png/others/music.png&quot;);

@@ -1,0 +1,93 @@
+{
+  "Shared": {
+    "attention": "Attention!",
+    "urlEmpty": "Nothing selected",
+    "show": "Show",
+    "hide": "Hide",
+    "iGotIt": "I got it",
+    "error": "Something went wrong",
+    "ConnectionErro": "A connection problem occurred",
+    "successful": "Operation successful!",
+    "ok": "Ok",
+    "exit": "Exit"
+  },
+  "Header": {
+    "Name": "David Ramos",
+    "Role": "Software Engineer"
+  },
+  "Skills": {
+    "Title": "Knowledge Pillars",
+    "ProgrammingLanguages": "Programming Languages",
+    "BackEnd": "Back-End",
+    "FrontEnd": "Front-End",
+    "VR3D": "VR & 3D",
+    "BBDD": "BBDD"
+  },
+  "Tools": {
+    "Title": "Technologies & Tools"
+  },
+  "Experience": {
+    "Title": "Professional Experience",
+    "Seidor": {
+      "Company": "SEIDOR (EJIE - Basque Administration)",
+      "Role": "Payment Gateway Team",
+      "Date": "01-2024 - 03-2026",
+      "Description": "Analysis and development of new functionalities in the Payment Gateway application ecosystem, ensuring compatibility, performance, and alignment with the system architecture. Migration and updating of various applications in the service portfolio, ensuring continuity and operational stability.",
+      "Stack": "Java, J2EE, Jakarta, Apache Tomcat, Oracle, GWT, Vaadin 8 - 14, Android, Flutter, React Native, etc."
+    },
+    "SeidorAgriculture": {
+      "Company": "SEIDOR (Álava Computing Center)",
+      "Role": "Department of Agriculture",
+      "Date": "06-2023 - 12-2023",
+      "Description": "Implementation of new features and refactoring of existing components. Drafting functional and technical documentation (diagrams, interfaces, specifications) to facilitate software development and maintenance.",
+      "Stack": "API REST Java Framework jADE, DB2, hibernate, Angular 14 - 21."
+    },
+    "Neurobai": {
+      "Company": "neurobai",
+      "Role": "Multi-platform solutions construction",
+      "Date": "09-2022 - 06-2023",
+      "Description": "Design of software architectures and definition of the most suitable technological stack for each solution, ensuring scalability, maintainability, and performance. Development of VR applications and management portals.",
+      "Stack": "Java 17, Spring Boot, MongoDB, Docker, Angular 12 - 15, Unity 3D, Virtual Reality."
+    },
+    "AxpeSantander": {
+      "Company": "AXPE Consulting (Banco Santander Client)",
+      "Role": "Design and development of microservices",
+      "Date": "05-2022 - 09-2022",
+      "Description": "Design and development of a Spring Boot-based microservice for the integration of ITSM and JIRA with existing systems, definition of REST APIs, and data persistence management.",
+      "Stack": "Java, Spring Boot, Microservices, Docker, Api REST, Angular 12."
+    },
+    "AxpeJusticia": {
+      "Company": "AXPE Consulting (Justicia.eus Team)",
+      "Role": "Development and maintenance of applications",
+      "Date": "09-2021 - 05-2022",
+      "Description": "Development and maintenance of applications in the Justicia.eus ecosystem using Java EE 8 and the Struts 2 framework, ensuring quality, performance, and compatibility.",
+      "Stack": "Java 7 - 8, Struts 1 - 2, Oracle Database."
+    },
+    "BSRRV": {
+      "Company": "BSR-RV",
+      "Role": "BSR-RV Project Co-creator",
+      "Date": "01-2021 - 07-2021",
+      "Description": "The BSR-RV virtual reality application was developed with the Unity graphics engine. The use of design patterns and the application of SOLID principles made possible a scalable application with a smooth user experience.",
+      "Stack": ".NET, C#, Unity, MongoDB, 3D Modeling, Blender."
+    }
+  },
+  "Projects": {
+    "Title": "Projects Portfolio",
+    "Intro": "Here you can find some of the products I build, focusing on scalability and user experience.",
+    "HomeAutomation": "Home Automation",
+    "Music": "Music"
+  },
+  "Footer": {
+    "Thanks": "Thank you for stopping by!",
+    "BuildTogether": "Let's build Together!",
+    "BuildTogetherText": "I'm working for ambitious brands and people, willing to unlock the most powerful features of each technology. Always open to new projects, if you want to work with me and join my quest to excellence don't doubt to contact me!",
+    "FeaturedProject": "Featured Project",
+    "FeaturedDesc": "Virtual Reality in Unity with Meta Quest 2",
+    "GetInTouch": "Get in touch",
+    "MainLinks": "Main links",
+    "CV": "Curriculum Vitae",
+    "MainWebsite": "Main Website",
+    "Location": "Vitoria, Spain",
+    "Quote": "I may not be where I want to be, but I'm not where I was"
+  }
+}

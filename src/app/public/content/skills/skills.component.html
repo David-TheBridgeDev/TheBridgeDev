@@ -1,11 +1,11 @@
 <aside id="tab_header" class="tab_header">
-  <span class="TagSelector" tag="skills">Skills</span>
+  <span class="TagSelector" tag="skills">{{ 'Skills.Title' | translate }}</span>
 </aside>
 <div id="container_skills" class="tabElement">
   <!--Programing Languages-->
   <div class="skills-container">
     <h2 class="portfolio_text">
-      Programing Languages
+      {{ 'Skills.ProgrammingLanguages' | translate }}
       <svg
         id="move-code"
         style="height: 32px; position: relative; top: 10px"
@@ -58,7 +58,7 @@
 
   <!--Back-End-->
   <div class="skills-container">
-    <h3>Back-End</h3>
+    <h3>{{ 'Skills.BackEnd' | translate }}</h3>
     <div class="skills-list">
       <div class="skill">
         <div style="width: 100px">Jakarta EE</div>
@@ -80,16 +80,19 @@
 
   <!--Front-End-->
   <div class="skills-container">
-    <h3>Front-End</h3>
+    <h3>{{ 'Skills.FrontEnd' | translate }}</h3>
     <div class="skills-list">
       <div class="skill">
-        <div style="width: 140px">Angular 12-19</div>
+        <div style="width: 140px">Angular</div>
       </div>
       <div class="skill">
-        <div style="width: 110px">Vaadin 8-14</div>
+        <div style="width: 110px">Vaadin</div>
       </div>
       <div class="skill">
-        <div style="width: 120px">Apache Struts</div>
+        <div style="width: 110px">Flutter</div>
+      </div>
+      <div class="skill">
+        <div style="width: 110px">React Native</div>
       </div>
       <div class="skill">
         <div style="width: 90px">Three.js</div>
@@ -99,7 +102,7 @@
 
   <!--VR-->
   <div class="skills-container">
-    <h3>VR</h3>
+    <h3>{{ 'Skills.VR3D' | translate }}</h3>
     <div style="display: flex; flex-wrap: wrap; gap: 15px">
       <div class="skill">
         <div style="width: 120px">Unity</div>
@@ -112,10 +115,13 @@
 
   <!--BBDD-->
   <div class="skills-container">
-    <h3>BBDD</h3>
+    <h3>{{ 'Skills.BBDD' | translate }}</h3>
     <div class="skills-list">
       <div class="skill">
-        <div style="width: 120px">SQL</div>
+        <div style="width: 120px">Oracle</div>
+      </div>
+      <div class="skill">
+        <div style="width: 120px">DB2</div>
       </div>
       <div class="skill">
         <div style="width: 90px">MongoDB</div>

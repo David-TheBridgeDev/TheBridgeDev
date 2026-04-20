@@ -1,0 +1,146 @@
+@import "src/styles/styles.scss";
+
+.experience-list {
+  width: 75%;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.experience-card {
+  background: white;
+  border: 2px solid #333;
+  padding: 1.2rem;
+  box-shadow: 6px 6px 0px 0px #333;
+  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0px 0px $main-color;
+    border-color: $main-color;
+
+    .exp-arrow {
+      color: $main-color;
+    }
+  }
+
+  &.is-expanded {
+    border-color: $main-color;
+    box-shadow: 8px 8px 0px 0px $main-color;
+
+    .exp-arrow {
+      transform: rotate(180deg);
+      color: $main-color;
+    }
+  }
+}
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.exp-header-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.exp-arrow {
+  transition: transform 0.3s ease, color 0.3s;
+  color: #888;
+}
+
+.exp-date {
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-size: 0.85rem;
+  color: #333;
+  background: #f0f0f0;
+  padding: 0.2rem 0.5rem;
+  border: 1px solid #ccc;
+  min-width: 140px;
+  text-align: center;
+}
+
+.exp-titles {
+  h3 {
+    margin: 0;
+    font-family: Georgia, serif;
+    font-size: 1.2rem;
+    color: #222;
+  }
+  h4 {
+    margin: 0.2rem 0 0 0;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 0.95rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+  }
+}
+
+// Accordion Content
+.exp-content-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+  opacity: 0;
+
+  &.show {
+    max-height: 800px; // Sufficiently large
+    opacity: 1;
+    border-top: 1px solid #eee;
+    margin-top: 1rem;
+    padding-top: 0.5rem;
+  }
+}
+
+.exp-description {
+  font-family: Georgia, serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #555;
+  margin: 0.8rem 0;
+  padding: 0;
+}
+
+.exp-stack {
+  margin-top: 1rem;
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-size: 0.85rem;
+  color: #444;
+  background: #fafafa;
+  padding: 0.6rem;
+  border-left: 3px solid $main-color;
+
+  strong {
+    color: #222;
+  }
+}
+
+@media (max-width: 768px) {
+  .experience-list {
+    width: 92%;
+  }
+
+  .exp-header-left {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .exp-date {
+    min-width: auto;
+    width: fit-content;
+  }
+
+  .exp-titles h3 {
+    font-size: 1.1rem;
+  }
+}

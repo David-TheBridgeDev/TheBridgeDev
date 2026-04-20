@@ -2,26 +2,92 @@
   "Shared": {
     "attention": "¡Atención!",
     "urlEmpty": "No se ha seleccionado nada",
-
     "show": "Mostrar",
     "hide": "Ocultar",
     "iGotIt": "Lo tengo",
-
-    "error": "Algo a fallado",
-    "ConnectionErro": "A ocurrido un problema de conexión",
+    "error": "Algo ha fallado",
+    "ConnectionErro": "Ha ocurrido un problema de conexión",
     "successful": "¡Operación realizada con éxito!",
-
     "ok": "Ok",
     "exit": "Salir"
   },
-
-  "mat-paginator": {
-    "items_per_page": "Elementos por página",
-    "next_page": "Página siguiente",
-    "previous_page": "Página anterior",
-    "first_page": "Primera página",
-    "last_page": "última página",
-    "range_page_label_1": "0 de {{length}}",
-    "range_page_label_2": "{{startIndex}} - {{endIndex}} de {{length}}"
+  "Header": {
+    "Name": "David Ramos",
+    "Role": "Ingeniero de Software"
+  },
+  "Skills": {
+    "Title": "Pilares de Conocimiento",
+    "ProgrammingLanguages": "Lenguajes de Programación",
+    "BackEnd": "Back-End",
+    "FrontEnd": "Front-End",
+    "VR3D": "VR & 3D",
+    "BBDD": "BBDD"
+  },
+  "Tools": {
+    "Title": "Tecnologías y Herramientas"
+  },
+  "Experience": {
+    "Title": "Experiencia Profesional",
+    "Seidor": {
+      "Company": "SEIDOR (EJIE - Administración Vasca)",
+      "Role": "Equipo de Pasarela de Pagos",
+      "Date": "01-2024 - 03-2026",
+      "Description": "Análisis y desarrollo de nuevas funcionalidades en el ecosistema de aplicaciones de la Pasarela de Pagos, garantizando compatibilidad, rendimiento y su alineación con la arquitectura del sistema. Migración y actualización de los distintos aplicativos de la cartera de servicios, asegurando continuidad y estabilidad operativa. Gestión y resolución de incidencias, realizando análisis técnico, correcciones y validación de las soluciones en los distintos entornos en coordinación con otros equipos.",
+      "Stack": "Java, J2EE, Jakarta, Apache Tomcat, Oracle, GWT, Vaadin 8 - 14, Android, Flutter, React Native, etc."
+    },
+    "SeidorAgriculture": {
+      "Company": "SEIDOR (Centro de Cálculo de Álava)",
+      "Role": "Departamento de Agricultura",
+      "Date": "06-2023 - 12-2023",
+      "Description": "Implementación de nuevas funcionalidades y refactorización de componentes existentes. Redacción de documentación funcional y técnica (diagramas, interfaces, especificaciones) para facilitar el desarrollo y mantenimiento del software. Análisis y gestión de issues mediante depuración, testing y despliegue de correcciones, garantizando la estabilidad del sistema.",
+      "Stack": "API REST Java Framework jADE, DB2, hibernate, Angular 14 - 21."
+    },
+    "Neurobai": {
+      "Company": "neurobai",
+      "Role": "Construcción de soluciones multiplataforma",
+      "Date": "09-2022 - 06-2023",
+      "Description": "Diseño de arquitecturas de software y definición del stack tecnológico más adecuado para cada solución, asegurando escalabilidad, mantenibilidad y rendimiento. Desarrollo de aplicaciones de VR y portales de gestión. Comunicación directa con clientes para la toma de requisitos, identificación de mejoras y validación funcional.",
+      "Stack": "Java 17, Spring Boot, MongoDB, Docker, Angular 12 - 15, Unity 3D, Virtual Reality."
+    },
+    "AxpeSantander": {
+      "Company": "AXPE Consulting (Cliente Banco Santander)",
+      "Role": "Diseño y desarrollo de microservicios",
+      "Date": "05-2022 - 09-2022",
+      "Description": "Diseño y desarrollo de microservicio basado en Spring Boot, para la integración de ITSM y JIRA con sistemas existentes, definición de APIs REST y gestión de persistencia de datos.",
+      "Stack": "Java, Spring Boot, Microservices, Docker, Api REST, Angular 12."
+    },
+    "AxpeJusticia": {
+      "Company": "AXPE Consulting (Equipo de Justicia.eus)",
+      "Role": "Desarrollo y mantenimiento de aplicaciones",
+      "Date": "09-2021 - 05-2022",
+      "Description": "Desarrollo y mantenimiento de aplicaciones del ecosistema Justicia.eus utilizando Java EE 8 y el framework Struts 2, asegurando calidad, rendimiento y compatibilidad.",
+      "Stack": "Java 7 - 8, Struts 1 - 2, Oracle Database."
+    },
+    "BSRRV": {
+      "Company": "BSR-RV",
+      "Role": "Cocreador del Proyecto BSR-RV",
+      "Date": "01-2021 - 07-2021",
+      "Description": "La aplicación de realidad virtual BSR-RV fue desarrollada con el motor gráfico Unity. El uso de patrones de diseño y la aplicación de principios SOLID hizo posible una aplicación escalable con una experiencia de usuario fluida.",
+      "Stack": ".NET, C#, Unity, MongoDB, 3D Modeling, Blender."
+    }
+  },
+  "Projects": {
+    "Title": "Portafolio de Proyectos",
+    "Intro": "Aquí puedes encontrar algunos de los productos que construyo, centrados en la escalabilidad y la experiencia de usuario.",
+    "HomeAutomation": "Domótica",
+    "Music": "Música"
+  },
+  "Footer": {
+    "Thanks": "¡Gracias por pasarte!",
+    "BuildTogether": "¡Construyamos algo juntos!",
+    "BuildTogetherText": "Trabajo para marcas y personas ambiciosas, dispuesto a desbloquear las características más potentes de cada tecnología. Siempre abierto a nuevos proyectos, si quieres trabajar conmigo y unirte a mi búsqueda de la excelencia, ¡no dudes en contactarme!",
+    "FeaturedProject": "Proyecto Destacado",
+    "FeaturedDesc": "Realidad Virtual en Unity con Meta Quest 2",
+    "GetInTouch": "Ponte en contacto",
+    "MainLinks": "Enlaces principales",
+    "CV": "Curriculum Vitae",
+    "MainWebsite": "Web Principal",
+    "Location": "Vitoria, España",
+    "Quote": "Puede que no esté donde quiero estar, pero no estoy donde estaba"
   }
 }

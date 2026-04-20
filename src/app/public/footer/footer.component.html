@@ -1,7 +1,7 @@
 <footer>
   <div class="footer_main">
     <span class="footer_thanks"
-      >Thank you for stopping by!
+      >{{ 'Footer.Thanks' | translate }}
       <svg
         id="heart-beat"
         xmlns="http://www.w3.org/2000/svg"
@@ -30,32 +30,29 @@
             alt="My Happy SVG"
           />
 
-          <span class="buildtogheter">Let's build Togheter!</span>
+          <span class="buildtogheter">{{ 'Footer.BuildTogether' | translate }}</span>
           <p class="buildtogheter_text">
-            I'm working for ambitious brands and people, willing to unlock the
-            most powerful features of each technology. Always open to new
-            projects, if you want to work with me and join my quest to greatness
-            don't doubt to contact me!
+            {{ 'Footer.BuildTogetherText' | translate }}
           </p>
         </div>
       </section>
       <div class="footer_main_b2">
-        <h3 class="footer_featured">Featured Project</h3>
+        <h3 class="footer_featured">{{ 'Footer.FeaturedProject' | translate }}</h3>
         <span class="footer_featured_desc"
-          >Virtual Reality in Unity with Meta Quets 2</span
+          >{{ 'Footer.FeaturedDesc' | translate }}</span
         >
         <a href="https://bsr-rv.web.app">
           <img src="assets/images/png/bsr-rv/bsr-rv.png" />
         </a>
         <section class="fmb2_container">
           <address class="contact_info_box">
-            <span>Get in touch</span>
+            <span>{{ 'Footer.GetInTouch' | translate }}</span>
             <a href="mailto:info@dramos.dev">info&#64;dramos.dev</a>
           </address>
           <div class="main_links_box">
-            <span>Main links</span>
-            <a href="">Curriculum Vitae</a>
-            <a href="">Main Website</a>
+            <span>{{ 'Footer.MainLinks' | translate }}</span>
+            <a href="">{{ 'Footer.CV' | translate }}</a>
+            <a href="">{{ 'Footer.MainWebsite' | translate }}</a>
           </div>
 
           <nav class="social_links_box">
@@ -136,30 +133,6 @@
                   <path d="M18 15l3 3l-3 3"></path>
                 </svg>
               </a>
-
-              <!--<a
-                style="text-decoration: none"
-                target="_blank"
-                href="https://www.instagram.com/hiru_izar/"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="header_social_icon"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  stroke-width="2"
-                  stroke="black"
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                  <rect x="4" y="4" width="16" height="16" rx="4"></rect>
-                  <circle cx="12" cy="12" r="3"></circle>
-                  <line x1="16.5" y1="7.5" x2="16.5" y2="7.501"></line>
-                </svg>
-              </a>-->
             </div>
 
             <span>
@@ -181,7 +154,7 @@
                   d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z"
                 ></path>
               </svg>
-              Vitoria, Spain
+              {{ 'Footer.Location' | translate }}
             </span>
           </nav>
         </section>
@@ -190,8 +163,8 @@
   </div>
   <section class="footer_sub">
     <p>
-      <small>© 2026 David Ramos</small>
-      <span>I may not be where I want to be, but I'm not where I was</span>
+      <small>© 2026 {{ 'Header.Name' | translate }}</small>
+      <span>{{ 'Footer.Quote' | translate }}</span>
     </p>
   </section>
 </footer>

@@ -32,10 +32,24 @@ Este documento describe las normas de estilo, arquitectura y desarrollo para el 
 - **Tipado:** Evitar `any` siempre que sea posible. Definir interfaces o modelos en `src/app/@shared/models`.
 - **I18n:** Todas las cadenas de texto visibles deben pasar por el servicio `TranslateService`.
 
+## 🎨 Identidad Visual (Retro-Playful)
+La aplicación debe transmitir una estética **"Retro-Tech Alegre"**, fusionando la nostalgia de los inicios de la informática con un tono vibrante y moderno. Se busca un equilibrio entre la "sabiduría" de los sistemas clásicos y la "alegría" de una interfaz viva.
+- **Concepto:** Referencias a terminales clásicos, interfaces de los 80/90 y el minimalismo lúdico.
+- **Tipografía:**
+    - **Datos y Código:** Monospace (ej. `IBM Plex Mono`, `Courier New`) para evocar consolas y terminales.
+    - **Narrativa y Títulos:** Serif clásica (o Slab Serif) para aportar aire de "sabiduría y experiencia" (nostalgia).
+- **Colores:** 
+    - Contrastes que recuerden al fósforo verde o ámbar sobre fondos oscuros.
+    - Uso de colores "vintage" pero saturados (azules eléctricos, naranjas quemados, beige tipo "hardware antiguo").
+- **Componentes:**
+    - Bordes sólidos y marcados (2px+) con sombras sin desenfoque (estilo *Neobrutalismo*) para un toque juguetón.
+    - Esquinas con redondeo sutil (4px) para mantener un aspecto mecánico/analógico.
+    - Micro-interacciones que imiten comportamientos retro (parpadeos de cursor, efectos de escaneo CRT sutiles, transiciones de "carga de datos").
+
 ## 🎨 Estilos y UI
 - **SCSS:** Preferir el uso de variables y mixins. Mantener estilos específicos en `src/styles/` si afectan a múltiples componentes de un módulo.
-- **Layout:** Uso de Angular Flex-Layout para estructuras responsivas.
-- **Iconos:** Uso de Angular Material Icons.
+- **Layout:** Uso de Angular Flex-Layout para estructuras responsivas, priorizando diseños cuadriculados que recuerden a las interfaces de usuario antiguas.
+- **Iconos:** Combinar Material Icons con elementos de pixel-art o iconos de trazo grueso y simple.
 
 ## 📏 Formateo (EditorConfig)
 - **Indentación:** 2 espacios.
