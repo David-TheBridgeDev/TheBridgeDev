@@ -1,5 +1,40 @@
-<div
-  matTooltip="You can move the object!"
-  id="rendererContainer"
-  #rendererContainer
-></div>
+<div class="threejs-window-wrapper">
+  <!-- Model Selector Overlay -->
+  <div class="model-selector-container">
+    <div class="selector-header">
+      <span class="selector-tag">PLAYER_CHAIRS.EXE</span>
+      <div class="window-controls-mini">
+        <span class="dot-mini"></span>
+        <span class="dot-mini"></span>
+      </div>
+    </div>
+
+    <div class="selector-body">
+      <button
+        *ngFor="let model of models"
+        [class.active]="currentModelId === model.id"
+        (click)="switchModel(model)"
+        class="model-btn"
+        [matTooltip]="model.name"
+      >
+        <div class="btn-inner">
+          <span class="model-code"> {{ model.label }}</span>
+        </div>
+      </button>
+    </div>
+  </div>
+
+  <!-- Loading Indicator -->
+  <div *ngIf="isLoading" class="model-loader-overlay">
+    <div class="loader-content">
+      <div class="spinner-retro"></div>
+      <span class="loading-text">RECOMPILING...</span>
+    </div>
+  </div>
+
+  <div
+    matTooltip="You can rotate the object!"
+    id="rendererContainer"
+    #rendererContainer
+  ></div>
+</div>
