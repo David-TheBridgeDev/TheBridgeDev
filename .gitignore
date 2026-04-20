@@ -49,3 +49,6 @@ android/*
 # Build process
 deploy/build/*
 deploy/public/*
+
+#doc
+doc/*
