@@ -4,7 +4,7 @@
       <h3 class="terminal-text">
         {{ "PageNotFound.SystemError" | translate }}
       </h3>
-      <h1 class="glitch-container" [routerLink]="['/', AppRoutes.HOME]">
+      <h1 class="glitch-container" [routerLink]="['/']">
         <span class="glitch" data-text="4">4</span>
         <span class="glitch" data-text="0">0</span>
         <span class="glitch" data-text="4">4</span>
@@ -16,7 +16,7 @@
     <div class="cursor">_</div>
 
     <div class="actions">
-      <button class="btn-back" [routerLink]="['/', AppRoutes.HOME]">
+      <button class="btn-back" [routerLink]="['/']">
         <span class="btn-text">{{
           "PageNotFound.BackToHome" | translate
         }}</span>
