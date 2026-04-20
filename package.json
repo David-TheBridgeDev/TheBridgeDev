@@ -8,8 +8,7 @@
     "build:pro": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "firebase:build:pro": "ng build --configuration=production && firebase_deploy_pro.bat",
-    "capacitor:build:pro": "cd ../ && capacitor-compile.bat"
+    "firebase:build:pro": "ng build --configuration=production && firebase_deploy_pro.bat"
   },
   "private": true,
   "dependencies": {

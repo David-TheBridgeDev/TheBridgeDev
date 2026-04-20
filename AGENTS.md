@@ -8,29 +8,32 @@ Este documento describe las normas de estilo, arquitectura y desarrollo para el 
 - **Estilos:** SCSS (Sass).
 - **UI:** Angular Material, Flex Layout.
 - **Gráficos:** Three.js para visualización 3D.
-- **Móvil:** Capacitor para empaquetado nativo (Android).
+- **Móvil:** Capacitor para empaquetado nativo.
 - **Internacionalización:** ngx-translate.
 
 ## 📂 Estructura de Archivos
 - **Nomenclatura:** Kebab-case para archivos y carpetas (ej. `button-back.component.ts`).
 - **Organización:**
-  - `src/app/@shared/`: Componentes, servicios, modelos y guards reutilizables.
-  - `src/app/public/`: Vistas y componentes de la parte pública de la web.
+  - `src/app/@shared/`: Componentes, servicios, modelos y guards reutilizables para toda la aplicación.
+  - `src/app/public/`: Vistas y componentes de la web pública (Landing, CV, etc.).
+  - `src/app/projects/`: Módulos de aplicaciones específicas integradas (Music, Home Automation/Shelly).
   - `src/assets/`: Recursos estáticos (i18n, imágenes, modelos 3D en `.glb`/`.fbx`).
+  - `src/styles/`: Archivos SCSS globales y específicos (ej. `fonts.scss`, `music.scss`).
 
 ## 💻 Convenciones de Código (TypeScript)
 - **Componentes:**
   - Deben ser **Standalone** (`standalone: true`).
-  - Usar `templateUrl` y `styleUrls` para separar el HTML y CSS.
-  - Utilizar `@UntilDestroy()` de `@ngneat/until-destroy` para gestionar suscripciones.
+  - Usar `templateUrl` y `styleUrls` para separar el HTML y CSS en componentes complejos.
+  - Componentes muy simples (ej. `AppComponent` con solo un router-outlet) pueden usar `template` y `styles` inline.
+  - Utilizar obligatoriamente `@UntilDestroy()` de `@ngneat/until-destroy` para gestionar la limpieza de suscripciones en componentes que usen observables.
 - **Servicios:**
   - Definidos con `@Injectable({ providedIn: 'root' })`.
-- **Inyección de Dependencias:** Usar inyección por constructor.
+- **Inyección de Dependencias:** Preferiblemente inyección por constructor para mantener consistencia con el código base.
 - **Tipado:** Evitar `any` siempre que sea posible. Definir interfaces o modelos en `src/app/@shared/models`.
 - **I18n:** Todas las cadenas de texto visibles deben pasar por el servicio `TranslateService`.
 
 ## 🎨 Estilos y UI
-- **SCSS:** Preferir el uso de variables y mixins.
+- **SCSS:** Preferir el uso de variables y mixins. Mantener estilos específicos en `src/styles/` si afectan a múltiples componentes de un módulo.
 - **Layout:** Uso de Angular Flex-Layout para estructuras responsivas.
 - **Iconos:** Uso de Angular Material Icons.
 
@@ -46,5 +49,5 @@ Este documento describe las normas de estilo, arquitectura y desarrollo para el 
 - `npm run test`: Ejecuta las pruebas unitarias.
 
 ## ⚠️ Consideraciones de Seguridad
-- Nunca subir archivos `.env` o secretos al repositorio.
+- Nunca subir archivos `.env`, secretos o configuraciones sensibles al repositorio.
 - Seguir las políticas de seguridad de Capacitor al interactuar con APIs nativas.
