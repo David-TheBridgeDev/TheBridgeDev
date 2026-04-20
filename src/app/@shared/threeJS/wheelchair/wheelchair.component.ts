@@ -202,11 +202,11 @@ export class WheelchairComponent implements OnInit {
 
   getContainerHeight() {
     if (window.innerWidth > 700 && window.innerWidth < 1200) {
-      return window.innerHeight * 0.5;
+      return window.innerHeight * 0.6; // Increased from 0.5
     } else if (window.innerWidth > 500 && window.innerWidth <= 700) {
-      return window.innerHeight * 0.4;
+      return window.innerHeight * 0.6; // Increased from 0.4
     } else if (window.innerWidth <= 500) {
-      return window.innerHeight * 0.3;
+      return window.innerHeight * 0.55; // Increased from 0.3
     } else {
       return window.innerHeight * 0.6;
     }

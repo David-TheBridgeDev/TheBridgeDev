@@ -501,6 +501,18 @@ span.footer_thanks:hover #heart-beat {
   margin: auto;
 }
 
+@media all and (max-width: 1000px) {
+  #container_threejs {
+    width: 85%;
+  }
+}
+
+@media all and (max-width: 600px) {
+  #container_threejs {
+    width: 90%;
+  }
+}
+
 canvas:focus {
   outline: none;
 }
