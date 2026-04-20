@@ -1,6 +1,84 @@
-.header_social_icon_links{
+@import "src/styles/styles.scss";
+
+.header_social_icon_links {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 3px;
+}
+
+.header_social_icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 6px;
+  border-radius: 50%;
+  border: 1px solid #eee;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-decoration: none;
+  color: #333;
+  box-sizing: border-box;
+
+  &:hover {
+    border-color: $main-color;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+
+    &.lang-btn-social {
+      color: $main-color;
+    }
+
+    svg {
+      stroke: $main-color;
+    }
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+    stroke: #555;
+    transition: stroke 0.3s;
+  }
+}
+
+.lang-btn-social {
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-size: 0.7rem;
+  font-weight: bold;
+  background: none;
+  border: 1px solid #eee;
+
+  &.active {
+    background: #f8f8f8;
+    border-color: $main-color;
+    color: #222;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 4px;
+      width: 4px;
+      height: 4px;
+      background: $main-color;
+      border-radius: 50%;
+    }
+  }
+}
+
+.lang-divider-vertical {
+  width: 1px;
+  height: 20px;
+  background: #eee;
+  margin: 0 4px;
+}
+
+// Global social icon class refinement
+.header_social_icon_links a {
+  display: block;
 }
