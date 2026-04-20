@@ -36,8 +36,9 @@
       class="grid-element"
       style="
         background-image: url(&quot;assets/images/png/others/domotic.png&quot;);
+        cursor: pointer;
       "
-      (click)="navegateToDomotic()"
+      [routerLink]="['/', AppRoutes.PROJECTS, AppRoutes.HOME_AUTOMATION]"
     ></div>
 
     <div
@@ -45,8 +46,9 @@
       class="grid-element"
       style="
         background-image: url(&quot;assets/images/png/others/music.png&quot;);
+        cursor: pointer;
       "
-      (click)="navegateToMusic()"
+      [routerLink]="['/', AppRoutes.PROJECTS, AppRoutes.MUSIC]"
     ></div>
   </div>
 </div>
