@@ -359,39 +359,6 @@ span.footer_thanks:hover #heart-beat {
   }
 }
 
-.portfolio_text_container {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-}
-
-hr.header_separator {
-  margin: 4rem auto -4.5rem auto;
-  width: 75%;
-  height: 1px;
-  background: #ccc;
-  border: none;
-  outline: none;
-}
-
-h1.portfolio_text {
-  font-size: 2.5rem;
-  color: #333;
-  margin-top: 1.2rem;
-  text-align: center;
-  padding: 0.5rem;
-  background: white;
-  width: auto;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-h1.portfolio_text:hover {
-  color: #989898;
-}
-
 /***********************************************Nav Bar*/
 .tabGrid {
   position: relative;
@@ -404,46 +371,6 @@ h1.portfolio_text:hover {
 .tab_container {
   position: relative;
   margin: auto;
-}
-
-.tab_header {
-  margin: auto auto 2px auto;
-  box-sizing: border-box;
-  font-family: "Source Sans Pro", sans-serif;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-
-  width: 75%;
-
-  border: $main-color 3px solid;
-
-  border-bottom-left-radius: 14px;
-  border-top-right-radius: 14px;
-}
-
-.tab_header span {
-  text-transform: uppercase;
-  font-size: 0.85rem;
-  cursor: pointer;
-  transition: color 0.3s;
-  color: #999;
-  padding: 1em 1.3em;
-}
-
-@media all and (min-width: 1600px) {
-  .tab_header span {
-    font-size: 1.2rem;
-  }
-}
-
-.tab_header span.active {
-  color: rgb(26, 26, 26);
-  font-weight: 600;
-}
-
-.tab_header span:hover {
-  color: $main-color;
 }
 
 /********************************************PDF */
