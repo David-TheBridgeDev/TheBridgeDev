@@ -1,15 +1,13 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatTooltip } from '@angular/material/tooltip';
-import { ShellyService } from '../../shelly.service';
-import { ShellyActions } from '../../shelly-actions';
 import { MatProgressSpinner } from '@angular/material/progress-spinner';
 import { NotificationService } from '../../../../@shared/services/notification.service';
-import {
-  AppService,
-  DeviceState,
-} from '../../../../@shared/services/app.service';
+
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
-import { ShellyGlobalActions } from '../../shelly-global-action';
+import { ShellyService } from '../../services/shelly.service';
+import { ShellyActions } from '../../models/shelly-actions';
+import { ShellyGlobalActions } from '../../models/shelly-global-action';
+import { DeviceState } from '../../models/deviceState';
 
 @UntilDestroy()
 @Component({
@@ -29,11 +27,10 @@ export class ShellyGlobalActionComponent implements OnInit {
   constructor(
     protected shellyService: ShellyService,
     private notificationService: NotificationService,
-    private appService: AppService,
   ) {}
 
   ngOnInit(): void {
-    this.appService.deviceState
+    this.shellyService.deviceState
       .pipe(untilDestroyed(this))
       .subscribe((state) => {
         this.deviceState = state;

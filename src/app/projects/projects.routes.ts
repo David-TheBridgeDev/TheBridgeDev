@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { AppRoutes } from '../@shared/models/appRoutes';
-import { ShellyHomeComponent } from './shelly-home/view/shelly-home.component';
+import { ShellyHomeComponent } from './shelly-home/shelly-home.component';
 
 export const PROJECTS_ROUTES: Routes = [
   {

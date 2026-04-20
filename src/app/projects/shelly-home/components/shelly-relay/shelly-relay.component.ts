@@ -1,14 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatProgressSpinner } from '@angular/material/progress-spinner';
-import { MatTooltip } from '@angular/material/tooltip';
-import { ShellyService } from '../../shelly.service';
-import { ShellyActions } from '../../shelly-actions';
-import { NotificationService } from '../../../../@shared/services/notification.service';
-import {
-  AppService,
-  DeviceState,
-} from '../../../../@shared/services/app.service';
+
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
+import { DeviceState } from '../../models/deviceState';
+import { MatTooltip } from '@angular/material/tooltip';
+import { ShellyActions } from '../../models/shelly-actions';
+import { ShellyService } from '../../services/shelly.service';
+import { NotificationService } from '../../../../@shared/services/notification.service';
 
 @UntilDestroy()
 @Component({
@@ -31,11 +29,10 @@ export class ShellyRelayComponent implements OnInit {
   constructor(
     protected shellyService: ShellyService,
     private notificationService: NotificationService,
-    private appService: AppService,
   ) {}
 
   ngOnInit(): void {
-    this.appService.deviceState
+    this.shellyService.deviceState
       .pipe(untilDestroyed(this))
       .subscribe((state) => {
         this.deviceState = state;

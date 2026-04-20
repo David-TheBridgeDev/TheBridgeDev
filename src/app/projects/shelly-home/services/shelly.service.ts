@@ -1,11 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ShellyActions } from './shelly-actions';
+import { BehaviorSubject } from 'rxjs';
+import { ShellyActions } from '../models/shelly-actions';
+import { DeviceState } from '../models/deviceState';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ShellyService {
+  deviceState = new BehaviorSubject<DeviceState>(DeviceState.NORMAL);
+
   constructor(private http: HttpClient) {}
 
   controlRelayRPC(ip: string, action: ShellyActions) {
