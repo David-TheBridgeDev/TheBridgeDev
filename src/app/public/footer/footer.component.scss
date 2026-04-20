@@ -262,6 +262,60 @@
   }
 }
 
+.back-to-top-floating-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 5;
+  height: 0; // Collapse height to allow overlapping
+
+  .back-to-top-floating-btn {
+    background: $main-color;
+    border: 3px solid #333;
+    padding: 0.8rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    cursor: pointer;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 900;
+    font-size: 1rem;
+    color: #333;
+    box-shadow: 6px 6px 0px 0px #333;
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    outline: none;
+    transform: translateY(-50%); // Center on the line
+
+    &:hover {
+      transform: translateY(-65%); // Lift more on hover
+      box-shadow: 8px 12px 0px 0px #333;
+      background: lighten($main-color, 5%);
+
+      svg {
+        animation: bounceUp 0.6s infinite alternate;
+      }
+    }
+
+    &:active {
+      transform: translateY(-40%);
+      box-shadow: 2px 2px 0px 0px #333;
+    }
+
+    svg {
+      transition: transform 0.2s;
+    }
+
+    .btn-text {
+      letter-spacing: 0.1rem;
+    }
+  }
+}
+
+@keyframes bounceUp {
+  from { transform: translateY(0); }
+  to { transform: translateY(-4px); }
+}
+
 // Status Bar
 .footer-status-bar {
   background: #1a1a1a;

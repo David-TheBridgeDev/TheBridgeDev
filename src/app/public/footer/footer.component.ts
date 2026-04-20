@@ -25,4 +25,11 @@ export class FooterComponent implements OnInit {
   protected readonly AppRoutes = AppRoutes;
 
   ngOnInit(): void {}
+
+  scrollToTop(): void {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
 }

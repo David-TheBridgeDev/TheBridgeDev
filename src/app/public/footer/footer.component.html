@@ -160,9 +160,35 @@
       </section>
     </div>
 
+    <div class="back-to-top-floating-container">
+      <button
+        class="back-to-top-floating-btn"
+        (click)="scrollToTop()"
+        [matTooltip]="'Footer.BackToTop' | translate"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          stroke-width="3"
+          stroke="currentColor"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <line x1="12" y1="5" x2="12" y2="19" />
+          <line x1="12" y1="5" x2="16" y2="9" />
+          <line x1="12" y1="5" x2="8" y2="9" />
+        </svg>
+        <span class="btn-text">TOP</span>
+      </button>
+    </div>
+
     <div class="footer-status-bar">
       <div class="status-left">
-        <span class="status-item">© 2026 {{ "Footer.Name" | translate }}</span>
+        <span class="status-item">© 2026 {{ "Header.Name" | translate }}</span>
         <span class="status-sep">|</span>
         <span class="status-item">SYS: OK</span>
         <span class="status-sep">|</span>

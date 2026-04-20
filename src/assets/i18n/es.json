@@ -95,6 +95,7 @@
     "CloseConfirm": "¿Deseas cerrar la sesión de Portfolio_OS? (Se recargará la página)",
     "CloseTitle": "Cerrar",
     "MinimizeTitle": "Minimizar",
-    "MaximizeTitle": "Maximizar"
+    "MaximizeTitle": "Maximizar",
+    "BackToTop": "Volver arriba"
   }
 }
