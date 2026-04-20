@@ -6,13 +6,12 @@ import { UntilDestroy } from '@ngneat/until-destroy';
 @UntilDestroy()
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  template: `<main><router-outlet></router-outlet></main>`,
+  styles: '',
   standalone: true,
   imports: [RouterOutlet],
 })
 export class AppComponent implements OnInit {
-  title = 'David Ramos | Home';
   constructor(private translate: TranslateService) {
     this.translate.setDefaultLang('es');
     this.translate.use('es');
