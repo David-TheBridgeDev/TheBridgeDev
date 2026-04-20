@@ -1,19 +1,13 @@
 <div class="tab_container">
-  <aside id="tab_header" class="tab_header">
-    <span class="TagSelector active" tag="threejs">Main</span>
-    <span class="TagSelector" tag="skills">Skills</span>
-    <span class="TagSelector" tag="tools">Tools</span>
-    <span class="TagSelector" tag="vr">VR</span>
-    <span class="TagSelector" tag="art">Art</span>
-    <span class="TagSelector" tag="projects">Projects</span>
-  </aside>
-
   <nav class="tabGrid">
     <div id="container_threejs" class="tabElement">
       <app-wheelchair></app-wheelchair>
     </div>
 
-    <div id="container_skills" class="tabElement hidden">
+    <aside id="tab_header" class="tab_header">
+      <span class="TagSelector" tag="skills">Skills</span>
+    </aside>
+    <div id="container_skills" class="tabElement">
       <!--Programing Languages-->
       <div class="skills-container">
         <h2 class="portfolio_text">
@@ -136,7 +130,10 @@
       </div>
     </div>
 
-    <div id="container_tools" class="tabElement hidden">
+    <aside id="tab_header" class="tab_header">
+      <span class="TagSelector" tag="tools">Tools</span>
+    </aside>
+    <div id="container_tools" class="tabElement">
       <h2 class="portfolio_text">
         Dev Tools
         <svg
@@ -248,11 +245,17 @@
       </div>
     </div>
 
-    <div id="container_vr" class="tabElement hidden">
+    <aside id="tab_header" class="tab_header">
+      <span class="TagSelector" tag="vr">VR</span>
+    </aside>
+    <div id="container_vr" class="tabElement">
       <app-vr></app-vr>
     </div>
 
-    <div id="container_art" class="tabElement hidden">
+    <aside id="tab_header" class="tab_header">
+      <span class="TagSelector" tag="art">Art</span>
+    </aside>
+    <div id="container_art" class="tabElement">
       <h2 class="portfolio_text">
         Never forget the moment to go beyond the stars
         <svg
@@ -291,7 +294,10 @@
       </iframe>
     </div>
 
-    <div id="container_projects" class="tabElement hidden">
+    <aside id="tab_header" class="tab_header">
+      <span class="TagSelector" tag="projects">Projects</span>
+    </aside>
+    <div id="container_projects" class="tabElement">
       <h2 class="portfolio_text">
         Project Portfolio
         <svg

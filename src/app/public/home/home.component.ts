@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FooterComponent } from '../footer/footer.component';
-import { TabsContainerComponent } from '../tabs/tabs-container/tabs-container.component';
 import { HeaderComponent } from '../header/header.component';
+import { ContentContainerComponent } from '../content/content-container.component';
 
 @Component({
-  selector: 'app-public',
-  templateUrl: './public.component.html',
-  styleUrls: ['./public.component.scss'],
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss'],
   standalone: true,
-  imports: [HeaderComponent, TabsContainerComponent, FooterComponent],
+  imports: [HeaderComponent, ContentContainerComponent, FooterComponent],
 })
-export class PublicComponent implements OnInit {
+export class HomeComponent implements OnInit {
   private selectedPlan: 'standard' | 'premium' | null = null;
 
   constructor(
