@@ -65,3 +65,6 @@ La aplicación debe transmitir una estética **"Retro-Tech Alegre"**, fusionando
 ## ⚠️ Consideraciones de Seguridad
 - Nunca subir archivos `.env`, secretos o configuraciones sensibles al repositorio.
 - Seguir las políticas de seguridad de Capacitor al interactuar con APIs nativas.
+
+## 📄 Actualización de Perfil y Experiencia
+Cada vez que el usuario solicite añadir o actualizar información sobre su trayectoria laboral o conocimientos técnicos, **es obligatorio leer el archivo `doc/C.V David Ramos.pdf`** para cargar su contenido en el contexto y asegurar que la información sea fiel a dicho documento.

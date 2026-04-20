@@ -1,3 +1,3 @@
 # Gemini
 
-This project follows the guidelines documented in [AGENTS.md](AGENTS.md).
+Este proyecto sigue las guías documentadas en [AGENTS.md](AGENTS.md). Cualquier modificación se deberá hacer en dicho archivo.
