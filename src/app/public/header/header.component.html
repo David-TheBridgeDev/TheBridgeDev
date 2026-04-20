@@ -2,9 +2,9 @@
   <!-- Retro OS Window Bar -->
   <div class="window-title-bar">
     <div class="window-controls">
-      <span class="dot close"></span>
-      <span class="dot minimize"></span>
-      <span class="dot maximize"></span>
+      <span (click)="closeWindow()" class="dot close" [title]="'Footer.CloseTitle' | translate"></span>
+      <span (click)="minimizeWindow()" class="dot minimize" [title]="'Footer.MinimizeTitle' | translate"></span>
+      <span (click)="maximizeWindow()" class="dot maximize" [title]="'Footer.MaximizeTitle' | translate"></span>
     </div>
     <div class="window-title-text">PORTFOLIO_OS - v{{ osVersion }}</div>
     <div class="window-stats">
@@ -13,7 +13,7 @@
     </div>
   </div>
 
-  <div class="header_main window-body">
+  <div class="header_main window-body" [class.minimized]="isMinimized">
     <div class="header_spinner2"></div>
     <div class="header_spinner_closer2"></div>
     <div class="header_spinner">

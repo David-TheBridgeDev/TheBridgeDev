@@ -13,6 +13,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   osVersion: string;
   cpuUsage: number = 0;
   memUsage: number = 0;
+  isMinimized: boolean = false;
   private statsInterval: any;
 
   constructor(private translate: TranslateService) {
@@ -21,6 +22,30 @@ export class HeaderComponent implements OnInit, OnDestroy {
       now.getMonth() + 1
     }.${now.getDate()}`;
     this.updateStats();
+  }
+
+  // Funciones de control de ventana
+  closeWindow(): void {
+    const confirmMsg = this.translate.instant('Footer.CloseConfirm');
+    if (confirm(confirmMsg)) {
+      window.location.reload();
+    }
+  }
+
+  minimizeWindow(): void {
+    this.isMinimized = !this.isMinimized;
+  }
+
+  maximizeWindow(): void {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen().catch((err) => {
+        console.error(
+          `Error intentando activar el modo pantalla completa: ${err.message}`,
+        );
+      });
+    } else {
+      document.exitFullscreen();
+    }
   }
 
   ngOnInit(): void {

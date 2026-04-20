@@ -91,6 +91,10 @@
     "Quote": "Puede que no esté donde quiero estar, pero no estoy donde estaba",
     "VRProjects": "Proyectos VR",
     "Art": "Arte y Música",
-    "Name": "David Ramos Perdomo"
+    "Name": "David Ramos Perdomo",
+    "CloseConfirm": "¿Deseas cerrar la sesión de Portfolio_OS? (Se recargará la página)",
+    "CloseTitle": "Cerrar",
+    "MinimizeTitle": "Minimizar",
+    "MaximizeTitle": "Maximizar"
   }
 }
