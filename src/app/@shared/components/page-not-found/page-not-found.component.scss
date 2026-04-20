@@ -96,21 +96,26 @@ body {
 }
 
 .typing-text {
-  font-family: "Source Sans Pro", sans-serif;
-  font-size: 1.2rem;
-  font-weight: 400;
-  color: #444;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
   margin-top: 20px;
   display: inline-block;
+  background: rgba(239, 188, 33, 0.1);
+  padding: 8px 12px;
+  border-left: 4px solid #efbc21;
 }
 
 .cursor {
   display: inline-block;
-  font-family: monospace;
-  font-size: 1.5rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 1.2rem;
   font-weight: bold;
   color: #efbc21;
   animation: blink 1s step-end infinite;
+  margin-left: 5px;
+  vertical-align: middle;
 }
 
 /* Keyframes */
@@ -266,24 +271,25 @@ body {
 }
 
 .btn-back {
-  background: transparent;
-  border: 2px solid #262626;
-  color: #262626;
+  background: white;
+  border: 3px solid #333;
+  color: #333;
   padding: 12px 30px;
-  font-family: "Courier New", Courier, monospace;
-  font-size: 14px;
-  font-weight: bold;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 1rem;
+  font-weight: 900;
   letter-spacing: 2px;
   cursor: pointer;
   position: relative;
   transition: all 0.2s;
   overflow: hidden;
+  box-shadow: 6px 6px 0px 0px #333;
 
   &:hover {
-    background: #262626;
-    color: #efbc21;
-    box-shadow: 5px 5px 0px #efbc21;
-    transform: translate(-2px, -2px);
+    background: #efbc21;
+    color: #333;
+    box-shadow: 10px 10px 0px #333;
+    transform: translate(-4px, -4px);
 
     .btn-glitch {
       animation: btn-glitch-anim 0.3s infinite;
@@ -298,8 +304,8 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #efbc21;
-    mix-blend-mode: multiply;
+    background: rgba(255, 255, 255, 0.3);
+    mix-blend-mode: overlay;
   }
 }
 

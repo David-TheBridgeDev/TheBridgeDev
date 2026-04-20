@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
 import { NGXLogger } from 'ngx-logger';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 import { AppRoutes } from '../../models/appRoutes';
 
 @Component({
-    selector: 'app-page-not-found',
-    templateUrl: './page-not-found.component.html',
-    styleUrls: ['./page-not-found.component.scss'],
-    standalone: true,
-    imports: [RouterLink]
+  selector: 'app-page-not-found',
+  templateUrl: './page-not-found.component.html',
+  styleUrls: ['./page-not-found.component.scss'],
+  standalone: true,
+  imports: [RouterLink, TranslateModule],
 })
 export class PageNotFoundComponent {
   protected readonly AppRoutes = AppRoutes;
@@ -19,8 +20,8 @@ export class PageNotFoundComponent {
     private router: Router,
   ) {}
 
-  navegateLogin() {
-    this.router.navigate(['user/unity'], {
+  navegateToHome() {
+    this.router.navigate([''], {
       relativeTo: this.route.parent?.parent,
       queryParamsHandling: 'preserve',
     });

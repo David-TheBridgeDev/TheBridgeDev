@@ -98,5 +98,10 @@
     "MinimizeTitle": "Minimizar",
     "MaximizeTitle": "Maximizar",
     "BackToTop": "Volver arriba"
+  },
+  "PageNotFound": {
+    "SystemError": "Error del sistema: 0x404",
+    "Description": "La página solicitada se ha desvanecido en el código...",
+    "BackToHome": "VOLVER AL INICIO"
   }
 }

@@ -1,21 +1,25 @@
 <div id="notfound">
   <div class="notfound">
     <div class="notfound-404">
-      <h3 class="terminal-text">System Error: 0x404</h3>
-      <h1 (click)="navegateLogin()" class="glitch-container">
+      <h3 class="terminal-text">
+        {{ "PageNotFound.SystemError" | translate }}
+      </h3>
+      <h1 (click)="navegateToHome()" class="glitch-container">
         <span class="glitch" data-text="4">4</span>
         <span class="glitch" data-text="0">0</span>
         <span class="glitch" data-text="4">4</span>
       </h1>
     </div>
     <h2 class="typing-text">
-      La página solicitada se ha desvanecido en el código...
+      {{ "PageNotFound.Description" | translate }}
     </h2>
     <div class="cursor">_</div>
 
     <div class="actions">
       <button class="btn-back" [routerLink]="['/']">
-        <span class="btn-text">RETURN_TO_HOME</span>
+        <span class="btn-text">{{
+          "PageNotFound.BackToHome" | translate
+        }}</span>
         <span class="btn-glitch"></span>
       </button>
     </div>
