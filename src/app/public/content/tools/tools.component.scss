@@ -1,0 +1,31 @@
+@import "src/styles/styles.scss";
+
+.ides_container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: 3rem auto;
+  max-width: 1200px;
+  gap: 1.5rem;
+  transition: all 1s;
+}
+
+.ides_container .grid-element {
+  width: 90px;
+  height: 90px;
+  cursor: pointer;
+  box-sizing: border-box;
+  background: white;
+  border: 2px solid #333;
+  box-shadow: 6px 6px 0px 0px #333;
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  &:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 10px 10px 0px 0px $main-color;
+    border-color: $main-color;
+  }
+}

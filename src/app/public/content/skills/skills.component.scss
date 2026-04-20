@@ -1,16 +1,23 @@
+@import "src/styles/styles.scss";
+
 .skills-container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-right: 10px;
-  margin-left: 10px;
-  padding-bottom: 21px;
+  margin: 2rem 10px;
+  padding-bottom: 2rem;
 
   h3 {
     display: flex;
     justify-content: center;
     font-family: "Source Sans Pro", sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid $main-color;
   }
 
   .skills-list {
@@ -18,27 +25,30 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 1rem;
   }
 
   .skill {
-    padding: 5px;
-    border-radius: 50px;
-    border: #ececec solid 2.5px;
-    box-shadow: 0px 8px 10px 2px rgb(247, 247, 247);
+    padding: 0.6rem 1rem;
+    background: white;
+    border: 2px solid #333;
+    box-shadow: 4px 4px 0px 0px #333;
+    transition: all 0.2s;
 
-    transition: all 0.4s;
-
-    // skill
+    // skill text
     div {
       display: flex;
       justify-content: center;
       font-weight: bold;
-      font-family: "Source Sans Pro", sans-serif;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.9rem;
+      color: #333;
     }
-  }
 
-  .skill:hover {
-    box-shadow: 0px 8px 10px 4px #efbc21;
+    &:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px 0px $main-color;
+      border-color: $main-color;
+    }
   }
 }

@@ -1,0 +1,24 @@
+@import "src/styles/styles.scss";
+
+img {
+  width: 70%;
+  max-width: 800px;
+  margin: 2rem auto;
+  display: block;
+  border: 4px solid #333;
+  box-shadow: 12px 12px 0px 0px #333;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+}
+
+img:hover {
+  transform: translate(-6px, -6px);
+  box-shadow: 18px 18px 0px 0px $main-color;
+  border-color: $main-color;
+}
+
+a {
+  text-decoration: none;
+  display: block;
+  margin: 0 auto;
+}
