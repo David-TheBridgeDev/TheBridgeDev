@@ -1,0 +1,44 @@
+.skills-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding-bottom: 21px;
+
+  h3 {
+    display: flex;
+    justify-content: center;
+    font-family: "Source Sans Pro", sans-serif;
+  }
+
+  .skills-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .skill {
+    padding: 5px;
+    border-radius: 50px;
+    border: #ececec solid 2.5px;
+    box-shadow: 0px 8px 10px 2px rgb(247, 247, 247);
+
+    transition: all 0.4s;
+
+    // skill
+    div {
+      display: flex;
+      justify-content: center;
+      font-weight: bold;
+      font-family: "Source Sans Pro", sans-serif;
+    }
+  }
+
+  .skill:hover {
+    box-shadow: 0px 8px 10px 4px #efbc21;
+  }
+}

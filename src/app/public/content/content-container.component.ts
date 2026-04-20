@@ -1,34 +1,27 @@
 import { Component, OnInit } from '@angular/core';
-import { MatTooltipModule } from '@angular/material/tooltip';
-import { ActivatedRoute, Router } from '@angular/router';
-import { AppRoutes } from '../../@shared/models/appRoutes';
-import { WheelchairComponent } from '../../@shared/threeJS/wheelchair/wheelchair.component';
+import { ArtComponent } from './art/art.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { SkillsComponent } from './skills/skills.component';
+import { ToolsComponent } from './tools/tools.component';
 import { VrComponent } from './vr/vr.component';
+import { WheelchairComponent } from '../../@shared/threeJS/wheelchair/wheelchair.component';
 
 @Component({
   selector: 'app-content-container',
   templateUrl: './content-container.component.html',
   styleUrls: ['./content-container.component.scss'],
   standalone: true,
-  imports: [WheelchairComponent, MatTooltipModule, VrComponent],
+  imports: [
+    SkillsComponent,
+    ToolsComponent,
+    ArtComponent,
+    ProjectsComponent,
+    VrComponent,
+    WheelchairComponent,
+  ],
 })
 export class ContentContainerComponent implements OnInit {
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-  ) {}
+  constructor() {}
 
   ngOnInit(): void {}
-
-  navegateToDomotic() {
-    this.router.navigate([AppRoutes.HOME_AUTOMATION], {
-      relativeTo: this.route.parent,
-    });
-  }
-
-  navegateToMusic() {
-    this.router.navigate([AppRoutes.MUSIC], {
-      relativeTo: this.route.parent,
-    });
-  }
 }
