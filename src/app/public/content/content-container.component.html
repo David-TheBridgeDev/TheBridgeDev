@@ -9,11 +9,15 @@
 
 <div class="tab_container">
   <nav class="tabGrid">
+    <aside id="threejs" class="tab_header retro-section-header">
+      <span class="terminal-tag">SYSTEM ></span>
+      <span class="TagSelector">{{ "Projects.3DViewer" | translate }}</span>
+    </aside>
     <div id="container_threejs" class="tabElement">
       <app-wheelchair></app-wheelchair>
     </div>
 
-    <aside class="tab_header retro-section-header">
+    <aside id="skills" class="tab_header retro-section-header">
       <span class="terminal-tag">SECTION ></span>
       <span class="TagSelector" tag="skills">{{
         "Skills.Title" | translate
@@ -23,7 +27,7 @@
       <app-skills></app-skills>
     </div>
 
-    <aside class="tab_header retro-section-header">
+    <aside id="tools" class="tab_header retro-section-header">
       <span class="terminal-tag">SECTION ></span>
       <span class="TagSelector" tag="tools">{{
         "Tools.Title" | translate
@@ -33,7 +37,7 @@
       <app-tools></app-tools>
     </div>
 
-    <aside class="tab_header retro-section-header">
+    <aside id="experience" class="tab_header retro-section-header">
       <span class="terminal-tag">SECTION ></span>
       <span class="TagSelector" tag="experience">{{
         "Experience.Title" | translate
