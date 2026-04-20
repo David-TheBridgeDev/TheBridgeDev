@@ -1,5 +1,19 @@
 <header>
-  <div class="header_main">
+  <!-- Retro OS Window Bar -->
+  <div class="window-title-bar">
+    <div class="window-controls">
+      <span class="dot close"></span>
+      <span class="dot minimize"></span>
+      <span class="dot maximize"></span>
+    </div>
+    <div class="window-title-text">PORTFOLIO_OS - v{{ osVersion }}</div>
+    <div class="window-stats">
+      <span class="stat-item">CPU: {{ cpuUsage }}%</span>
+      <span class="stat-item">MEM: {{ memUsage }}MB</span>
+    </div>
+  </div>
+
+  <div class="header_main window-body">
     <div class="header_spinner2"></div>
     <div class="header_spinner_closer2"></div>
     <div class="header_spinner">

@@ -1,10 +1,70 @@
 @import "src/styles/styles.scss";
 
+.window-title-bar {
+  background: repeating-linear-gradient(
+    45deg,
+    #333,
+    #333 10px,
+    #383838 10px,
+    #383838 20px
+  );
+  color: white;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.75rem;
+  border-bottom: 3px solid #333;
+  border-top: 4px solid #333; // Match footer top border
+
+  .window-controls {
+    display: flex;
+    gap: 6px;
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 1.5px solid #000;
+
+      &.close {
+        background: #ff5f56;
+      }
+      &.minimize {
+        background: #ffbd2e;
+      }
+      &.maximize {
+        background: #27c93f;
+      }
+    }
+  }
+
+  .window-title-text {
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5);
+  }
+
+  .window-stats {
+    display: flex;
+    gap: 1rem;
+    color: $main-color;
+    font-weight: bold;
+  }
+}
+
+.window-body {
+  border-bottom: 3px solid #333;
+  // Existing header_main styles are in styles.scss
+}
+
 .header_social_icon_links {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 3px;
+  margin-top: 0.4rem;
 }
 
 .header_social_icon {
@@ -78,7 +138,12 @@
   margin: 0 4px;
 }
 
-// Global social icon class refinement
-.header_social_icon_links a {
-  display: block;
+@media (max-width: 600px) {
+  .window-stats {
+    display: none;
+  }
+
+  .header_social_icon_links {
+    gap: 4px;
+  }
 }
