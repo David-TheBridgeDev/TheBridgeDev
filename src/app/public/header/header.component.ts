@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 
@@ -9,18 +9,35 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [TranslateModule, CommonModule],
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit, OnDestroy {
   osVersion: string;
-  cpuUsage: number;
-  memUsage: number;
+  cpuUsage: number = 0;
+  memUsage: number = 0;
+  private statsInterval: any;
 
   constructor(private translate: TranslateService) {
     const now = new Date();
     this.osVersion = `${now.getFullYear()}.${
       now.getMonth() + 1
     }.${now.getDate()}`;
-    this.cpuUsage = Math.floor(Math.random() * 8) + 2; // 1-5%
-    this.memUsage = Math.floor(Math.random() * (512 - 64 + 1)) + 64; // 64-512MB
+    this.updateStats();
+  }
+
+  ngOnInit(): void {
+    this.statsInterval = setInterval(() => {
+      this.updateStats();
+    }, 2200);
+  }
+
+  ngOnDestroy(): void {
+    if (this.statsInterval) {
+      clearInterval(this.statsInterval);
+    }
+  }
+
+  private updateStats(): void {
+    this.cpuUsage = Math.floor(Math.random() * 8) + 1; // 1-8%
+    this.memUsage = Math.floor(Math.random() * (512 - 128 + 1)) + 128; // 128-512MB
   }
 
   get currentLang(): string {
