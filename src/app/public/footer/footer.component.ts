@@ -23,6 +23,7 @@ import { ArtComponent } from './art/art.component';
 })
 export class FooterComponent implements OnInit {
   protected readonly AppRoutes = AppRoutes;
+  currentYear: number = new Date().getFullYear();
 
   ngOnInit(): void {}
 

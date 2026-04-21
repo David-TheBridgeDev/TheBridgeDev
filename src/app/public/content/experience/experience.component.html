@@ -44,4 +44,52 @@
       </div>
     </div>
   </div>
+
+  <!-- Parallel Projects Section -->
+  <h2 class="section-subtitle">
+    {{ "ParallelProjects.Title" | translate }}
+  </h2>
+
+  <div
+    *ngFor="let proj of parallelProjects; let i = index"
+    class="experience-card parallel-card"
+    [class.is-expanded]="expandedParallelIndex === i"
+    (click)="toggleParallelProject(i)"
+  >
+    <div class="exp-header">
+      <div class="exp-header-left">
+        <div class="exp-titles">
+          <h3>{{ "Experience." + proj + ".Company" | translate }}</h3>
+          <h4>{{ "Experience." + proj + ".Role" | translate }}</h4>
+        </div>
+      </div>
+      <div class="exp-arrow">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </div>
+    </div>
+
+    <div class="exp-content-wrapper" [class.show]="expandedParallelIndex === i">
+      <div class="exp-content">
+        <p class="exp-description">
+          {{ "Experience." + proj + ".Description" | translate }}
+        </p>
+        <div class="exp-stack">
+          <strong>{{ "Shared.stack" | translate }}: </strong
+          >{{ "Experience." + proj + ".Stack" | translate }}
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

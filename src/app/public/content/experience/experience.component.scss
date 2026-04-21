@@ -40,6 +40,20 @@
   }
 }
 
+.section-subtitle {
+  margin: 1rem 0 0.5rem 0;
+  font-family: Georgia, serif;
+  font-size: 1.4rem;
+  color: #333;
+  border-bottom: 2px solid #333;
+  width: fit-content;
+  padding-right: 2rem;
+}
+
+.parallel-card {
+  border-style: dashed;
+}
+
 .exp-header {
   display: flex;
   justify-content: space-between;

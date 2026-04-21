@@ -16,16 +16,28 @@ export class ExperienceComponent {
     'Neurobai',
     'AxpeSantander',
     'AxpeJusticia',
-    'BSRRV',
   ];
 
+  parallelProjects = ['BSRRV'];
+
   expandedIndex: number | null = null;
+  expandedParallelIndex: number | null = null;
 
   toggleExperience(index: number): void {
+    this.expandedParallelIndex = null;
     if (this.expandedIndex === index) {
       this.expandedIndex = null;
     } else {
       this.expandedIndex = index;
+    }
+  }
+
+  toggleParallelProject(index: number): void {
+    this.expandedIndex = null;
+    if (this.expandedParallelIndex === index) {
+      this.expandedParallelIndex = null;
+    } else {
+      this.expandedParallelIndex = index;
     }
   }
 }

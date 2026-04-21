@@ -53,7 +53,7 @@
     "Title": "Tecnologías y Herramientas"
   },
   "Experience": {
-    "Title": "Proyectos y Experiencia",
+    "Title": "Experiencia Profesional",
     "Seidor": {
       "Company": "SEIDOR (EJIE - Administración Vasca)",
       "Role": "Equipo de Pasarela de Pagos",
@@ -96,6 +96,9 @@
       "Description": "La aplicación de realidad virtual BSR-RV fue desarrollada con el motor gráfico Unity. El uso de patrones de diseño y la aplicación de principios SOLID hizo posible una aplicación escalable con una experiencia de usuario fluida.",
       "Stack": ".NET, C#, Unity, MongoDB, 3D Modeling, Blender."
     }
+  },
+  "ParallelProjects": {
+    "Title": "Otros Proyectos"
   },
   "Projects": {
     "Title": "Portafolio de Proyectos",
