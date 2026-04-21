@@ -1,4 +1,4 @@
-@import "src/styles/styles.scss";
+@use "../../../styles/variables" as vars;
 
 .portfolio-retro-header {
   display: flex;
@@ -48,7 +48,7 @@
 
   &:hover {
     transform: translate(-4px, -4px);
-    box-shadow: 12px 12px 0px 0px $main-color;
+    box-shadow: 12px 12px 0px 0px vars.$main-color;
   }
 
   h1.portfolio_text {
@@ -72,7 +72,7 @@
   font-family: "IBM Plex Mono", "Courier New", monospace;
   font-size: 0.75rem;
   background: #333;
-  color: $main-color;
+  color: vars.$main-color;
   padding: 2px 8px;
   font-weight: bold;
   white-space: nowrap;
@@ -101,10 +101,10 @@
 
   &:hover {
     transform: translate(-4px, -4px);
-    box-shadow: 12px 12px 0px 0px $main-color !important;
+    box-shadow: 12px 12px 0px 0px vars.$main-color !important;
 
     .TagSelector {
-      color: $main-color !important;
+      color: vars.$main-color !important;
     }
   }
 

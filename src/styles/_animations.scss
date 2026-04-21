@@ -1,0 +1,65 @@
+@keyframes beat {
+  0% { transform: scale(1.2); }
+  5% { transform: scale(1.4); }
+  10% { transform: scale(1.2); }
+  15% { transform: scale(1.5); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1.2); }
+}
+
+@keyframes moveS {
+  0% { transform: scale(1.2); }
+  20% { transform: rotate(-1deg) scale(1.1); }
+  40% { transform: scale(1.2); }
+  50% { transform: rotate(2deg) scale(1.1); }
+  70% { transform: rotate(-1deg) scale(1.2); }
+  100% { transform: scale(1.1); }
+}
+
+@keyframes moveCode {
+  0% { transform: scale(1); }
+  25% { transform: rotate(2deg) scale(1.1); }
+  75% { transform: rotate(-2deg) scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes moveTool {
+  0% { transform: scale(1); }
+  25% { transform: rotate(-1deg) scale(1.1); }
+  65% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  50% { transform: translate(-50%, -50%) rotate(180deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes imgMove {
+  0% { transform: rotate(-1deg); }
+  20% { transform: rotate(2deg); }
+  50% { transform: rotate(-2deg); }
+  70% { transform: rotate(1deg); }
+  100% { transform: rotate(-1deg); }
+}
+
+@keyframes shine {
+  100% { transform: translateX(100%); }
+}
+
+@keyframes bounceUp {
+  from { transform: translateY(0); }
+  to { transform: translateY(-4px); }
+}
+
+@keyframes blink {
+  from, to { color: transparent; }
+  50% { color: inherit; }
+}
+
+@keyframes bounce {
+  0% { transform: scale(1); }
+  10% { transform: scale(0.9); }
+  100% { transform: scale(1); }
+}

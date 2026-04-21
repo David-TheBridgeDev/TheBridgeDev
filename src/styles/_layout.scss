@@ -1,0 +1,64 @@
+@use 'variables' as vars;
+
+.tabGrid {
+  position: relative;
+  overflow: hidden;
+  min-height: 20vh;
+  transition: height 0.35s;
+  margin: auto auto 5px;
+}
+
+.tab_container {
+  position: relative;
+  margin: auto;
+}
+
+#container_threejs {
+  width: 50%;
+  margin: auto;
+
+  @media all and (max-width: 1000px) {
+    width: 85%;
+  }
+
+  @media all and (max-width: 600px) {
+    width: 90%;
+  }
+}
+
+canvas:focus {
+  outline: none;
+}
+
+#container_art {
+  margin-left: 15%;
+  margin-right: 15%;
+
+  @media all and (max-width: 600px) {
+    padding: 0em;
+    margin-left: 4%;
+    margin-right: 4%;
+  }
+
+  iframe {
+    width: 100%;
+    height: 380px;
+  }
+}
+
+h2.portfolio_text {
+  padding: 2em 0 2em 0;
+  font-size: 1.3rem;
+  font-family: vars.$font-family-sans;
+  color: vars.$heading-color;
+  text-align: center;
+  background: vars.$white;
+  margin: auto;
+  letter-spacing: 0.07em;
+  font-weight: bold;
+
+  @media all and (max-width: 600px) {
+    padding-left: 0em;
+    padding-right: 0em;
+  }
+}

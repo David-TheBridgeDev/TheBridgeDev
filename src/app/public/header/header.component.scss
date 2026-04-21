@@ -1,4 +1,4 @@
-@import "src/styles/styles.scss";
+@use "../../../styles/variables" as vars;
 
 .window-title-bar {
   background: repeating-linear-gradient(
@@ -13,10 +13,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: "IBM Plex Mono", monospace;
+  font-family: vars.$font-family-mono;
   font-size: 0.75rem;
   border-bottom: 3px solid #333;
-  border-top: 4px solid #333; // Match footer top border
+  border-top: 4px solid #333;
 
   .window-controls {
     display: flex;
@@ -84,7 +84,7 @@
   .window-stats {
     display: flex;
     gap: 1rem;
-    color: $main-color;
+    color: vars.$main-color;
     font-weight: bold;
   }
 }
@@ -103,6 +103,165 @@
     pointer-events: none;
     border-bottom: 0 solid #333;
   }
+}
+
+/* Legacy Header Styles moved from styles.scss */
+.Mainlogo {
+  margin: auto;
+  width: 180px;
+}
+
+.header_main {
+  position: relative;
+  margin: auto;
+  padding: 4rem 2rem 0.5rem 2rem;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  overflow: hidden;
+  z-index: 1;
+  background-color: vars.$white;
+}
+
+.header_controlbox {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.author {
+  display: block;
+  text-align: center;
+  font-family: vars.$font-family-sans;
+  font-size: 1.2rem;
+  letter-spacing: 0.24rem;
+  text-transform: uppercase;
+}
+
+.subAuth {
+  display: block;
+  text-align: center;
+  font-family: vars.$font-family-sans;
+  font-size: 0.78rem;
+  letter-spacing: 0.07rem;
+  color: vars.$text-color;
+  text-transform: uppercase;
+}
+
+.header_arrows {
+  padding: 8px;
+}
+
+.header_spinner {
+  position: absolute;
+  top: 55.5%;
+  left: 50%;
+  width: 250px;
+  height: 250px;
+  border-radius: 100%;
+  border: 2px dashed #ddd;
+  z-index: -1;
+  animation: spin 35s linear infinite;
+}
+
+.header_spinner2 {
+  position: absolute;
+  top: 55.5%;
+  left: 50%;
+  width: 275px;
+  height: 275px;
+  border-radius: 100%;
+  border: 2px dashed #333;
+  z-index: -1;
+  animation: spin 55s linear reverse infinite;
+}
+
+.header_spinner3 {
+  position: absolute;
+  top: 55.5%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  border-radius: 100%;
+  border: 2px dashed #ddd;
+  z-index: -1;
+  animation: spin 60s linear infinite;
+}
+
+.header_spinner .innersphere {
+  position: absolute;
+  border-radius: 100%;
+}
+
+.header_spinner .innersphere1 {
+  width: 7px;
+  height: 7px;
+  top: -2%;
+  left: 50%;
+  background: #656565;
+}
+
+.header_spinner .innersphere2 {
+  width: 10px;
+  height: 10px;
+  top: -2.5%;
+  left: 55%;
+  background: vars.$main-color;
+}
+
+.header_spinner .innersphere3 {
+  width: 8px;
+  height: 8px;
+  top: 40%;
+  left: -1.5%;
+  background: vars.$main-color;
+}
+
+.header_spinner .innersphere4 {
+  width: 11px;
+  height: 11px;
+  bottom: 2%;
+  left: 70%;
+  border: 2px solid vars.$text-color;
+}
+
+.header_spinner .innersphere5 {
+  width: 8px;
+  height: 8px;
+  bottom: 5%;
+  left: 20%;
+  border: 3px solid vars.$main-color;
+}
+
+.header_spinner_closer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  top: 78.5%;
+  background: white;
+}
+
+.header_spinner_closer2 {
+  position: absolute;
+  bottom: 32%;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(white 86%, transparent 100%);
+}
+
+.header_spinner_closer3 {
+  position: absolute;
+  bottom: 32%;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(white 40%, transparent 45%);
 }
 
 .header_social_icon_links {
@@ -130,16 +289,16 @@
   box-sizing: border-box;
 
   &:hover {
-    border-color: $main-color;
+    border-color: vars.$main-color;
     transform: translateY(-2px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 
     &.lang-btn-social {
-      color: $main-color;
+      color: vars.$main-color;
     }
 
     svg {
-      stroke: $main-color;
+      stroke: vars.$main-color;
     }
   }
 
@@ -152,7 +311,7 @@
 }
 
 .lang-btn-social {
-  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-family: vars.$font-family-mono;
   font-size: 0.7rem;
   font-weight: bold;
   background: none;
@@ -160,7 +319,7 @@
 
   &.active {
     background: #f8f8f8;
-    border-color: $main-color;
+    border-color: vars.$main-color;
     color: #222;
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
     position: relative;
@@ -171,7 +330,7 @@
       bottom: 4px;
       width: 4px;
       height: 4px;
-      background: $main-color;
+      background: vars.$main-color;
       border-radius: 50%;
     }
   }

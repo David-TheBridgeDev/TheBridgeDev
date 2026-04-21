@@ -1,4 +1,4 @@
-@import "src/styles/styles.scss";
+@use "../../../../styles/variables" as vars;
 
 img {
   width: 70%;
@@ -13,8 +13,8 @@ img {
 
 img:hover {
   transform: translate(-6px, -6px);
-  box-shadow: 18px 18px 0px 0px $main-color;
-  border-color: $main-color;
+  box-shadow: 18px 18px 0px 0px vars.$main-color;
+  border-color: vars.$main-color;
 }
 
 a {

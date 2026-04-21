@@ -1,4 +1,4 @@
-@import "src/styles/styles.scss";
+@use "../../../../styles/variables" as vars;
 
 .experience-list {
   width: 75%;
@@ -21,21 +21,21 @@
 
   &:hover {
     transform: translate(-2px, -2px);
-    box-shadow: 8px 8px 0px 0px $main-color;
-    border-color: $main-color;
+    box-shadow: 8px 8px 0px 0px vars.$main-color;
+    border-color: vars.$main-color;
 
     .exp-arrow {
-      color: $main-color;
+      color: vars.$main-color;
     }
   }
 
   &.is-expanded {
-    border-color: $main-color;
-    box-shadow: 8px 8px 0px 0px $main-color;
+    border-color: vars.$main-color;
+    box-shadow: 8px 8px 0px 0px vars.$main-color;
 
     .exp-arrow {
       transform: rotate(180deg);
-      color: $main-color;
+      color: vars.$main-color;
     }
   }
 }
@@ -54,7 +54,9 @@
 }
 
 .exp-arrow {
-  transition: transform 0.3s ease, color 0.3s;
+  transition:
+    transform 0.3s ease,
+    color 0.3s;
   color: #888;
 }
 
@@ -90,7 +92,9 @@
 .exp-content-wrapper {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+  transition:
+    max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.3s ease;
   opacity: 0;
 
   &.show {
@@ -118,7 +122,7 @@
   color: #444;
   background: #fafafa;
   padding: 0.6rem;
-  border-left: 3px solid $main-color;
+  border-left: 3px solid vars.$main-color;
 
   strong {
     color: #222;

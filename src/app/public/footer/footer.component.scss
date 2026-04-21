@@ -1,10 +1,10 @@
-@import "src/styles/styles.scss";
+@use "../../../styles/variables" as vars;
 
 .footer-retro-container {
   background: #f8f8f8;
   border-top: 4px solid #333;
   padding: 0;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: vars.$font-family-sans;
 }
 
 .footer-banner {
@@ -22,7 +22,7 @@
   gap: 1.5rem;
   padding: 2rem;
   font-size: 2rem;
-  font-family: "Birthstone", cursive;
+  font-family: vars.$font-family-cursive;
   position: relative;
   overflow: hidden;
   border-bottom: 4px solid #333;
@@ -56,12 +56,6 @@
   }
 }
 
-@keyframes shine {
-  100% {
-    transform: translateX(100%);
-  }
-}
-
 .footer-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -83,7 +77,7 @@
 
   &:hover {
     transform: translate(-4px, -4px);
-    box-shadow: 12px 12px 0px 0px $main-color;
+    box-shadow: 12px 12px 0px 0px vars.$main-color;
   }
 
   .card-header {
@@ -95,10 +89,10 @@
     gap: 1rem;
 
     .terminal-tag {
-      font-family: "IBM Plex Mono", "Courier New", monospace;
+      font-family: vars.$font-family-mono;
       font-size: 0.75rem;
       background: #333;
-      color: $main-color;
+      color: vars.$main-color;
       padding: 2px 6px;
       font-weight: bold;
       white-space: nowrap;
@@ -119,7 +113,7 @@
     p {
       padding: 0;
       margin-top: 1rem;
-      font-family: Georgia, serif;
+      font-family: vars.$font-family-serif;
       color: #444;
       text-align: left;
     }
@@ -153,7 +147,7 @@
     &:hover {
       filter: grayscale(0%);
       transform: scale(1.1);
-      border-color: $main-color;
+      border-color: vars.$main-color;
       z-index: 2;
     }
   }
@@ -165,7 +159,7 @@
   font-size: 0.75rem;
   color: #888;
   border-top: 1px solid #eee;
-  font-family: "IBM Plex Mono", monospace;
+  font-family: vars.$font-family-mono;
 }
 
 // Contact Card
@@ -180,7 +174,7 @@
     gap: 0.2rem;
 
     .label {
-      font-family: "IBM Plex Mono", monospace;
+      font-family: vars.$font-family-mono;
       font-size: 0.7rem;
       font-weight: bold;
       color: #999;
@@ -195,7 +189,7 @@
     }
 
     a:hover {
-      color: $main-color;
+      color: vars.$main-color;
       text-decoration: underline;
     }
   }
@@ -205,30 +199,6 @@
   display: flex;
   gap: 10px;
   margin-top: 0.5rem;
-}
-
-// Reuse header social icon styles
-.header_social_icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 32px;
-  height: 32px;
-  padding: 6px;
-  border-radius: 50%;
-  border: 1px solid #eee;
-  background: white;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  text-decoration: none;
-  color: #333;
-  box-sizing: border-box;
-
-  &:hover {
-    border-color: $main-color;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  }
 }
 
 // Isolated Projects Sections (VR & Art)
@@ -267,29 +237,29 @@
   justify-content: center;
   position: relative;
   z-index: 5;
-  height: 0; // Collapse height to allow overlapping
+  height: 0;
 
   .back-to-top-floating-btn {
-    background: $main-color;
+    background: vars.$main-color;
     border: 3px solid #333;
     padding: 0.8rem 1.5rem;
     display: flex;
     align-items: center;
     gap: 0.8rem;
     cursor: pointer;
-    font-family: "IBM Plex Mono", monospace;
+    font-family: vars.$font-family-mono;
     font-weight: 900;
     font-size: 1rem;
     color: #333;
     box-shadow: 6px 6px 0px 0px #333;
     transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     outline: none;
-    transform: translateY(-50%); // Center on the line
+    transform: translateY(-50%);
 
     &:hover {
-      transform: translateY(-65%); // Lift more on hover
+      transform: translateY(-65%);
       box-shadow: 8px 12px 0px 0px #333;
-      background: lighten($main-color, 5%);
+      background: lighten(vars.$main-color, 5%);
 
       svg {
         animation: bounceUp 0.6s infinite alternate;
@@ -311,20 +281,15 @@
   }
 }
 
-@keyframes bounceUp {
-  from { transform: translateY(0); }
-  to { transform: translateY(-4px); }
-}
-
 // Status Bar
 .footer-status-bar {
   background: #1a1a1a;
-  color: $main-color;
+  color: vars.$main-color;
   padding: 0.8rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: "IBM Plex Mono", monospace;
+  font-family: vars.$font-family-mono;
   font-size: 0.85rem;
   border-top: 4px solid #333;
   box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.5);
@@ -353,7 +318,7 @@
 
   .quote {
     font-style: normal;
-    font-family: "IBM Plex Mono", monospace;
+    font-family: vars.$font-family-mono;
     font-size: 0.8rem;
     color: #888;
     max-width: 400px;
@@ -365,16 +330,6 @@
   .blinking-cursor {
     font-weight: bold;
     animation: blink 1s step-end infinite;
-  }
-}
-
-@keyframes blink {
-  from,
-  to {
-    color: transparent;
-  }
-  50% {
-    color: $main-color;
   }
 }
 

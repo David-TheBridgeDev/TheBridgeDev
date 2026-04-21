@@ -1,0 +1,68 @@
+@use 'variables' as vars;
+
+.hidden {
+  display: none;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.working-on-it {
+  position: absolute;
+  top: 0.7em;
+  width: 5em;
+  margin: auto;
+  padding-left: 2em;
+}
+
+.pdf-box {
+  width: 100%;
+  margin: 3% 1%;
+  text-align: center;
+
+  iframe {
+    width: 95%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    aspect-ratio: 1/1.414;
+
+    @media (max-width: 600px) {
+      aspect-ratio: 1/1.5;
+    }
+
+    @media (min-width: 800px) {
+      width: 75%;
+    }
+  }
+}
+
+// Common Animations Classes
+#heart-beat {
+  animation: beat 3s linear infinite;
+  padding-left: 0.5em;
+}
+
+#star-move {
+  animation: moveS 1s linear infinite;
+}
+
+#move-code {
+  animation: moveCode 1s linear infinite;
+}
+
+#move-tool {
+  animation: moveTool 1s linear infinite;
+}
+
+span.footer_thanks:hover #heart-beat {
+  animation: beat 1.5s linear infinite;
+}
+
+.grid-element:hover {
+  animation: imgMove 1.5s linear infinite;
+}
