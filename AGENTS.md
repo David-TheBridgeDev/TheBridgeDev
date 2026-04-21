@@ -5,7 +5,7 @@ Este documento describe las normas de estilo, arquitectura y desarrollo para el 
 ## 🛠 Stack Tecnológico
 - **Framework:** Angular 18+ (Componentes Standalone).
 - **Lenguaje:** TypeScript 5.4+.
-- **Estilos:** SCSS (Sass).
+- **Estilos:** SCSS (Sass Modules con `@use`).
 - **UI:** Angular Material, Flex Layout.
 - **Gráficos:** Three.js para visualización 3D.
 - **Móvil:** Capacitor para empaquetado nativo.
@@ -18,7 +18,7 @@ Este documento describe las normas de estilo, arquitectura y desarrollo para el 
   - `src/app/public/`: Vistas y componentes de la web pública (Landing, CV, etc.).
   - `src/app/projects/`: Módulos de aplicaciones específicas integradas (Music, Home Automation/Shelly).
   - `src/assets/`: Recursos estáticos (i18n, imágenes, modelos 3D en `.glb`/`.fbx`).
-  - `src/styles/`: Archivos SCSS globales y específicos (ej. `fonts.scss`, `music.scss`).
+  - `src/styles/`: Arquitectura SCSS modular basada en partials (`_variables.scss`, `_base.scss`, `_animations.scss`, etc.).
 
 ## 💻 Convenciones de Código (TypeScript)
 - **Componentes:**
@@ -47,7 +47,11 @@ La aplicación debe transmitir una estética **"Retro-Tech Alegre"**, fusionando
     - Micro-interacciones que imiten comportamientos retro (parpadeos de cursor, efectos de escaneo CRT sutiles, transiciones de "carga de datos").
 
 ## 🎨 Estilos y UI
-- **SCSS:** Preferir el uso de variables y mixins. Mantener estilos específicos en `src/styles/` si afectan a múltiples componentes de un módulo.
+- **Sass (SCSS):**
+    - Se utiliza el sistema de módulos de Sass con `@use`. El uso de `@import` está deprecado y debe evitarse.
+    - **Partials:** Todos los estilos globales se dividen en archivos que empiezan con guion bajo (ej. `_variables.scss`).
+    - **Encapsulación:** Los estilos específicos de un componente (ej. Header, Footer) **deben** residir en su archivo `.scss` local y no en el global.
+    - **Variables:** Importar variables globales mediante `@use "ruta/relativa/variables" as vars;` y acceder con `vars.$nombre-variable`.
 - **Layout:** Uso de Angular Flex-Layout para estructuras responsivas, priorizando diseños cuadriculados que recuerden a las interfaces de usuario antiguas.
 - **Iconos:** Combinar Material Icons con elementos de pixel-art o iconos de trazo grueso y simple.
 
