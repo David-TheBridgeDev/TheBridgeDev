@@ -1,9 +1,9 @@
-import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
-import { FooterComponent } from '../footer/footer.component';
-import { HeaderComponent } from '../header/header.component';
-import { ContentContainerComponent } from '../content/content-container.component';
+import { HeaderComponent } from './header/header.component';
+import { ContentContainerComponent } from './content/content-container.component';
+import { FooterComponent } from './footer/footer.component';
 
 @Component({
   selector: 'app-home',
@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location,
   ) {}
 
   ngOnInit(): void {}
@@ -38,11 +38,11 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     const options = {
       root: null,
       rootMargin: '-10% 0px -20% 0px', // Responsive trigger margins
-      threshold: 0.1
+      threshold: 0.1,
     };
 
     this.observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const id = entry.target.getAttribute('id');
           if (id) {
@@ -56,29 +56,31 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     const elementsToObserve = [
       'app-header[id]',
       'app-footer[id]',
-      '.retro-section-header[id]'
+      '.retro-section-header[id]',
     ];
 
-    elementsToObserve.forEach(selector => {
-      document.querySelectorAll(selector).forEach(el => this.observer.observe(el));
+    elementsToObserve.forEach((selector) => {
+      document
+        .querySelectorAll(selector)
+        .forEach((el) => this.observer.observe(el));
     });
   }
 
   private updateUrlFragment(id: string): void {
     // If we're at the top (home), clear the fragment instead of adding #home
     const fragment = id === 'home' ? null : id;
-    
-    const urlTree = this.router.createUrlTree([], { 
-      relativeTo: this.route, 
-      fragment: fragment 
+
+    const urlTree = this.router.createUrlTree([], {
+      relativeTo: this.route,
+      fragment: fragment,
     });
-    
+
     const url = this.router.serializeUrl(urlTree);
     this.location.go(url);
   }
 
   private handleInitialScroll(): void {
-    this.route.fragment.subscribe(fragment => {
+    this.route.fragment.subscribe((fragment) => {
       if (fragment) {
         setTimeout(() => {
           const element = document.getElementById(fragment);
