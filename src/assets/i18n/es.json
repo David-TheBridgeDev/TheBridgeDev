@@ -9,11 +9,35 @@
     "ConnectionErro": "Ha ocurrido un problema de conexión",
     "successful": "¡Operación realizada con éxito!",
     "ok": "Ok",
-    "exit": "Salir"
+    "exit": "Salir",
+    "stack": "Tecnologías"
   },
   "Header": {
     "Name": "David Ramos",
     "Role": "Ingeniero de Software"
+  },
+  "Strengths": {
+    "Title": "Mis Especialidades",
+    "AI": {
+      "Title": "Desarrollo con IA",
+      "Desc": "Uso de <b>Spec-Driven Development</b> con ayuda de <b>agentes de IA</b> para un desarrollo de alta velocidad, siempre bajo mi supervisión experta."
+    },
+    "Backend": {
+      "Title": "Back-end - Java",
+      "Desc": "Experiencia trabajando con <b>sistemas monolíticos complejos</b> y grandes <b>jerarquías de herencia</b>, donde un amplio conocimiento de <b>Java</b> es necesario."
+    },
+    "Frontend": {
+      "Title": "Front-end",
+      "Desc": "Entusiasta del desarrollo Web con sólidos fundamentos de <b>HTML, CSS y Javascript</b>. Utilizo <b>Angular (v12 - v20)</b> como framework principal."
+    },
+    "Mobility": {
+      "Title": "Movilidad y Escritorio",
+      "Desc": "Desarrollo de aplicaciones multiplataforma con <b>Capacitor</b> para Android/iOS, y con <b>Electron</b> para escritorio (Windows, macOS, Linux)."
+    },
+    "Security": {
+      "Title": "Ciberseguridad",
+      "Desc": "Implementación de Autenticación y Autorización segura utilizando estándares como <b>OAuth2</b> y <b>JWT</b> (JSON Web Tokens)."
+    }
   },
   "Skills": {
     "Title": "Pilares de Conocimiento",
@@ -21,13 +45,15 @@
     "BackEnd": "Back-End",
     "FrontEnd": "Front-End",
     "VR3D": "VR & 3D",
-    "BBDD": "BBDD"
+    "BBDD": "SGBD",
+    "Mobility": "Movilidad",
+    "AIAgents": "Agentes de IA que utilizo"
   },
   "Tools": {
     "Title": "Tecnologías y Herramientas"
   },
   "Experience": {
-    "Title": "Experiencia Profesional",
+    "Title": "Proyectos y Experiencia",
     "Seidor": {
       "Company": "SEIDOR (EJIE - Administración Vasca)",
       "Role": "Equipo de Pasarela de Pagos",

@@ -9,11 +9,35 @@
     "ConnectionErro": "A connection problem occurred",
     "successful": "Operation successful!",
     "ok": "Ok",
-    "exit": "Exit"
+    "exit": "Exit",
+    "stack": "Stack"
   },
   "Header": {
     "Name": "David Ramos",
     "Role": "Software Engineer"
+  },
+  "Strengths": {
+    "Title": "My Expertises",
+    "AI": {
+      "Title": "AI Development",
+      "Desc": "Leveraging <b>Spec-Driven Development</b> with AI agents for high-velocity delivery under expert architectural supervision."
+    },
+    "Backend": {
+      "Title": "Back-end - Java",
+      "Desc": "Experience with <b>complex monolithic systems</b> and deep <b>inheritance hierarchies</b>, where mastery of <b>Java</b> is essential."
+    },
+    "Frontend": {
+      "Title": "Front-end",
+      "Desc": "Web development enthusiast with solid foundations in <b>HTML, CSS, and Javascript</b>. Using <b>Angular (v12 - v20)</b> as core framework."
+    },
+    "Mobility": {
+      "Title": "Mobility & Desktop",
+      "Desc": "Developing cross-platform apps with <b>Capacitor</b> (Android/iOS) and <b>Electron</b> (Windows, macOS, Linux)."
+    },
+    "Security": {
+      "Title": "Cybersecurity",
+      "Desc": "Implementing secure Authentication and Authorization using <b>OAuth2</b> and <b>JWT</b> (JSON Web Tokens)."
+    }
   },
   "Skills": {
     "Title": "Knowledge Pillars",
@@ -21,13 +45,15 @@
     "BackEnd": "Back-End",
     "FrontEnd": "Front-End",
     "VR3D": "VR & 3D",
-    "BBDD": "BBDD"
+    "BBDD": "DBMS",
+    "Mobility": "Mobility",
+    "AIAgents": "AI Agents I use"
   },
   "Tools": {
     "Title": "Technologies & Tools"
   },
   "Experience": {
-    "Title": "Professional Experience",
+    "Title": "Projects and Experience",
     "Seidor": {
       "Company": "SEIDOR (EJIE - Basque Administration)",
       "Role": "Payment Gateway Team",

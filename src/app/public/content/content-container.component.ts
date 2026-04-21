@@ -4,6 +4,7 @@ import { WheelchairComponent } from '../../@shared/threeJS/wheelchair/wheelchair
 import { TranslatePipe } from '@ngx-translate/core';
 import { SkillsComponent } from './skills/skills.component';
 import { ToolsComponent } from './tools/tools.component';
+import { StrengthsComponent } from './strengths/strengths.component';
 
 @Component({
   selector: 'app-content-container',
@@ -15,6 +16,7 @@ import { ToolsComponent } from './tools/tools.component';
     ToolsComponent,
     ExperienceComponent,
     WheelchairComponent,
+    StrengthsComponent,
     TranslatePipe,
   ],
 })

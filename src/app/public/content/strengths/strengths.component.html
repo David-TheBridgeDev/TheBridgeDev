@@ -1,0 +1,20 @@
+<div class="expertise-container">
+  <div class="expertise-grid">
+    @for (item of strengths; track item.id) {
+    <div class="expertise-card">
+      <div class="card-header">
+        <span class="terminal-tag">{{ item.tag }} ></span>
+        <mat-icon class="expertise-icon">{{ item.icon }}</mat-icon>
+      </div>
+      <div class="card-body">
+        <h3>{{ "Strengths." + item.id + ".Title" | translate }}</h3>
+        <p [innerHTML]="'Strengths.' + item.id + '.Desc' | translate"></p>
+      </div>
+      <div class="card-footer">
+        <div class="status-indicator"></div>
+        <span class="status-text">SYSTEM_READY</span>
+      </div>
+    </div>
+    }
+  </div>
+</div>
