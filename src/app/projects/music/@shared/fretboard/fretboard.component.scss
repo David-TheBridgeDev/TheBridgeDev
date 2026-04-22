@@ -4,11 +4,50 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  border-radius: 4px 4px 4px 4px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  width: 100%;
 
+  // Altura base del mástil (210px) multiplicada por el zoom aproximado para reservar espacio
+  height: 250px;
   margin-top: 2rem;
   padding: 0;
+  overflow: visible;
+
+  // Ajustes de altura para reservar el espacio correcto según el zoom en móviles
+  @media all and (max-width: 1100px) { height: 230px; }
+  @media all and (max-width: 900px) { height: 200px; }
+  @media all and (max-width: 700px) { height: 160px; }
+  @media all and (max-width: 500px) { height: 130px; }
+  @media all and (max-width: 400px) { height: 110px; }
+}
+
+.fretboard-scaler {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 880px; // Ancho original total aproximado para que el zoom trabaje sobre base fija
+
+  // Aplicación del zoom sobre el escalador para que no se vea afectado
+  // por las restricciones de ancho del contenedor padre (flex, padding, etc).
+  @media all and (max-width: 1100px) { zoom: 0.95; }
+  @media all and (max-width: 1000px) { zoom: 0.85; }
+  @media all and (max-width: 900px) { zoom: 0.75; }
+  @media all and (max-width: 800px) { zoom: 0.65; }
+  @media all and (max-width: 700px) { zoom: 0.55; }
+  @media all and (max-width: 600px) { zoom: 0.5; }
+  @media all and (max-width: 500px) { zoom: 0.45; }
+  @media all and (max-width: 400px) { zoom: 0.4; }
+}
+
+.fretboard {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-direction: row;
+  position: relative;
+  height: 210px; // Altura fija para 6 cuerdas x 35px
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 
   // Fondo de madera continua (Ebony/Rosewood)
   background: #2c1b18;
@@ -21,25 +60,6 @@
       #2d1a14 100px
     );
   border: 2px solid #1a100d;
-  overflow: visible;
-}
-
-@media all and (max-width: 760px) {
-  :host {
-    margin-top: 1rem;
-    overflow-x: auto;
-    width: 95vw;
-    justify-content: flex-start;
-  }
-}
-
-.fretboard {
-  display: flex;
-  justify-content: flex-start;
-  align-items: stretch;
-  flex-direction: row;
-  position: relative;
-  height: 210px; // Altura fija para 6 cuerdas x 35px
 
   // Dibujamos las 6 cuerdas con paradas de transparencia rígidas para evitar que se difuminen
   &::before {
