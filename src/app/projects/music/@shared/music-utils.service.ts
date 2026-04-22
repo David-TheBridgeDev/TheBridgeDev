@@ -13,7 +13,7 @@ export class MusicUtilsService {
 
     let result = matrix.map((_, i) => matrix[(i + shift) % len]);
 
-    // anade el traste 12
+    // Add the 12th fret
     result.push(result[0]);
 
     return result;

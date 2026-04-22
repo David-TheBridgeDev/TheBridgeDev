@@ -1,64 +1,74 @@
 $common-width: 90%;
+$accent-color: #efbc21; // Usando el color principal del proyecto
 
 :host {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
+  padding: 0;
+  width: 100%;
+  min-height: 85vh;
 
   overflow: hidden;
-
-  width: 100%;
-  height: 100%;
-
-  height: 85vh;
 }
 
 .keyNotesContainer {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   flex-direction: row;
-  gap: 1rem;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  flex-wrap: wrap;
+  gap: 0.55rem;
 
   .keyNoteContainer {
-    .keyNote {
-      text-align: center;
-      font-family: Arial, serif;
-      font-size: 1.5rem !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 45px;
 
+    .keyNote {
+      width: 44px;
+      height: 42px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 700;
+      font-size: 1.1rem !important;
       margin: 0;
       padding: 0;
+      border-radius: 12px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      color: white; // Texto blanco para mejor contraste sobre fondo de color
     }
 
     .grade {
       text-align: center;
-      margin: 0;
+      margin-top: 6px;
       padding: 0;
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: #555;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     .major {
-      background-color: #44beff;
-      border-radius: 3px;
+      background: linear-gradient(135deg, #44beff, #2980b9);
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
     .minor {
-      background-color: lightgray;
-      border-radius: 3px;
+      background: linear-gradient(135deg, #95a5a6, #7f8c8d);
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
     .diminished {
-      background-color: #ff9595;
-      border-radius: 3px;
+      background: linear-gradient(135deg, #ff9595, #e74c3c);
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
-  }
-}
-
-@media (max-width: 500px) {
-  .keyNotesContainer {
-    gap: 0.5rem;
   }
 }
 
@@ -67,48 +77,77 @@ $common-width: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0.2rem 0;
 
-  background-color: #ececec;
-  width: $common-width;
-  height: $common-width;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(15px);
+  width: 370px;
+  height: 370px;
+  max-width: 90vw;
+  max-height: 90vw;
 
-  border-radius: 1rem;
+  border-radius: 50%;
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.25),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.5);
 
   h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 6rem;
+    font-size: 8rem;
     position: absolute;
-    font-family: Arial, serif;
+    margin: 0;
+    // Usando la fuente artística Birthstone
+    font-family: "Birthstone", cursive;
+    color: #2c3e50;
+    z-index: 10;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
   }
 
-  @media (max-width: 500px) {
-    h1 {
-      font-size: 4rem;
-    }
-  }
-
-  .circle {
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-
+  .circle,
   .outside {
     display: block;
     position: absolute;
+    // Unificamos tamaño al 100% para que compartan el mismo centro exacto
     width: 100%;
     height: 100%;
+    padding: 15px; // Espacio interno para que respire dentro del contenedor
+    box-sizing: border-box;
     object-fit: contain;
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    pointer-events: none; // Evitamos que interfieran con la interacción
+  }
+
+  .circle {
+    z-index: 1;
+    // La imagen base se queda quieta
+  }
+
+  .outside {
+    z-index: 2;
+    // Esta es la que rota según el 'deg' del componente
   }
 }
 
 mat-slider {
-  height: 72px;
-  width: 80%;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  width: 300px;
+  max-width: 80%;
+  margin: 0.2rem 0;
+
+  // Customizing Material Slider (standard way for modern versions)
+  --mdc-slider-active-track-color: #efbc21;
+  --mdc-slider-handle-color: #efbc21;
+  --mdc-slider-hover-handle-color: #efbc21;
+  --mdc-slider-focus-handle-color: #efbc21;
+}
+
+@media (max-width: 500px) {
+  .circle-of-fifths-container h1 {
+    font-size: 5rem;
+  }
+  .keyNotesContainer {
+    gap: 0.4rem;
+    padding: 0.5rem;
+  }
 }

@@ -4,44 +4,120 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  border: 1px solid rgba(185, 47, 47, 0);
-  border-radius: 1rem;
-  box-shadow:
-    rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
-    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  border-radius: 4px 4px 4px 4px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 
-  margin-top: 1rem;
-  padding-bottom: 1rem;
-  background-color: #ffffff;
+  margin-top: 2rem;
+  padding: 0;
+
+  // Fondo de madera continua (Ebony/Rosewood)
+  background: #2c1b18;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1) 50%, transparent 50%),
+    repeating-linear-gradient(
+      90deg,
+      #3d231a 0px,
+      #3d231a 1px,
+      #2d1a14 2px,
+      #2d1a14 100px
+    );
+  border: 2px solid #1a100d;
+  overflow: visible;
 }
 
 @media all and (max-width: 760px) {
   :host {
-    margin-top: 0;
+    margin-top: 1rem;
+    overflow-x: auto;
+    width: 95vw;
+    justify-content: flex-start;
   }
 }
 
 .fretboard {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: stretch;
   flex-direction: row;
-  margin-bottom: 8px;
-  transform: translate(-18px, 0);
+  position: relative;
+  height: 210px; // Altura fija para 6 cuerdas x 35px
+
+  // Dibujamos las 6 cuerdas con paradas de transparencia rígidas para evitar que se difuminen
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 5;
+    background-image: linear-gradient(
+      to bottom,
+      transparent 16px,
+      rgba(255, 255, 255, 0.4) 17px,
+      rgba(160, 160, 160, 0.9) 17.5px,
+      rgba(0, 0, 0, 0.5) 18.5px,
+      transparent 20px,
+      transparent 51px,
+      rgba(255, 255, 255, 0.4) 52px,
+      rgba(160, 160, 160, 0.9) 52.5px,
+      rgba(0, 0, 0, 0.5) 53.5px,
+      transparent 55px,
+      transparent 86px,
+      rgba(255, 255, 255, 0.4) 87px,
+      rgba(160, 160, 160, 0.9) 87.5px,
+      rgba(0, 0, 0, 0.5) 88.5px,
+      transparent 90px,
+      transparent 121px,
+      rgba(255, 255, 255, 0.4) 122px,
+      rgba(170, 170, 170, 0.9) 122.5px,
+      rgba(0, 0, 0, 0.5) 123.5px,
+      transparent 125px,
+      transparent 156px,
+      rgba(255, 255, 255, 0.4) 157px,
+      rgba(180, 180, 180, 0.9) 157.5px,
+      rgba(0, 0, 0, 0.5) 158.5px,
+      transparent 160px,
+      transparent 191px,
+      rgba(255, 255, 255, 0.4) 192px,
+      rgba(190, 190, 190, 0.9) 192.5px,
+      rgba(0, 0, 0, 0.5) 193.5px,
+      transparent 195px
+    );
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
 }
 
 .fret {
   display: flex;
   flex-direction: column-reverse;
+  position: relative;
+  width: 70px; // Ancho del traste
+
+  // Alambre del traste (Metal wire)
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to right, #777, #eee, #999, #555);
+    z-index: 4;
+    box-shadow: 1px 0 3px rgba(0, 0, 0, 0.8);
+  }
 }
 
-// Cuerdas al aire
+// Cejuela (Nut) - Solo para el primer traste (notas al aire)
 .fret:first-child {
-  .box {
-    border: 1px solid transparent;
-    .note {
-      transform: translate(70%, 50%);
-    }
+  width: 40px;
+  background-color: #1a1a1a;
+  &::after {
+    width: 10px;
+    background: #fdfdfd; // Color hueso/plástico
+    border-radius: 2px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
   }
 }
 
@@ -49,14 +125,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50px;
-  height: 30px;
-  border: 1px solid #000000;
+  width: 100%;
+  height: 35px; // Espacio entre cuerdas
   position: relative;
-}
-
-.box:last-child {
-  border-width: 0;
+  border: none; // Eliminamos el borde de tabla
 }
 
 .note {
@@ -67,36 +139,57 @@
   justify-content: center;
   align-items: center;
   font-weight: bold;
-  font-family: Arial, Helvetica, sans-serif;
-  transform: translate(0, 54%);
+  font-size: 0.85rem;
+  font-family: "IBM Plex Mono", monospace;
 
-  border-radius: 40px;
-  z-index: 10;
-  color: #000000;
+  // Centrado absoluto sobre la cuerda y en medio de los trastes
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+  z-index: 10; // Encima de las cuerdas
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  transition: transform 0.1s ease;
+
+  &:hover {
+    transform: translate(-50%, -50%) scale(1.15);
+  }
 }
 
 .dot {
   position: absolute;
-  width: 16px;
-  height: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  transform: translate(100%, -440%);
-
-  border-radius: 40px;
-
-  background-color: #000000;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8); // Inlay sutil en la madera
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  font-size: 0;
 }
 
+// Ajuste para el punto doble del traste 12
 .doble {
-  height: 40px !important;
-  transform: translate(100%, -147%) !important;
-}
-
-.void {
-  background-color: transparent !important;
-  color: black;
-  font-size: 20px;
+  background: transparent;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.8);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &::before {
+    top: -40px;
+  }
+  &::after {
+    bottom: -40px;
+  }
 }
