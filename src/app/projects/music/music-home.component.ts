@@ -4,6 +4,7 @@ import { MatTab, MatTabGroup } from '@angular/material/tabs';
 import { FretboardViewerComponent } from './fretboard/fretboard-viewer/fretboard-viewer.component';
 import { ChordScaleViewerComponent } from './chord-scale-viwer/chord-scale-viewer/chord-scale-viewer.component';
 import { ActivatedRoute, Router } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-music-home',
@@ -14,6 +15,7 @@ import { ActivatedRoute, Router } from '@angular/router';
     MatTab,
     FretboardViewerComponent,
     ChordScaleViewerComponent,
+    TranslateModule
   ],
   templateUrl: './music-home.component.html',
   styleUrl: './music-home.component.scss',
@@ -44,5 +46,9 @@ export class MusicHomeComponent implements OnInit {
       fragment: this.tabHashes[index],
       replaceUrl: true
     });
+  }
+
+  goHome() {
+    this.router.navigate(['/']);
   }
 }

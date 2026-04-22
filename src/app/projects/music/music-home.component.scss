@@ -16,18 +16,21 @@
   border-radius: 4px;
   overflow: hidden;
   position: relative;
-  
+
   &::before {
-    content: '';
+    content: "";
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     pointer-events: none;
     background: repeating-linear-gradient(
       0deg,
       transparent,
       transparent 2px,
-      rgba(0,0,0,0.03) 2px,
-      rgba(0,0,0,0.03) 4px
+      rgba(0, 0, 0, 0.03) 2px,
+      rgba(0, 0, 0, 0.03) 4px
     );
     z-index: 100;
   }
@@ -39,7 +42,9 @@
   border-bottom: 4px solid vars.$black;
   display: flex;
   align-items: center;
-  
+
+  cursor: pointer;
+
   .retro-title {
     color: vars.$main-color;
     font-family: vars.$font-family-mono;
@@ -48,7 +53,7 @@
     font-weight: bold;
     letter-spacing: 2px;
     display: inline-block;
-    
+
     &::after {
       content: "_";
       animation: blink 1.2s infinite step-end;
@@ -57,8 +62,13 @@
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 ::ng-deep {
@@ -101,7 +111,7 @@
       font-size: 0.85rem;
       font-family: vars.$font-family-mono;
     }
-    
+
     &:hover {
       background-color: #ddd;
     }
