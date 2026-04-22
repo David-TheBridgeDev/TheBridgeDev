@@ -1,4 +1,18 @@
-<div class="chords">
+<div class="chordsBtn">
+  @for (scaleName of scaleBtn; track scaleName){
+  <button
+    mat-button
+    color="primary"
+    matTooltip="{{ !!scaleName.description ? scaleName.description : scaleName.name }}"
+    (click)="selectScale(scaleName.name)"
+    [class.active]="scaleSelected === scaleName.name"
+  >
+    {{ scaleName.name }}
+  </button>
+  }
+</div>
+
+<div class="nav-controls">
   <button
     class="btn-previews-chord"
     mat-fab
@@ -17,18 +31,8 @@
   >
     <mat-icon>keyboard_arrow_right</mat-icon>
   </button>
-  <app-fretboard [scale]="scale"></app-fretboard>
 </div>
 
-<div class="chordsBtn">
-  @for (scaleName of scaleBtn; track scaleName){
-  <button
-    mat-button
-    color="primary"
-    matTooltip="{{ scaleName }}"
-    (click)="selectScale(scaleName.name)"
-  >
-    {{ scaleName.name }}
-  </button>
-  }
+<div class="fretboard-container">
+  <app-fretboard [scale]="scale"></app-fretboard>
 </div>
