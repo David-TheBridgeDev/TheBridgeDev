@@ -1,38 +1,35 @@
 :host {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  overflow: hidden;
-  gap: 1rem;
+  padding: 1rem;
+  gap: 2rem;
+  min-height: 80vh;
 }
 
 .chords {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   flex-direction: row;
   width: 100%;
+  gap: 1.5rem;
 }
 
-.btn-previews-chord {
-  width: 45px;
-  height: 45px;
-  z-index: 1;
-}
+.btn-previews-chord,
 .btn-next-chord {
-  width: 45px;
-  height: 45px;
-  z-index: 1;
-}
+  width: 50px;
+  height: 50px;
+  background-color: white !important;
+  color: #333 !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
 
-@media all and (max-width: 760px) {
-  .chords {
-    flex-direction: column;
-  }
-  .btn-previews-chord {
-  }
-  .btn-next-chord {
+  mat-icon {
+    font-size: 2rem;
+    width: 32px;
+    height: 32px;
   }
 }
 
@@ -42,5 +39,53 @@
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 12px;
+  padding: 0.5rem;
+  max-width: 900px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  button {
+    height: 40px;
+    padding: 0 20px;
+    border-radius: 20px;
+    background: white;
+    color: #555;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+
+    &:hover {
+      background: #efbc21;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(239, 188, 33, 0.3);
+      border-color: transparent;
+    }
+
+    &.active {
+      background: #efbc21;
+      color: white;
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+@media all and (max-width: 760px) {
+  .chords {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .chordsBtn {
+    padding: 1rem;
+    gap: 8px;
+    border-radius: 1rem;
+  }
 }

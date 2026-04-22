@@ -25,34 +25,36 @@ $accent-color: #efbc21; // Usando el color principal del proyecto
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 45px;
+    min-width: 0; // Eliminamos el min-width para que se pegue al texto
 
     .keyNote {
-      width: 44px;
-      height: 42px;
+      width: auto; // Ancho automático
+      height: auto; // Altura automática
+      min-width: 0;
+      padding: 2px 6px; // Padding mínimo para "pegarse" al texto
       display: flex;
       justify-content: center;
       align-items: center;
       font-family: "IBM Plex Mono", monospace;
       font-weight: 700;
-      font-size: 1.1rem !important;
+      font-size: 1.1rem !important; // Reducimos un poco para que sea más compacto
       margin: 0;
-      padding: 0;
-      border-radius: 12px;
+      border-radius: 4px; // Radio más pequeño para contenedores ceñidos
       transition: all 0.2s ease;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      color: white; // Texto blanco para mejor contraste sobre fondo de color
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      color: white;
+      white-space: nowrap;
     }
 
     .grade {
       text-align: center;
-      margin-top: 6px;
+      margin-top: 2px;
       padding: 0;
-      font-size: 0.7rem;
+      font-size: 0.65rem;
       font-weight: 800;
       color: #555;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
     }
 
     .major {
