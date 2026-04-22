@@ -110,7 +110,6 @@
   overflow-x: auto;
   padding: 1rem 0;
 
-  /* Give it a slight border to fit the theme */
   border: 3px solid vars.$black;
   background: vars.$white;
   border-radius: 4px;
@@ -118,7 +117,7 @@
 
 @media all and (max-width: 760px) {
   :host {
-    padding: 1rem;
+    padding: 0.5rem;
     gap: 1.5rem;
   }
 
@@ -147,6 +146,47 @@
       width: 29px;
       height: 29px;
       line-height: 29px;
+    }
+  }
+}
+
+@media all and (max-width: 480px) {
+  :host {
+    padding: 0.25rem;
+    gap: 1rem;
+  }
+
+  .chordsBtn {
+    padding: 6px;
+    gap: 4px;
+    border-width: 2px;
+    box-shadow: 4px 4px 0px vars.$black;
+
+    button {
+      height: 28px;
+      padding: 0 8px;
+      font-size: 0.65rem;
+      border-width: 1px;
+      letter-spacing: 0;
+    }
+  }
+
+  .nav-controls {
+    gap: 0.5rem;
+  }
+
+  .btn-previews-chord,
+  .btn-next-chord {
+    width: 38px;
+    height: 38px;
+    border-width: 2px !important;
+    box-shadow: 2px 2px 0px vars.$black !important;
+
+    mat-icon {
+      font-size: 1.5rem;
+      width: 24px;
+      height: 24px;
+      line-height: 24px;
     }
   }
 }

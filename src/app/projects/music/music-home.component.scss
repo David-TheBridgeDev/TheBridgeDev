@@ -117,4 +117,39 @@
     border-radius: 0;
     margin-top: auto;
   }
+
+  /* Responsive fixes for compact mobile displays */
+  @media all and (max-width: 600px) {
+    .mat-mdc-tab-header {
+      margin: 1rem auto 1rem !important;
+      border-width: 2px !important;
+      box-shadow: 2px 2px 0px vars.$black;
+    }
+    .mat-mdc-tab {
+      height: 40px !important;
+      padding: 0 12px !important;
+      min-width: 80px !important;
+      .mdc-tab__text-label {
+        font-size: 0.7rem;
+        letter-spacing: 0;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 600px) {
+  :host {
+    padding: 0.5rem;
+  }
+  .retro-container {
+    border-width: 2px;
+    box-shadow: 4px 4px 0px vars.$black;
+  }
+  .retro-header {
+    border-bottom-width: 2px;
+    padding: 0.4rem 0.8rem;
+    .retro-title {
+      font-size: 0.9rem;
+    }
+  }
 }
