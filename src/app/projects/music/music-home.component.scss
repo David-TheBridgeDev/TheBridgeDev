@@ -65,6 +65,13 @@
   .mat-mdc-tab-group {
     background: transparent;
     padding-bottom: 2rem;
+    // Eliminar rastro azul de Material (MDC)
+    --mdc-tab-indicator-active-indicator-color: #{vars.$black};
+    --mat-tab-header-active-label-text-color: #{vars.$black};
+    --mat-tab-header-active-ripple-color: #{vars.$main-color};
+    --mat-tab-header-inactive-label-text-color: #{vars.$text-color};
+    --mat-tab-header-active-focus-label-text-color: #{vars.$black};
+    --mat-tab-header-active-hover-label-text-color: #{vars.$black};
   }
 
   .mat-mdc-tab-header {
