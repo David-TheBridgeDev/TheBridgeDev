@@ -2,7 +2,7 @@
   <div class="retro-header">
     <h1 class="retro-title">>_ MUSIC_SYSTEM_V1.0</h1>
   </div>
-  <mat-tab-group animationDuration="0ms">
+  <mat-tab-group animationDuration="0ms" [selectedIndex]="selectedIndex" (selectedIndexChange)="onTabChange($event)">
     <mat-tab label="> Circle Fifths">
       <app-circle-of-fifths></app-circle-of-fifths>
     </mat-tab>
