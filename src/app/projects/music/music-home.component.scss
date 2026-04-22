@@ -1,24 +1,80 @@
+@use "../../../styles/variables" as vars;
+
 :host {
   display: block;
   min-height: 100vh;
-  background-color: #f8f9fa;
-  //padding-top: 5px;
+  background-color: vars.$bg-color;
+  padding: 1.5rem;
+}
+
+.retro-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  border: 4px solid vars.$black;
+  background-color: vars.$white;
+  box-shadow: 8px 8px 0px vars.$black;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.03) 2px,
+      rgba(0,0,0,0.03) 4px
+    );
+    z-index: 100;
+  }
+}
+
+.retro-header {
+  background-color: vars.$black;
+  padding: 0.5rem 1rem;
+  border-bottom: 4px solid vars.$black;
+  display: flex;
+  align-items: center;
+  
+  .retro-title {
+    color: vars.$main-color;
+    font-family: vars.$font-family-mono;
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    display: inline-block;
+    
+    &::after {
+      content: "_";
+      animation: blink 1.2s infinite step-end;
+    }
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 ::ng-deep {
   .mat-mdc-tab-group {
     background: transparent;
+    padding-bottom: 2rem;
   }
 
   .mat-mdc-tab-header {
-    //margin: 0 auto 5px !important;
-    margin: 0 auto 0 !important;
-    max-width: 500px;
-    background: white;
-    border-radius: 50px;
-    padding: 4px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+    margin: 2rem auto 2rem !important;
+    max-width: 650px;
+    background: vars.$bg-color;
+    border: 3px solid vars.$black !important;
+    border-radius: 4px;
+    padding: 0;
+    box-shadow: 4px 4px 0px vars.$black;
   }
 
   .mat-mdc-tab-labels {
@@ -27,27 +83,38 @@
 
   .mat-mdc-tab {
     height: 48px !important;
-    border-radius: 40px;
-    transition: all 0.3s ease;
+    border-radius: 0;
+    transition: all 0.2s ease;
 
     .mdc-tab__text-label {
-      color: #777 !important;
-      font-weight: 600;
-      letter-spacing: 0.5px;
+      color: vars.$text-color !important;
+      font-weight: 700;
+      letter-spacing: 1px;
       text-transform: uppercase;
-      font-size: 0.75rem;
+      font-size: 0.85rem;
+      font-family: vars.$font-family-mono;
+    }
+    
+    &:hover {
+      background-color: #ddd;
     }
   }
 
   .mat-mdc-tab-active {
+    background-color: vars.$main-color;
     .mdc-tab__text-label {
-      color: #333 !important;
+      color: vars.$black !important;
+    }
+    &:hover {
+      background-color: vars.$main-color;
     }
   }
 
   .mat-mdc-tab-indicator__inner {
-    border-color: #efbc21 !important;
-    border-top-width: 3px !important;
-    border-radius: 3px 3px 0 0;
+    border-color: vars.$black !important;
+    border-top-width: 0 !important;
+    border-bottom: 4px solid vars.$black !important;
+    border-radius: 0;
+    margin-top: auto;
   }
 }

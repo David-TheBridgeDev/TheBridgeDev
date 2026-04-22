@@ -1,9 +1,11 @@
+@use "../../../../../styles/variables" as vars;
+
 :host {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  padding: 1.5rem;
+  padding: 0.5rem;
   gap: 2rem;
   min-height: 80vh;
 }
@@ -14,42 +16,48 @@
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 10px;
-  padding: 12px;
+  gap: 12px;
+  padding: 16px;
   max-width: 900px;
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(10px);
-  border-radius: 50px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(0, 0, 0, 0.03);
+  background: vars.$white;
+  border-radius: 4px;
+  box-shadow: 6px 6px 0px vars.$black;
+  border: 3px solid vars.$black;
 
   button {
-    height: 38px;
-    padding: 0 18px;
-    border-radius: 40px;
-    background: white;
-    color: #666;
-    font-family: "IBM Plex Mono", monospace;
-    font-weight: 600;
-    font-size: 0.8rem;
-    letter-spacing: 0.3px;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    height: 40px;
+    padding: 0 20px;
+    border-radius: 0;
+    background: vars.$white;
+    color: vars.$black;
+    font-family: vars.$font-family-mono;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    border: 2px solid vars.$black;
+    transition: all 0.15s ease-in-out;
+    box-shadow: 2px 2px 0px vars.$black;
+    text-transform: uppercase;
 
     &:hover {
-      background: #efbc21;
-      color: white;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 15px rgba(239, 188, 33, 0.3);
-      border-color: transparent;
+      background: #ccc;
+      transform: translate(-1px, -1px);
+      box-shadow: 3px 3px 0px vars.$black;
+    }
+
+    &:active {
+      transform: translate(2px, 2px);
+      box-shadow: 0px 0px 0px vars.$black;
     }
 
     &.active {
-      background: #efbc21;
-      color: white;
-      border-color: transparent;
-      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(239, 188, 33, 0.2);
+      background: vars.$main-color;
+      color: vars.$black;
+      box-shadow: 2px 2px 0px vars.$black;
+
+      &:active {
+        box-shadow: 0px 0px 0px vars.$black;
+      }
     }
   }
 }
@@ -58,30 +66,40 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1.5rem;
-  margin-top: -0.5rem;
+  gap: 2rem;
+  margin-top: 1rem;
 }
 
 .btn-previews-chord,
 .btn-next-chord {
-  width: 48px;
-  height: 48px;
-  background-color: white !important;
-  color: #333 !important;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08) !important;
-  border: 1px solid rgba(0, 0, 0, 0.04) !important;
-  transition: all 0.2s ease !important;
+  width: 54px;
+  height: 54px;
+  background-color: vars.$white !important;
+  color: vars.$black !important;
+  box-shadow: 4px 4px 0px vars.$black !important;
+  border: 3px solid vars.$black !important;
+  border-radius: 4px !important;
+  transition: all 0.15s ease !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12) !important;
+    background-color: vars.$main-color !important;
+    transform: translate(-2px, -2px) !important;
+    box-shadow: 6px 6px 0px vars.$black !important;
+  }
+
+  &:active {
+    transform: translate(2px, 2px) !important;
+    box-shadow: 0px 0px 0px vars.$black !important;
   }
 
   mat-icon {
-    font-size: 2rem;
-    width: 32px;
-    height: 32px;
-    line-height: 32px;
+    font-size: 2.2rem;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
   }
 }
 
@@ -90,7 +108,12 @@
   display: flex;
   justify-content: center;
   overflow-x: auto;
-  padding: 0.5rem 0;
+  padding: 1rem 0;
+
+  /* Give it a slight border to fit the theme */
+  border: 3px solid vars.$black;
+  background: vars.$white;
+  border-radius: 4px;
 }
 
 @media all and (max-width: 760px) {
@@ -100,14 +123,13 @@
   }
 
   .chordsBtn {
-    padding: 8px;
-    gap: 6px;
-    border-radius: 20px;
-    
+    padding: 12px;
+    gap: 8px;
+
     button {
-      height: 32px;
-      padding: 0 12px;
-      font-size: 0.75rem;
+      height: 36px;
+      padding: 0 14px;
+      font-size: 0.8rem;
     }
   }
 
@@ -117,14 +139,14 @@
 
   .btn-previews-chord,
   .btn-next-chord {
-    width: 42px;
-    height: 42px;
-    
+    width: 46px;
+    height: 46px;
+
     mat-icon {
-      font-size: 1.75rem;
-      width: 28px;
-      height: 28px;
-      line-height: 28px;
+      font-size: 1.8rem;
+      width: 29px;
+      height: 29px;
+      line-height: 29px;
     }
   }
 }

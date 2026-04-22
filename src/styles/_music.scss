@@ -1,55 +1,54 @@
-$common-color: #bdc3c7;
+@use "./variables" as vars;
+
+$common-color: #f8f9fa; /* slightly off white */
 
 .tonica {
-  background-color: #2980b9;
-  color: white !important;
-  border: 2px solid #1a5276;
+  background-color: #4cc9f0 !important; /* bright blue */
+  color: vars.$black !important;
+  border-color: vars.$black !important;
 }
 
 .supertonica {
-  background-color: $common-color;
-  color: #2c3e50 !important;
+  background-color: $common-color !important;
+  color: vars.$black !important;
 }
 
 .mediante {
-  background-color: #f1c40f;
-  color: #2c3e50 !important;
-  border: 1px solid #d4ac0d;
+  background-color: vars.$main-color !important; /* bright yellow/amber */
+  color: vars.$black !important;
 }
 
 .subdominante {
-  background-color: $common-color;
-  color: #2c3e50 !important;
+  background-color: $common-color !important;
+  color: vars.$black !important;
 }
 
 .dominante {
-  background-color: #27ae60;
-  color: white !important;
-  border: 1px solid #1e8449;
+  background-color: #06d6a0 !important; /* bright green */
+  color: vars.$black !important;
 }
 
 .superdominante {
-  background-color: #7f8c8d;
-  color: white !important;
+  background-color: $common-color !important;
+  color: vars.$black !important;
 }
 
 .sensible {
-  background-color: #8e44ad;
-  color: white !important;
-  border: 1px solid #703688;
+  background-color: #f72585 !important; /* hot pink */
+  color: vars.$white !important;
 }
 
 .novena {
-  background-color: #e67e22;
-  color: white !important;
+  background-color: #ff9f1c !important; /* orange */
+  color: vars.$black !important;
 }
 
 .once {
-  background-color: #d35400;
-  color: white !important;
+  background-color: #ffbf69 !important; /* light orange */
+  color: vars.$black !important;
 }
 
 .trece {
-  background-color: #c0392b;
-  color: white !important;
+  background-color: #ef476f !important; /* coral/red */
+  color: vars.$white !important;
 }
