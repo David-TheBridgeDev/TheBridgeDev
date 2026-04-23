@@ -1,5 +1,9 @@
 @use 'variables' as vars;
 
+html {
+  scroll-padding-top: 40px; // Height of the fixed Retro OS Window Bar
+}
+
 body {
   margin: 0;
   padding: 0;

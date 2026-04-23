@@ -1,6 +1,13 @@
 @use "../../../styles/variables" as vars;
 
 .window-title-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: vars.$main-width-desktop;
+  z-index: 1000;
   background: repeating-linear-gradient(
     45deg,
     #333,
@@ -17,6 +24,17 @@
   font-size: 0.75rem;
   border-bottom: 3px solid #333;
   border-top: 4px solid #333;
+  box-sizing: border-box;
+
+  @media all and (max-width: 1099px) {
+    width: vars.$main-width-mobile;
+  }
+  @media all and (min-width: 1100px) {
+    width: vars.$main-width-tablet;
+  }
+  @media all and (min-width: 1300px) {
+    width: vars.$main-width-desktop;
+  }
 
   .window-controls {
     display: flex;
