@@ -12,9 +12,9 @@ export class ThemeService {
   constructor(rendererFactory: RendererFactory2) {
     this.renderer = rendererFactory.createRenderer(null, null);
     const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     
-    const isDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
+    // Default to dark theme if no theme is saved
+    const isDark = savedTheme ? savedTheme === 'dark' : true;
     this.setDarkMode(isDark);
   }
 
