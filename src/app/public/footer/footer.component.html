@@ -49,22 +49,22 @@
         </div>
         <div class="card-body project-gallery">
           <div
-            [matTooltip]="'Projects.HomeAutomation' | translate"
-            class="project-tile"
-            style="
-              background-image: url(&quot;assets/images/png/others/domotic.png&quot;);
-            "
+            class="project-mini-card"
             [routerLink]="['/', AppRoutes.PROJECTS, AppRoutes.HOME_AUTOMATION]"
-          ></div>
+            [matTooltip]="'Projects.HomeAutomation' | translate"
+          >
+            <div class="mini-card-icon home-icon"></div>
+            <span class="mini-card-label">DOMOTIC.SYS</span>
+          </div>
 
           <div
-            [matTooltip]="'Projects.Music' | translate"
-            class="project-tile"
-            style="
-              background-image: url(&quot;assets/images/png/others/music.png&quot;);
-            "
+            class="project-mini-card"
             [routerLink]="['/', AppRoutes.PROJECTS, AppRoutes.MUSIC]"
-          ></div>
+            [matTooltip]="'Projects.Music' | translate"
+          >
+            <div class="mini-card-icon music-icon"></div>
+            <span class="mini-card-label">AUDIO.EXE</span>
+          </div>
         </div>
         <div class="card-footer-info">
           <span>{{ "Projects.Intro" | translate }}</span>

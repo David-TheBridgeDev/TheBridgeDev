@@ -1,5 +1,13 @@
 @use "../../../../styles/variables" as vars;
 
+:host {
+  display: block;
+  width: 100%;
+  padding-bottom: 20px; // Space for the bottom shadow
+  padding-right: 20px; // Space for the right shadow
+  box-sizing: border-box;
+}
+
 .threejs-window-wrapper {
   position: relative;
   width: 100%;
