@@ -4,14 +4,17 @@
   position: relative;
   margin: auto;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  overflow: hidden;
-  max-height: 10000px; // Large enough for full content
+}
 
-  &.minimized-content {
+.tabElement {
+  max-height: 10000px; // Sufficiently large
+  opacity: 1;
+  overflow: hidden;
+  transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease, margin 0.4s ease;
+
+  &.collapsed {
     max-height: 0;
     opacity: 0;
-    transform: scaleY(0);
-    transform-origin: top;
     pointer-events: none;
     margin-top: 0;
     margin-bottom: 0;
@@ -110,12 +113,35 @@
   display: flex !important;
   flex-direction: row !important;
   align-items: center;
-  justify-content: flex-start !important;
+  justify-content: space-between !important; // Align arrow to the right
   gap: 1.5rem;
   transition:
     transform 0.2s,
-    box-shadow 0.2s;
+    box-shadow 0.2s,
+    margin 0.3s ease;
   cursor: pointer;
+
+  &.collapsed {
+    margin: 1rem auto !important;
+    
+    .exp-arrow {
+      transform: rotate(0deg); // Point down when collapsed
+    }
+  }
+
+  .header-content-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .exp-arrow {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: rotate(180deg); // Default expanded
+    color: #888;
+    display: flex;
+    align-items: center;
+  }
 
   &:hover {
     transform: translate(-4px, -4px);
@@ -123,6 +149,10 @@
 
     .TagSelector {
       color: vars.$main-color !important;
+    }
+
+    .exp-arrow {
+      color: vars.$main-color;
     }
   }
 

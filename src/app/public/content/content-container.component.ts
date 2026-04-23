@@ -28,14 +28,39 @@ export class ContentContainerComponent implements OnInit, OnDestroy {
   isMinimized: boolean = false;
   private windowStateSubscription!: Subscription;
 
+  // Track individual section states
+  sections = {
+    strengths: true,
+    threejs: true,
+    skills: true,
+    tools: true,
+    experience: true,
+  };
+
   constructor(private windowStateService: WindowStateService) {}
 
   ngOnInit(): void {
     this.windowStateSubscription = this.windowStateService.isMinimized$.subscribe(
       (minimized) => {
         this.isMinimized = minimized;
+        // If global minimize is triggered, collapse all sections
+        if (minimized) {
+          this.setAllSections(false);
+        } else {
+          this.setAllSections(true);
+        }
       },
     );
+  }
+
+  toggleSection(section: keyof typeof this.sections): void {
+    this.sections[section] = !this.sections[section];
+  }
+
+  private setAllSections(value: boolean): void {
+    Object.keys(this.sections).forEach((key) => {
+      this.sections[key as keyof typeof this.sections] = value;
+    });
   }
 
   ngOnDestroy(): void {

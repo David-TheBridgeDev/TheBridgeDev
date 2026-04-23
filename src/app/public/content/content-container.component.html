@@ -7,51 +7,181 @@
   <div class="retro-line"></div>
 </div>
 
-<div class="tab_container" [class.minimized-content]="isMinimized">
+<div class="tab_container">
   <nav class="tabGrid">
-    <aside id="strengths" class="tab_header retro-section-header">
-      <span class="terminal-tag">SYSTEM ></span>
-      <span class="TagSelector">{{ "Strengths.Title" | translate }}</span>
+    <aside
+      id="strengths"
+      class="tab_header retro-section-header"
+      (click)="toggleSection('strengths')"
+      [class.collapsed]="!sections.strengths"
+    >
+      <div class="header-content-left">
+        <span class="terminal-tag">SYSTEM ></span>
+        <span class="TagSelector">{{ "Strengths.Title" | translate }}</span>
+      </div>
+      <div class="exp-arrow">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </div>
     </aside>
-    <div id="container_strengths" class="tabElement">
+    <div
+      id="container_strengths"
+      class="tabElement"
+      [class.collapsed]="!sections.strengths"
+    >
       <app-strengths></app-strengths>
     </div>
 
-    <aside id="threejs" class="tab_header retro-section-header">
-      <span class="terminal-tag">SYSTEM ></span>
-      <span class="TagSelector">{{ "Projects.3DViewer" | translate }}</span>
+    <aside
+      id="threejs"
+      class="tab_header retro-section-header"
+      (click)="toggleSection('threejs')"
+      [class.collapsed]="!sections.threejs"
+    >
+      <div class="header-content-left">
+        <span class="terminal-tag">SYSTEM ></span>
+        <span class="TagSelector">{{ "Projects.3DViewer" | translate }}</span>
+      </div>
+      <div class="exp-arrow">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </div>
     </aside>
-    <div id="container_threejs" class="tabElement">
+    <div
+      id="container_threejs"
+      class="tabElement"
+      [class.collapsed]="!sections.threejs"
+    >
       <app-wheelchair></app-wheelchair>
     </div>
 
-    <aside id="skills" class="tab_header retro-section-header">
-      <span class="terminal-tag">SECTION ></span>
-      <span class="TagSelector" tag="skills">{{
-        "Skills.Title" | translate
-      }}</span>
+    <aside
+      id="skills"
+      class="tab_header retro-section-header"
+      (click)="toggleSection('skills')"
+      [class.collapsed]="!sections.skills"
+    >
+      <div class="header-content-left">
+        <span class="terminal-tag">SECTION ></span>
+        <span class="TagSelector" tag="skills">{{
+          "Skills.Title" | translate
+        }}</span>
+      </div>
+      <div class="exp-arrow">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </div>
     </aside>
-    <div id="container_skills" class="tabElement">
+    <div
+      id="container_skills"
+      class="tabElement"
+      [class.collapsed]="!sections.skills"
+    >
       <app-skills></app-skills>
     </div>
 
-    <aside id="tools" class="tab_header retro-section-header">
-      <span class="terminal-tag">SECTION ></span>
-      <span class="TagSelector" tag="tools">{{
-        "Tools.Title" | translate
-      }}</span>
+    <aside
+      id="tools"
+      class="tab_header retro-section-header"
+      (click)="toggleSection('tools')"
+      [class.collapsed]="!sections.tools"
+    >
+      <div class="header-content-left">
+        <span class="terminal-tag">SECTION ></span>
+        <span class="TagSelector" tag="tools">{{
+          "Tools.Title" | translate
+        }}</span>
+      </div>
+      <div class="exp-arrow">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </div>
     </aside>
-    <div id="container_tools" class="tabElement">
+    <div
+      id="container_tools"
+      class="tabElement"
+      [class.collapsed]="!sections.tools"
+    >
       <app-tools></app-tools>
     </div>
 
-    <aside id="experience" class="tab_header retro-section-header">
-      <span class="terminal-tag">SECTION ></span>
-      <span class="TagSelector" tag="experience">{{
-        "Experience.Title" | translate
-      }}</span>
+    <aside
+      id="experience"
+      class="tab_header retro-section-header"
+      (click)="toggleSection('experience')"
+      [class.collapsed]="!sections.experience"
+    >
+      <div class="header-content-left">
+        <span class="terminal-tag">SECTION ></span>
+        <span class="TagSelector" tag="experience">{{
+          "Experience.Title" | translate
+        }}</span>
+      </div>
+      <div class="exp-arrow">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </div>
     </aside>
-    <div id="container_experience" class="tabElement">
+    <div
+      id="container_experience"
+      class="tabElement"
+      [class.collapsed]="!sections.experience"
+    >
       <app-experience></app-experience>
     </div>
   </nav>
