@@ -1,6 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
+import { WindowStateService } from '../../@shared/services/window-state.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -15,8 +17,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
   memUsage: number = 0;
   isMinimized: boolean = false;
   private statsInterval: any;
+  private windowStateSubscription!: Subscription;
 
-  constructor(private translate: TranslateService) {
+  constructor(
+    private translate: TranslateService,
+    private windowStateService: WindowStateService,
+  ) {
     const now = new Date();
     this.osVersion = `${now.getFullYear()}.${
       now.getMonth() + 1
@@ -33,7 +39,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   minimizeWindow(): void {
-    this.isMinimized = !this.isMinimized;
+    this.windowStateService.toggleMinimize();
   }
 
   maximizeWindow(): void {
@@ -52,11 +58,20 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.statsInterval = setInterval(() => {
       this.updateStats();
     }, 2200);
+
+    this.windowStateSubscription = this.windowStateService.isMinimized$.subscribe(
+      (minimized) => {
+        this.isMinimized = minimized;
+      },
+    );
   }
 
   ngOnDestroy(): void {
     if (this.statsInterval) {
       clearInterval(this.statsInterval);
+    }
+    if (this.windowStateSubscription) {
+      this.windowStateSubscription.unsubscribe();
     }
   }
 

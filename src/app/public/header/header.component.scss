@@ -108,16 +108,18 @@
 }
 
 .window-body {
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   max-height: 2000px;
   opacity: 1;
   overflow: hidden;
+  transform-origin: top;
 
   &.minimized {
     max-height: 0;
     padding-top: 0;
     padding-bottom: 0;
     opacity: 0;
+    transform: scaleY(0);
     pointer-events: none;
     border-bottom: 0 solid #333;
   }

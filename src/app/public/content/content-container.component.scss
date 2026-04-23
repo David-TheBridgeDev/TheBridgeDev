@@ -1,5 +1,23 @@
 @use "../../../styles/variables" as vars;
 
+.tab_container {
+  position: relative;
+  margin: auto;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  max-height: 10000px; // Large enough for full content
+
+  &.minimized-content {
+    max-height: 0;
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    pointer-events: none;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
 .portfolio-retro-header {
   display: flex;
   align-items: center;
