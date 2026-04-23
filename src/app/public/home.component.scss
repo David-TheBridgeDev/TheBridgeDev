@@ -1,4 +1,9 @@
 :host {
   display: block;
   padding-top: 20px;
+  transition: padding-top 0.4s ease;
+
+  &.is-minimized {
+    padding-top: 40px;
+  }
 }

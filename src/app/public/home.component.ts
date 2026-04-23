@@ -4,6 +4,8 @@ import { Location } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { ContentContainerComponent } from './content/content-container.component';
 import { FooterComponent } from './footer/footer.component';
+import { WindowStateService } from '../@shared/services/window-state.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -11,17 +13,29 @@ import { FooterComponent } from './footer/footer.component';
   styleUrls: ['./home.component.scss'],
   standalone: true,
   imports: [HeaderComponent, ContentContainerComponent, FooterComponent],
+  host: {
+    '[class.is-minimized]': 'isMinimized',
+  },
 })
 export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   private observer!: IntersectionObserver;
+  isMinimized = false;
+  private windowStateSubscription!: Subscription;
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private location: Location,
+    private windowStateService: WindowStateService,
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.windowStateSubscription = this.windowStateService.isMinimized$.subscribe(
+      (minimized) => {
+        this.isMinimized = minimized;
+      },
+    );
+  }
 
   ngAfterViewInit(): void {
     this.setupScrollSpy();
@@ -31,6 +45,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   ngOnDestroy(): void {
     if (this.observer) {
       this.observer.disconnect();
+    }
+    if (this.windowStateSubscription) {
+      this.windowStateSubscription.unsubscribe();
     }
   }
 
