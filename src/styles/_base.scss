@@ -1,4 +1,4 @@
-@use 'variables' as vars;
+@use "variables" as vars;
 
 html {
   scroll-padding-top: 40px; // Height of the fixed Retro OS Window Bar
@@ -7,20 +7,27 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background-color: vars.$bg-color;
+  background-color: var(--bg-color);
   background-position: center;
   background-size: cover;
   font-family: vars.$font-family-cursive;
   font-size: 15px;
   border: 0;
   vertical-align: baseline;
+  color: var(--text-color);
+  transition:
+    background-color 0.1s ease,
+    color 0.1s ease;
 }
 
 main {
   width: vars.$main-width-desktop;
   margin: auto;
-  background: vars.$white;
-  box-shadow: 0 0 25px vars.$border-color;
+  background: var(--surface-color);
+  box-shadow: 0 0 25px var(--shadow-color);
+  transition:
+    background-color 0.1s ease,
+    box-shadow 0.1s ease;
 
   @media all and (max-width: 1099px) {
     width: vars.$main-width-mobile;

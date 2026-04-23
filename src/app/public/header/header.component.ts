@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { WindowStateService } from '../../@shared/services/window-state.service';
+import { ThemeService } from '../../@shared/services/theme.service';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -16,12 +17,15 @@ export class HeaderComponent implements OnInit, OnDestroy {
   cpuUsage: number = 0;
   memUsage: number = 0;
   isMinimized: boolean = false;
+  isDarkMode: boolean = false;
   private statsInterval: any;
   private windowStateSubscription!: Subscription;
+  private themeSubscription!: Subscription;
 
   constructor(
     private translate: TranslateService,
     private windowStateService: WindowStateService,
+    private themeService: ThemeService,
   ) {
     const now = new Date();
     this.osVersion = `${now.getFullYear()}.${
@@ -55,6 +59,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
     }
   }
 
+  toggleTheme(): void {
+    this.themeService.toggleTheme();
+  }
+
   ngOnInit(): void {
     this.statsInterval = setInterval(() => {
       this.updateStats();
@@ -65,6 +73,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
         this.isMinimized = minimized;
       },
     );
+
+    this.themeSubscription = this.themeService.isDarkMode$.subscribe(
+      (isDark) => {
+        this.isDarkMode = isDark;
+      },
+    );
   }
 
   ngOnDestroy(): void {
@@ -73,6 +87,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
     }
     if (this.windowStateSubscription) {
       this.windowStateSubscription.unsubscribe();
+    }
+    if (this.themeSubscription) {
+      this.themeSubscription.unsubscribe();
     }
   }
 

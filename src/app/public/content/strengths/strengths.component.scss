@@ -13,9 +13,9 @@
 }
 
 .expertise-card {
-  background: white;
-  border: 3px solid #333;
-  box-shadow: 8px 8px 0px 0px #333;
+  background: var(--surface-color);
+  border: 3px solid var(--black);
+  box-shadow: 8px 8px 0px 0px var(--black);
   display: flex;
   flex-direction: column;
   position: relative;
@@ -29,7 +29,7 @@
     left: 0;
     width: 100%;
     height: 4px;
-    background: #333;
+    background: var(--black);
     transition: background 0.3s;
   }
 
@@ -63,8 +63,8 @@
   }
 
   .card-header {
-    background: #f8f8f8;
-    border-bottom: 3px solid #333;
+    background: var(--bg-color);
+    border-bottom: 3px solid var(--black);
     padding: 1rem;
     display: flex;
     justify-content: space-between;
@@ -73,7 +73,7 @@
     .terminal-tag {
       font-family: vars.$font-family-mono;
       font-size: 0.7rem;
-      background: #333;
+      background: var(--black);
       color: vars.$main-color;
       padding: 3px 8px;
       font-weight: bold;
@@ -85,7 +85,7 @@
       font-size: 2rem;
       width: 32px;
       height: 32px;
-      color: #333;
+      color: var(--black);
       transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
   }
@@ -100,7 +100,7 @@
       text-transform: uppercase;
       letter-spacing: 0.15rem;
       font-weight: 900;
-      color: #333;
+      color: var(--black);
       font-family: vars.$font-family-sans;
       transition: color 0.3s;
     }
@@ -109,7 +109,7 @@
       padding: 0;
       margin-top: 1.2rem;
       font-family: vars.$font-family-serif;
-      color: #555;
+      color: var(--text-color);
       text-align: left;
       font-size: 1rem;
       line-height: 1.5;
@@ -117,8 +117,8 @@
   }
 
   .card-footer {
-    background: #fafafa;
-    border-top: 1px solid #eee;
+    background: var(--bg-color);
+    border-top: 1px solid var(--border-color);
     padding: 0.6rem 1rem;
     display: flex;
     align-items: center;
@@ -128,14 +128,14 @@
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: #ccc;
+      background: var(--border-color);
       transition: all 0.3s;
     }
 
     .status-text {
       font-family: vars.$font-family-mono;
       font-size: 0.65rem;
-      color: #999;
+      color: var(--text-color);
       font-weight: bold;
       letter-spacing: 1px;
     }

@@ -6,10 +6,10 @@ iframe {
   height: 380px;
   margin: 3rem auto;
   display: block;
-  border: 4px solid #333 !important;
-  box-shadow: 12px 12px 0px 0px #333;
-  transition: all 0.3s;
-  background: white;
+  border: 4px solid var(--black) !important;
+  box-shadow: 12px 12px 0px 0px var(--black);
+  transition: all 0.3s, background-color 0.1s ease;
+  background: var(--surface-color);
 
   &:hover {
     transform: translate(-4px, -4px);

@@ -15,7 +15,7 @@
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
-    color: #333;
+    color: var(--black);
     margin-bottom: 1.5rem;
     border-bottom: 2px solid vars.$main-color;
   }
@@ -30,9 +30,9 @@
 
   .skill {
     padding: 0.6rem 1rem;
-    background: white;
-    border: 2px solid #333;
-    box-shadow: 4px 4px 0px 0px #333;
+    background: var(--surface-color);
+    border: 2px solid var(--black);
+    box-shadow: 4px 4px 0px 0px var(--black);
     transition: all 0.2s;
 
     // skill text
@@ -42,7 +42,7 @@
       font-weight: bold;
       font-family: "IBM Plex Mono", monospace;
       font-size: 0.9rem;
-      color: #333;
+      color: var(--black);
     }
 
     &:hover {

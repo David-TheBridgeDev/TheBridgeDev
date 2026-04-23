@@ -1,11 +1,42 @@
-// Colors
-$main-color: #efbc21;
-$bg-color: #eeeeee;
-$text-color: #777;
-$heading-color: #444;
-$border-color: #ddd;
-$white: #fff;
-$black: #333;
+// Theme Variables (CSS Variables)
+:root {
+  --main-color: #efbc21;
+  --bg-color: #eeeeee;
+  --text-color: #777;
+  --heading-color: #444;
+  --border-color: #ddd;
+  --surface-color: #fff;
+  --surface-color-rgb: 255, 255, 255;
+  --black: #333;
+  --white: #fff;
+  --header-bg: #fff;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --section-bg: #fff;
+}
+
+body.dark-theme {
+  --main-color: #efbc21;
+  --bg-color: #121212;
+  --text-color: #bbbbbb;
+  --heading-color: #eeeeee;
+  --border-color: #333333;
+  --surface-color: #1e1e1e;
+  --surface-color-rgb: 30, 30, 30;
+  --black: #eeeeee;
+  --white: #121212;
+  --header-bg: #1e1e1e;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --section-bg: #1e1e1e;
+}
+
+// Map SASS variables to CSS variables for backward compatibility
+$main-color: var(--main-color);
+$bg-color: var(--bg-color);
+$text-color: var(--text-color);
+$heading-color: var(--heading-color);
+$border-color: var(--border-color);
+$white: var(--surface-color);
+$black: var(--black);
 
 // Typography
 $font-family-cursive: "Birthstone", cursive;

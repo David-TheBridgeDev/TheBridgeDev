@@ -1,10 +1,11 @@
 @use "../../../styles/variables" as vars;
 
 .footer-retro-container {
-  background: #f8f8f8;
-  border-top: 4px solid #333;
+  background: var(--surface-color);
+  border-top: 4px solid var(--black);
   padding: 0;
   font-family: vars.$font-family-sans;
+  transition: background-color 0.1s ease;
 }
 
 .footer-banner {
@@ -66,14 +67,15 @@
 }
 
 .footer-card {
-  background: white;
-  border: 3px solid #333;
-  box-shadow: 8px 8px 0px 0px #333;
+  background: var(--surface-color);
+  border: 3px solid var(--black);
+  box-shadow: 8px 8px 0px 0px var(--black);
   display: flex;
   flex-direction: column;
   transition:
     transform 0.2s,
-    box-shadow 0.2s;
+    box-shadow 0.2s,
+    background-color 0.1s ease;
 
   &:hover {
     transform: translate(-4px, -4px);
@@ -81,8 +83,8 @@
   }
 
   .card-header {
-    background: #f0f0f0;
-    border-bottom: 3px solid #333;
+    background: var(--bg-color);
+    border-bottom: 3px solid var(--black);
     padding: 0.8rem 1.2rem;
     display: flex;
     align-items: center;
@@ -91,7 +93,7 @@
     .terminal-tag {
       font-family: vars.$font-family-mono;
       font-size: 0.75rem;
-      background: #333;
+      background: var(--black);
       color: vars.$main-color;
       padding: 2px 6px;
       font-weight: bold;
@@ -104,6 +106,7 @@
       text-transform: uppercase;
       letter-spacing: 0.1rem;
       font-weight: 800;
+      color: var(--black);
     }
   }
 
@@ -114,7 +117,7 @@
       padding: 0;
       margin-top: 1rem;
       font-family: vars.$font-family-serif;
-      color: #444;
+      color: var(--text-color);
       text-align: left;
     }
   }
@@ -137,7 +140,7 @@
   .project-tile {
     width: 80px;
     height: 80px;
-    border: 2px solid #333;
+    border: 2px solid var(--black);
     background-size: cover;
     background-position: center;
     cursor: pointer;
@@ -154,11 +157,11 @@
 }
 
 .card-footer-info {
-  background: #fafafa;
+  background: var(--bg-color);
   padding: 0.5rem 1rem;
   font-size: 0.75rem;
-  color: #888;
-  border-top: 1px solid #eee;
+  color: var(--text-color);
+  border-top: 1px solid var(--border-color);
   font-family: vars.$font-family-mono;
 }
 
@@ -177,13 +180,13 @@
       font-family: vars.$font-family-mono;
       font-size: 0.7rem;
       font-weight: bold;
-      color: #999;
+      color: var(--text-color);
     }
 
     a,
     span {
       font-size: 1rem;
-      color: #333;
+      color: var(--black);
       text-decoration: none;
       font-weight: 600;
     }
@@ -212,7 +215,7 @@
       width: 100%;
       margin: 0.2rem auto;
       border-width: 2px;
-      box-shadow: 4px 4px 0px 0px #333;
+      box-shadow: 4px 4px 0px 0px var(--black);
     }
 
     app-art iframe {
@@ -220,7 +223,7 @@
       height: 180px;
       margin: 0.2rem auto;
       border-width: 2px !important;
-      box-shadow: 4px 4px 0px 0px #333;
+      box-shadow: 4px 4px 0px 0px var(--black);
     }
 
     .portfolio_text {
@@ -228,6 +231,7 @@
       padding: 0.3rem 0 !important;
       text-align: left !important;
       line-height: 1.2;
+      color: var(--black);
     }
   }
 }
@@ -241,7 +245,7 @@
 
   .back-to-top-floating-btn {
     background: vars.$main-color;
-    border: 3px solid #333;
+    border: 3px solid var(--black);
     padding: 0.8rem 1.5rem;
     display: flex;
     align-items: center;
@@ -250,16 +254,16 @@
     font-family: vars.$font-family-mono;
     font-weight: 900;
     font-size: 1rem;
-    color: #333;
-    box-shadow: 6px 6px 0px 0px #333;
+    color: var(--black);
+    box-shadow: 6px 6px 0px 0px var(--black);
     transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     outline: none;
     transform: translateY(-50%);
 
     &:hover {
       transform: translateY(-65%);
-      box-shadow: 8px 12px 0px 0px #333;
-      background: lighten(vars.$main-color, 5%);
+      box-shadow: 8px 12px 0px 0px var(--black);
+      background: lighten(#efbc21, 5%);
 
       svg {
         animation: bounceUp 0.6s infinite alternate;
@@ -268,7 +272,7 @@
 
     &:active {
       transform: translateY(-40%);
-      box-shadow: 2px 2px 0px 0px #333;
+      box-shadow: 2px 2px 0px 0px var(--black);
     }
 
     svg {
@@ -284,7 +288,7 @@
 // Status Bar
 .footer-status-bar {
   background: #1a1a1a;
-  color: vars.$main-color;
+  color: #efbc21;
   padding: 0.8rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -306,7 +310,7 @@
   }
 
   .status-sep {
-    color: #444;
+    color: var(--border-color);
     user-select: none;
   }
 

@@ -143,6 +143,7 @@
   overflow: hidden;
   z-index: 1;
   background-color: vars.$white;
+  transition: background-color 0.1s ease;
 }
 
 .header_controlbox {
@@ -160,6 +161,7 @@
   font-size: 1.2rem;
   letter-spacing: 0.24rem;
   text-transform: uppercase;
+  color: var(--black);
 }
 
 .subAuth {
@@ -174,6 +176,7 @@
 
 .header_arrows {
   padding: 8px;
+  color: var(--black);
 }
 
 .header_spinner {
@@ -183,7 +186,7 @@
   width: 250px;
   height: 250px;
   border-radius: 100%;
-  border: 2px dashed #ddd;
+  border: 2px dashed var(--border-color);
   z-index: -1;
   animation: spin 35s linear infinite;
 }
@@ -195,7 +198,7 @@
   width: 275px;
   height: 275px;
   border-radius: 100%;
-  border: 2px dashed #333;
+  border: 2px dashed var(--black);
   z-index: -1;
   animation: spin 55s linear reverse infinite;
 }
@@ -207,7 +210,7 @@
   width: 300px;
   height: 300px;
   border-radius: 100%;
-  border: 2px dashed #ddd;
+  border: 2px dashed var(--border-color);
   z-index: -1;
   animation: spin 60s linear infinite;
 }
@@ -263,7 +266,7 @@
   height: 100%;
   z-index: -1;
   top: 78.5%;
-  background: white;
+  background: vars.$white;
 }
 
 .header_spinner_closer2 {
@@ -272,7 +275,7 @@
   width: 100%;
   height: 100%;
   z-index: -1;
-  background: linear-gradient(white 86%, transparent 100%);
+  background: linear-gradient(vars.$white 86%, transparent 100%);
 }
 
 .header_spinner_closer3 {
@@ -281,7 +284,7 @@
   width: 100%;
   height: 100%;
   z-index: -1;
-  background: linear-gradient(white 40%, transparent 45%);
+  background: linear-gradient(vars.$white 40%, transparent 45%);
 }
 
 .header_social_icon_links {
@@ -292,6 +295,18 @@
   margin-top: 0.4rem;
 }
 
+.theme-toggle-btn {
+  color: var(--black) !important;
+  
+  &:hover {
+    color: vars.$main-color !important;
+  }
+
+  svg {
+    stroke: currentColor !important;
+  }
+}
+
 .header_social_icon {
   display: flex;
   justify-content: center;
@@ -300,33 +315,32 @@
   height: 32px;
   padding: 6px;
   border-radius: 50%;
-  border: 1px solid #eee;
-  background: white;
+  border: 1px solid var(--border-color);
+  background: var(--surface-color);
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.1s ease-in-out, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   text-decoration: none;
-  color: #333;
+  color: var(--black);
   box-sizing: border-box;
+  stroke: currentColor; // Direct stroke application
 
   &:hover {
     border-color: vars.$main-color;
     transform: translateY(-2px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 6px var(--shadow-color);
+    color: vars.$main-color;
 
     &.lang-btn-social {
       color: vars.$main-color;
     }
-
-    svg {
-      stroke: vars.$main-color;
-    }
   }
 
+  // Handle case where SVG is inside (like the language buttons or if structured differently)
   svg {
     width: 20px;
     height: 20px;
-    stroke: #555;
-    transition: stroke 0.3s;
+    stroke: currentColor;
+    transition: stroke 0.1s ease;
   }
 }
 
@@ -335,22 +349,23 @@
   font-size: 0.7rem;
   font-weight: bold;
   background: none;
-  border: 1px solid #eee;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
 
   &.active {
-    background: #f8f8f8;
-    border-color: vars.$main-color;
-    color: #222;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    background: var(--main-color); // More visible active state
+    border-color: var(--main-color);
+    color: #333; // Dark text on yellow background
+    box-shadow: inset 0 2px 4px var(--shadow-color);
     position: relative;
 
     &::after {
       content: "";
       position: absolute;
-      bottom: 4px;
+      bottom: 2px;
       width: 4px;
       height: 4px;
-      background: vars.$main-color;
+      background: #333;
       border-radius: 50%;
     }
   }
@@ -359,7 +374,7 @@
 .lang-divider-vertical {
   width: 1px;
   height: 20px;
-  background: #eee;
+  background: var(--border-color);
   margin: 0 4px;
 }
 

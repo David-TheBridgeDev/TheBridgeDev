@@ -54,9 +54,9 @@
 }
 
 .portfolio-title-box {
-  background: white;
-  border: 3px solid #333;
-  box-shadow: 8px 8px 0px 0px #333;
+  background: var(--surface-color);
+  border: 3px solid var(--black);
+  box-shadow: 8px 8px 0px 0px var(--black);
   padding: 1.2rem 2.5rem;
   display: flex;
   flex-direction: column;
@@ -64,7 +64,8 @@
   gap: 0.5rem;
   transition:
     transform 0.2s,
-    box-shadow 0.2s;
+    box-shadow 0.2s,
+    background-color 0.1s ease;
   min-width: 250px;
 
   &:hover {
@@ -74,7 +75,7 @@
 
   h1.portfolio_text {
     font-size: 2.5rem;
-    color: #333;
+    color: var(--black);
     margin: 0;
     padding: 0;
     background: transparent;
@@ -92,7 +93,7 @@
 .terminal-tag {
   font-family: "IBM Plex Mono", "Courier New", monospace;
   font-size: 0.75rem;
-  background: #333;
+  background: var(--black);
   color: vars.$main-color;
   padding: 2px 8px;
   font-weight: bold;
@@ -105,9 +106,9 @@
   margin: 2rem auto 2rem auto !important;
   width: 85% !important;
   max-width: 1000px;
-  background: white !important;
-  border: 3px solid #333 !important;
-  box-shadow: 8px 8px 0px 0px #333 !important;
+  background: var(--surface-color) !important;
+  border: 3px solid var(--black) !important;
+  box-shadow: 8px 8px 0px 0px var(--black) !important;
   border-radius: 0 !important;
   padding: 0.8rem 1.5rem !important;
   display: flex !important;
@@ -118,7 +119,8 @@
   transition:
     transform 0.2s,
     box-shadow 0.2s,
-    margin 0.3s ease;
+    margin 0.3s ease,
+    background-color 0.1s ease;
   cursor: pointer;
 
   &.collapsed {
@@ -138,7 +140,7 @@
   .exp-arrow {
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     transform: rotate(180deg); // Default expanded
-    color: #888;
+    color: var(--text-color);
     display: flex;
     align-items: center;
   }
@@ -158,7 +160,7 @@
 
   .TagSelector {
     padding: 0 !important;
-    color: #333 !important;
+    color: var(--black) !important;
     font-weight: 900 !important;
     font-size: 1.1rem !important;
     letter-spacing: 0.1rem;
