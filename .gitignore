@@ -50,5 +50,5 @@ android/*
 deploy/build/*
 deploy/public/*
 
-#doc
-doc/*
+#docs
+docs/*
