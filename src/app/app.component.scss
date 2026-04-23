@@ -1,0 +1,180 @@
+@use "../styles/variables" as vars;
+
+.system-crashing {
+  animation: glitch-vibration 0.2s infinite;
+  filter: grayscale(1) contrast(3) brightness(2);
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bsod-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #0000aa;
+  color: #cccccc;
+  z-index: 9999;
+  font-family: vars.$font-family-mono;
+  padding: 5% 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  animation: bsod-fade-in 0.2s forwards;
+
+  .bsod-content {
+    max-width: 900px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+
+    .bsod-header {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2rem;
+
+      .bsod-tag {
+        background: #cccccc;
+        color: #0000aa;
+        padding: 0px 15px;
+        font-weight: bold;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+      }
+    }
+
+    p {
+      color: #cccccc;
+      text-align: left;
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      padding: 0;
+      line-height: 1.4;
+      font-family: vars.$font-family-mono;
+    }
+
+    .bsod-instructions {
+      margin-bottom: 2rem;
+      list-style: none;
+      padding-left: 0;
+      li {
+        margin-bottom: 0.8rem;
+        font-size: 1.1rem;
+      }
+    }
+
+    .bsod-center {
+      text-align: center;
+      margin: 3rem 0;
+    }
+
+    .bsod-footer {
+      border-top: 1px solid #cccccc;
+      padding-top: 1rem;
+      opacity: 0.8;
+      p {
+        font-size: 0.9rem;
+        margin-bottom: 0.3rem;
+      }
+    }
+
+    .collecting-info {
+      text-align: right;
+      font-size: 0.8rem;
+      margin-top: 2rem;
+      color: #ffff00;
+      font-weight: bold;
+    }
+
+    .blink {
+      animation: blink 1s step-end infinite;
+    }
+  }
+
+  // CRT Effects
+  .scanlines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      rgba(18, 16, 16, 0) 50%,
+      rgba(0, 0, 0, 0.15) 50%
+    );
+    background-size: 100% 4px;
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  .crt-flicker {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(18, 16, 16, 0.05);
+    opacity: 0;
+    z-index: 4;
+    pointer-events: none;
+    animation: flicker 0.1s infinite;
+  }
+}
+
+// Mobile Responsive
+@media (max-width: 768px) {
+  .bsod-overlay {
+    padding: 1.5rem;
+    align-items: flex-start;
+    padding-top: 15%;
+
+    .bsod-content {
+      .bsod-header {
+        margin-bottom: 1.5rem;
+        .bsod-tag {
+          font-size: 1.2rem;
+        }
+      }
+
+      p, .bsod-instructions li {
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+      }
+
+      .bsod-center {
+        margin: 1.5rem 0;
+      }
+
+      .bsod-footer p {
+        font-size: 0.75rem;
+      }
+    }
+  }
+}
+
+@keyframes glitch-vibration {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(3px, -3px); }
+  50% { transform: translate(-3px, 3px); }
+  75% { transform: translate(3px, 3px); }
+  100% { transform: translate(-3px, -3px); }
+}
+
+@keyframes bsod-fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes flicker {
+  0% { opacity: 0.1; }
+  50% { opacity: 0.05; }
+  100% { opacity: 0.12; }
+}

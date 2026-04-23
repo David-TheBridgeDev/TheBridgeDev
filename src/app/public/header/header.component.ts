@@ -32,10 +32,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   // Funciones de control de ventana
   closeWindow(): void {
-    const confirmMsg = this.translate.instant('Footer.CloseConfirm');
-    if (confirm(confirmMsg)) {
+    this.windowStateService.triggerCrash();
+    // Auto-reload after the "brutal" sequence
+    setTimeout(() => {
       window.location.reload();
-    }
+    }, 6000);
   }
 
   minimizeWindow(): void {
