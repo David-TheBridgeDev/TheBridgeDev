@@ -3,4 +3,5 @@ export enum AppRoutes {
   PROJECTS = 'projects',
   HOME_AUTOMATION = 'home-automation',
   MUSIC = 'music',
+  WHEELCHAIR = 'wheelchair',
 }

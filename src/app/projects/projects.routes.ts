@@ -12,4 +12,9 @@ export const PROJECTS_ROUTES: Routes = [
     loadChildren: () =>
       import('./music/music.routes').then((m) => m.MUSIC_ROUTES),
   },
+  {
+    path: AppRoutes.WHEELCHAIR,
+    loadChildren: () =>
+      import('./wheelchair/wheelchair.routes').then((m) => m.WHEELCHAIR_ROUTES),
+  },
 ];

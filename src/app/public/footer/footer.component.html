@@ -65,6 +65,15 @@
             <div class="mini-card-icon music-icon"></div>
             <span class="mini-card-label">AUDIO.EXE</span>
           </div>
+
+          <div
+            class="project-mini-card"
+            [routerLink]="['/', AppRoutes.PROJECTS, AppRoutes.WHEELCHAIR]"
+            [matTooltip]="'Projects.Wheelchair' | translate"
+          >
+            <div class="mini-card-icon wheelchair-icon"></div>
+            <span class="mini-card-label">BSR.EXE</span>
+          </div>
         </div>
         <div class="card-footer-info">
           <span>{{ "Projects.Intro" | translate }}</span>

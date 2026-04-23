@@ -1,0 +1,81 @@
+<div class="threejs-window-wrapper">
+  <!-- Model Selector Overlay -->
+  <div class="model-selector-container">
+    <div class="selector-header">
+      <div class="header-left">
+        <span class="selector-tag">CHAIRS</span>
+      </div>
+      <div class="header-right">
+        <div class="window-controls-mini">
+          <span class="dot-mini"></span>
+          <span class="dot-mini"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="selector-body">
+      <button
+        *ngFor="let model of models"
+        [class.active]="currentModelId === model.id"
+        (click)="switchModel(model)"
+        class="model-btn"
+        [matTooltip]="model.name"
+      >
+        <div class="btn-inner">
+          <span class="model-code"> {{ model.label }}</span>
+        </div>
+      </button>
+
+      <!-- Center View Button -->
+      <button
+        class="model-btn center-btn"
+        (click)="centerView()"
+        matTooltip="Center Camera"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <circle cx="12" cy="12" r="3" />
+          <path d="M3 7V5a2 2 0 0 1 2-2h2" />
+          <path d="M17 3h2a2 2 0 0 1 2 2v2" />
+          <path d="M21 17v2a2 2 0 0 1-2 2h-2" />
+          <path d="M7 21H5a2 2 0 0 1-2-2v-2" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Loading Indicator -->
+  <div *ngIf="isLoading" class="model-loader-overlay">
+    <div class="loader-content">
+      <div class="spinner-retro"></div>
+      <span class="loading-text">RECOMPILING...</span>
+    </div>
+  </div>
+
+  <div id="rendererContainer" #rendererContainer></div>
+
+  <!-- Footer Status Bar -->
+  <div class="viewer-footer-status">
+    <div class="status-segment">
+      <span class="status-label">ENGINE:</span>
+      <span class="status-value">THREE.JS_R160</span>
+    </div>
+    <div class="status-segment hidden-mobile">
+      <span class="status-label">ASSET:</span>
+      <span class="status-value">BSR_MODEL_PRO</span>
+    </div>
+    <div class="status-segment">
+      <span class="status-label">STATUS:</span>
+      <span class="status-value blinking">ONLINE</span>
+    </div>
+  </div>
+</div>

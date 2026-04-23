@@ -1,0 +1,62 @@
+<div class="retro-container">
+  <div class="retro-header" (click)="goHome()">
+    <h1 class="retro-title">>_ WHEELCHAIR_V1.0</h1>
+    <button
+      class="theme-toggle-header"
+      (click)="toggleTheme($event)"
+      [title]="isDarkMode ? 'Light Mode' : 'Dark Mode'"
+    >
+      @if (isDarkMode) {
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="icon-sun"
+      >
+        <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
+        <path
+          d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"
+        />
+      </svg>
+      } @else {
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="icon-moon"
+      >
+        <path
+          d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"
+        />
+      </svg>
+      }
+    </button>
+  </div>
+  <mat-tab-group
+    animationDuration="0ms"
+    [selectedIndex]="selectedIndex"
+    (selectedIndexChange)="onTabChange($event)"
+  >
+    <mat-tab label="> Visor 3D">
+      <app-wheelchair-viewer></app-wheelchair-viewer>
+    </mat-tab>
+    <mat-tab label="> Reglas BSR 25/26">
+      <app-wheelchair-rules></app-wheelchair-rules>
+    </mat-tab>
+    <mat-tab label="> Filosofía">
+      <app-wheelchair-philosophy></app-wheelchair-philosophy>
+    </mat-tab>
+  </mat-tab-group>
+</div>

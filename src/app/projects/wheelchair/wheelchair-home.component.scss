@@ -1,0 +1,121 @@
+@use "../../../styles/variables" as vars;
+
+:host {
+  display: block;
+  min-height: 100vh;
+  background-color: vars.$bg-color;
+}
+
+.retro-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  border: 4px solid vars.$black;
+  background-color: vars.$white;
+  box-shadow: 8px 8px 0px vars.$black;
+  position: relative;
+  overflow: hidden;
+}
+
+.retro-header {
+  background-color: vars.$black;
+  color: vars.$white;
+  padding: 0.6rem 1.2rem;
+  border-bottom: 4px solid vars.$black;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .retro-title {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .theme-toggle-header {
+    background: transparent;
+    border: 2px solid vars.$white;
+    color: vars.$white;
+    padding: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    border-radius: 4px;
+
+    &:hover {
+      background-color: vars.$white;
+      color: vars.$black;
+      transform: scale(1.1);
+    }
+  }
+
+  &:hover {
+    filter: brightness(1.2);
+  }
+}
+
+:host ::ng-deep {
+  .mat-mdc-tab-group {
+    font-family: "Courier New", Courier, monospace;
+  }
+
+  .mat-mdc-tab-header {
+    background-color: #eee;
+    border-bottom: 2px solid vars.$black;
+  }
+
+  .mat-mdc-tab {
+    height: 48px;
+    border-right: 2px solid vars.$black;
+    opacity: 1 !important;
+
+    .mdc-tab__text-label {
+      color: vars.$black !important;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    &.mdc-tab--active {
+      background-color: vars.$white;
+      .mdc-tab__text-label {
+        color: vars.$black !important;
+      }
+    }
+  }
+
+  .mat-mdc-tab-body-wrapper {
+    padding: 1rem;
+    background-color: vars.$white;
+  }
+
+  .mat-mdc-tab-labels {
+    background-color: #ddd;
+  }
+
+  .mdc-tab-indicator__content--underline {
+    border-top-width: 4px !important;
+    border-color: vars.$black !important;
+  }
+}
+
+@media (max-width: 768px) {
+  :host {
+    padding: 0.5rem;
+  }
+  .retro-container {
+    border-width: 2px;
+    box-shadow: 4px 4px 0px vars.$black;
+  }
+  .retro-header {
+    border-bottom-width: 2px;
+    padding: 0.4rem 0.8rem;
+    .retro-title {
+      font-size: 0.9rem;
+    }
+  }
+}
