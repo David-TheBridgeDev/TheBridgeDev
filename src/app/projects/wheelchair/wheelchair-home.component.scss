@@ -104,9 +104,6 @@
 }
 
 @media (max-width: 768px) {
-  :host {
-    padding: 0.5rem;
-  }
   .retro-container {
     border-width: 2px;
     box-shadow: 4px 4px 0px vars.$black;
