@@ -53,11 +53,62 @@
     </div>
   </div>
 
+  <!-- Commands Overlay -->
+  <div class="commands-overlay">
+    <div class="overlay-header">COMMANDS</div>
+    <div class="command-line">> WASD: MOVE</div>
+    <div class="command-line">> DRAG: LOOK</div>
+    <div class="command-line">> SCROLL: ZOOM</div>
+  </div>
+
+  <!-- Lighting Overlay -->
+  <div class="lighting-overlay">
+    <div class="overlay-header">LIGHTING</div>
+    <div class="env-selector">
+      <button 
+        *ngFor="let env of environments"
+        class="env-mini-btn"
+        [class.active]="selectedEnv === env.id"
+        (click)="changeHDR(env.id)"
+      >
+        {{ env.name }}
+      </button>
+    </div>
+  </div>
+
   <!-- Loading Indicator -->
   <div *ngIf="isLoading" class="model-loader-overlay">
     <div class="loader-content">
       <div class="spinner-retro"></div>
       <span class="loading-text">RECOMPILING...</span>
+    </div>
+  </div>
+
+  <!-- Mobile Controls (D-Pad) -->
+  <div class="mobile-controls-overlay" (contextmenu)="$event.preventDefault()">
+    <div class="control-row">
+      <button class="control-btn" 
+        (touchstart)="updateKeys('w', true)" (touchend)="updateKeys('w', false)"
+        (mousedown)="updateKeys('w', true)" (mouseup)="updateKeys('w', false)" (mouseleave)="updateKeys('w', false)">
+        ▲
+      </button>
+    </div>
+    <div class="control-row">
+      <button class="control-btn" 
+        (touchstart)="updateKeys('a', true)" (touchend)="updateKeys('a', false)"
+        (mousedown)="updateKeys('a', true)" (mouseup)="updateKeys('a', false)" (mouseleave)="updateKeys('a', false)">
+        ◀
+      </button>
+      <button class="control-btn" 
+        (touchstart)="updateKeys('s', true)" (touchend)="updateKeys('s', false)"
+        (mousedown)="updateKeys('s', true)" (mouseup)="updateKeys('s', false)" (mouseleave)="updateKeys('s', false)">
+        ▼
+      </button>
+      <button class="control-btn" 
+        (touchstart)="updateKeys('d', true)" (touchend)="updateKeys('d', false)"
+        (mousedown)="updateKeys('d', true)" (mouseup)="updateKeys('d', false)" (mouseleave)="updateKeys('d', false)">
+        ▶
+      </button>
     </div>
   </div>
 

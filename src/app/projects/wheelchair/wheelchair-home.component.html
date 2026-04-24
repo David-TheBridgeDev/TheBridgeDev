@@ -1,11 +1,15 @@
 <div class="retro-container">
   <div class="retro-header" (click)="goHome()">
     <h1 class="retro-title">>_ WHEELCHAIR_V1.0</h1>
-    <button
-      class="theme-toggle-header"
-      (click)="toggleTheme($event)"
-      [title]="isDarkMode ? 'Light Mode' : 'Dark Mode'"
-    >
+    <div class="header-actions">
+      <button class="retro-btn-header" (click)="openRules($event)">
+        RULES
+      </button>
+      <button
+        class="theme-toggle-header"
+        (click)="toggleTheme($event)"
+        [title]="isDarkMode ? 'Light Mode' : 'Dark Mode'"
+      >
       @if (isDarkMode) {
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -44,19 +48,10 @@
       }
     </button>
   </div>
-  <mat-tab-group
-    animationDuration="0ms"
-    [selectedIndex]="selectedIndex"
-    (selectedIndexChange)="onTabChange($event)"
-  >
-    <mat-tab label="> Visor 3D">
+</div>
+  <div class="main-content">
+    <div class="viewer-section">
       <app-wheelchair-viewer></app-wheelchair-viewer>
-    </mat-tab>
-    <mat-tab label="> Reglas BSR 25/26">
-      <app-wheelchair-rules></app-wheelchair-rules>
-    </mat-tab>
-    <mat-tab label="> Filosofía">
-      <app-wheelchair-philosophy></app-wheelchair-philosophy>
-    </mat-tab>
-  </mat-tab-group>
+    </div>
+  </div>
 </div>

@@ -105,7 +105,7 @@ export class WheelchairComponent implements OnInit {
 
     // Environment (HDR)
     const rgbeLoader = new RGBELoader();
-    rgbeLoader.load('assets/3D/hdr/venice_sunset_1k.hdr', (texture) => {
+    rgbeLoader.load('assets/3D/hdr/living_room.hdr', (texture) => {
       texture.mapping = THREE.EquirectangularReflectionMapping;
       this.scene.environment = texture;
     });
