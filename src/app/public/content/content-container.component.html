@@ -80,42 +80,6 @@
     </div>
 
     <aside
-      id="tools"
-      class="tab_header retro-section-header"
-      (click)="toggleSection('tools')"
-      [class.collapsed]="!sections.tools"
-    >
-      <div class="header-content-left">
-        <span class="terminal-tag">SECTION ></span>
-        <span class="TagSelector" tag="tools">{{
-          "Tools.Title" | translate
-        }}</span>
-      </div>
-      <div class="exp-arrow">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <polyline points="6 9 12 15 18 9"></polyline>
-        </svg>
-      </div>
-    </aside>
-    <div
-      id="container_tools"
-      class="tabElement"
-      [class.collapsed]="!sections.tools"
-    >
-      <app-tools></app-tools>
-    </div>
-
-    <aside
       id="threejs"
       class="tab_header retro-section-header"
       (click)="toggleSection('threejs')"

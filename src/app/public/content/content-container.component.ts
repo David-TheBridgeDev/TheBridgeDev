@@ -2,7 +2,6 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { WheelchairComponent } from '../../@shared/threeJS/wheelchair/wheelchair.component';
 import { TranslatePipe } from '@ngx-translate/core';
 import { SkillsComponent } from './skills/skills.component';
-import { ToolsComponent } from './tools/tools.component';
 import { StrengthsComponent } from './strengths/strengths.component';
 import { WindowStateService } from '../../@shared/services/window-state.service';
 import { Subscription } from 'rxjs';
@@ -15,7 +14,6 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [
     SkillsComponent,
-    ToolsComponent,
     WheelchairComponent,
     StrengthsComponent,
     TranslatePipe,
@@ -30,7 +28,6 @@ export class ContentContainerComponent implements OnInit, OnDestroy {
   sections = {
     strengths: true,
     skills: true,
-    tools: true,
     threejs: true,
   };
 
