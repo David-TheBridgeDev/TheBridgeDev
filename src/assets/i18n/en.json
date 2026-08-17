@@ -33,10 +33,6 @@
     "Mobility": {
       "Title": "Mobility & Desktop",
       "Desc": "Developing cross-platform apps with <b>Capacitor</b> (Android/iOS) and <b>Electron</b> (Windows, macOS, Linux)."
-    },
-    "Security": {
-      "Title": "Cybersecurity",
-      "Desc": "Implementing secure Authentication and Authorization using <b>OAuth2</b> and <b>JWT</b> (JSON Web Tokens)."
     }
   },
   "Skills": {

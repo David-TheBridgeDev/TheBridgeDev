@@ -32,10 +32,5 @@ export class StrengthsComponent {
       icon: 'devices',
       tag: 'MOB',
     },
-    {
-      id: 'Security',
-      icon: 'security',
-      tag: 'SEC',
-    },
   ];
 }

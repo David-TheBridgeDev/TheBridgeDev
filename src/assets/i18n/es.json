@@ -33,10 +33,6 @@
     "Mobility": {
       "Title": "Movilidad y Escritorio",
       "Desc": "Desarrollo de aplicaciones multiplataforma con <b>Capacitor</b> para Android/iOS, y con <b>Electron</b> para escritorio (Windows, macOS, Linux)."
-    },
-    "Security": {
-      "Title": "Ciberseguridad",
-      "Desc": "Implementación de Autenticación y Autorización segura utilizando estándares como <b>OAuth2</b> y <b>JWT</b> (JSON Web Tokens)."
     }
   },
   "Skills": {
