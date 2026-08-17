@@ -1,5 +1,4 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ExperienceComponent } from './experience/experience.component';
 import { WheelchairComponent } from '../../@shared/threeJS/wheelchair/wheelchair.component';
 import { TranslatePipe } from '@ngx-translate/core';
 import { SkillsComponent } from './skills/skills.component';
@@ -17,7 +16,6 @@ import { CommonModule } from '@angular/common';
   imports: [
     SkillsComponent,
     ToolsComponent,
-    ExperienceComponent,
     WheelchairComponent,
     StrengthsComponent,
     TranslatePipe,
@@ -34,7 +32,6 @@ export class ContentContainerComponent implements OnInit, OnDestroy {
     threejs: true,
     skills: true,
     tools: true,
-    experience: true,
   };
 
   constructor(private windowStateService: WindowStateService) {}
