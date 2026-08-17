@@ -29,9 +29,9 @@ export class ContentContainerComponent implements OnInit, OnDestroy {
   // Track individual section states
   sections = {
     strengths: true,
-    threejs: true,
     skills: true,
     tools: true,
+    threejs: true,
   };
 
   constructor(private windowStateService: WindowStateService) {}
