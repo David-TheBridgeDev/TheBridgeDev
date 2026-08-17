@@ -260,20 +260,13 @@
   margin-top: 0.5rem;
 }
 
-// Isolated Projects Sections (VR & Art)
+// Isolated Projects Sections (Art)
 .isolated-content-body {
   display: flex;
   flex-direction: column;
   padding: 1rem !important;
 
   ::ng-deep {
-    app-vr img {
-      width: 100%;
-      margin: 0.2rem auto;
-      border-width: 2px;
-      box-shadow: 4px 4px 0px 0px var(--black);
-    }
-
     app-art iframe {
       width: 100%;
       height: 180px;

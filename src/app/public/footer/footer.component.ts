@@ -4,7 +4,6 @@ import { RouterLink } from '@angular/router';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { CommonModule } from '@angular/common';
 import { AppRoutes } from '../../@shared/models/appRoutes';
-import { VrComponent } from './vr/vr.component';
 import { ArtComponent } from './art/art.component';
 
 @Component({
@@ -17,7 +16,6 @@ import { ArtComponent } from './art/art.component';
     RouterLink,
     MatTooltipModule,
     CommonModule,
-    VrComponent,
     ArtComponent,
   ],
 })
